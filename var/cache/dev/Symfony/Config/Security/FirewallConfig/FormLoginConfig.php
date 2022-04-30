@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class FormLoginConfig 
 {
@@ -35,7 +35,6 @@ class FormLoginConfig
     private $failureForward;
     private $failurePathParameter;
     private $csrfTokenGenerator;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -44,7 +43,6 @@ class FormLoginConfig
      */
     public function provider($value): static
     {
-        $this->_usedProperties['provider'] = true;
         $this->provider = $value;
     
         return $this;
@@ -57,7 +55,6 @@ class FormLoginConfig
      */
     public function rememberMe($value): static
     {
-        $this->_usedProperties['rememberMe'] = true;
         $this->rememberMe = $value;
     
         return $this;
@@ -70,7 +67,6 @@ class FormLoginConfig
      */
     public function successHandler($value): static
     {
-        $this->_usedProperties['successHandler'] = true;
         $this->successHandler = $value;
     
         return $this;
@@ -83,7 +79,6 @@ class FormLoginConfig
      */
     public function failureHandler($value): static
     {
-        $this->_usedProperties['failureHandler'] = true;
         $this->failureHandler = $value;
     
         return $this;
@@ -96,7 +91,6 @@ class FormLoginConfig
      */
     public function checkPath($value): static
     {
-        $this->_usedProperties['checkPath'] = true;
         $this->checkPath = $value;
     
         return $this;
@@ -109,7 +103,6 @@ class FormLoginConfig
      */
     public function useForward($value): static
     {
-        $this->_usedProperties['useForward'] = true;
         $this->useForward = $value;
     
         return $this;
@@ -122,7 +115,6 @@ class FormLoginConfig
      */
     public function requirePreviousSession($value): static
     {
-        $this->_usedProperties['requirePreviousSession'] = true;
         $this->requirePreviousSession = $value;
     
         return $this;
@@ -135,7 +127,6 @@ class FormLoginConfig
      */
     public function loginPath($value): static
     {
-        $this->_usedProperties['loginPath'] = true;
         $this->loginPath = $value;
     
         return $this;
@@ -148,7 +139,6 @@ class FormLoginConfig
      */
     public function usernameParameter($value): static
     {
-        $this->_usedProperties['usernameParameter'] = true;
         $this->usernameParameter = $value;
     
         return $this;
@@ -161,7 +151,6 @@ class FormLoginConfig
      */
     public function passwordParameter($value): static
     {
-        $this->_usedProperties['passwordParameter'] = true;
         $this->passwordParameter = $value;
     
         return $this;
@@ -174,7 +163,6 @@ class FormLoginConfig
      */
     public function csrfParameter($value): static
     {
-        $this->_usedProperties['csrfParameter'] = true;
         $this->csrfParameter = $value;
     
         return $this;
@@ -187,7 +175,6 @@ class FormLoginConfig
      */
     public function csrfTokenId($value): static
     {
-        $this->_usedProperties['csrfTokenId'] = true;
         $this->csrfTokenId = $value;
     
         return $this;
@@ -200,7 +187,6 @@ class FormLoginConfig
      */
     public function enableCsrf($value): static
     {
-        $this->_usedProperties['enableCsrf'] = true;
         $this->enableCsrf = $value;
     
         return $this;
@@ -213,7 +199,6 @@ class FormLoginConfig
      */
     public function postOnly($value): static
     {
-        $this->_usedProperties['postOnly'] = true;
         $this->postOnly = $value;
     
         return $this;
@@ -226,7 +211,6 @@ class FormLoginConfig
      */
     public function formOnly($value): static
     {
-        $this->_usedProperties['formOnly'] = true;
         $this->formOnly = $value;
     
         return $this;
@@ -239,7 +223,6 @@ class FormLoginConfig
      */
     public function alwaysUseDefaultTargetPath($value): static
     {
-        $this->_usedProperties['alwaysUseDefaultTargetPath'] = true;
         $this->alwaysUseDefaultTargetPath = $value;
     
         return $this;
@@ -252,7 +235,6 @@ class FormLoginConfig
      */
     public function defaultTargetPath($value): static
     {
-        $this->_usedProperties['defaultTargetPath'] = true;
         $this->defaultTargetPath = $value;
     
         return $this;
@@ -265,7 +247,6 @@ class FormLoginConfig
      */
     public function targetPathParameter($value): static
     {
-        $this->_usedProperties['targetPathParameter'] = true;
         $this->targetPathParameter = $value;
     
         return $this;
@@ -278,7 +259,6 @@ class FormLoginConfig
      */
     public function useReferer($value): static
     {
-        $this->_usedProperties['useReferer'] = true;
         $this->useReferer = $value;
     
         return $this;
@@ -291,7 +271,6 @@ class FormLoginConfig
      */
     public function failurePath($value): static
     {
-        $this->_usedProperties['failurePath'] = true;
         $this->failurePath = $value;
     
         return $this;
@@ -304,7 +283,6 @@ class FormLoginConfig
      */
     public function failureForward($value): static
     {
-        $this->_usedProperties['failureForward'] = true;
         $this->failureForward = $value;
     
         return $this;
@@ -317,7 +295,6 @@ class FormLoginConfig
      */
     public function failurePathParameter($value): static
     {
-        $this->_usedProperties['failurePathParameter'] = true;
         $this->failurePathParameter = $value;
     
         return $this;
@@ -330,7 +307,6 @@ class FormLoginConfig
      */
     public function csrfTokenGenerator($value): static
     {
-        $this->_usedProperties['csrfTokenGenerator'] = true;
         $this->csrfTokenGenerator = $value;
     
         return $this;
@@ -339,140 +315,117 @@ class FormLoginConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('provider', $value)) {
-            $this->_usedProperties['provider'] = true;
+        if (isset($value['provider'])) {
             $this->provider = $value['provider'];
             unset($value['provider']);
         }
     
-        if (array_key_exists('remember_me', $value)) {
-            $this->_usedProperties['rememberMe'] = true;
+        if (isset($value['remember_me'])) {
             $this->rememberMe = $value['remember_me'];
             unset($value['remember_me']);
         }
     
-        if (array_key_exists('success_handler', $value)) {
-            $this->_usedProperties['successHandler'] = true;
+        if (isset($value['success_handler'])) {
             $this->successHandler = $value['success_handler'];
             unset($value['success_handler']);
         }
     
-        if (array_key_exists('failure_handler', $value)) {
-            $this->_usedProperties['failureHandler'] = true;
+        if (isset($value['failure_handler'])) {
             $this->failureHandler = $value['failure_handler'];
             unset($value['failure_handler']);
         }
     
-        if (array_key_exists('check_path', $value)) {
-            $this->_usedProperties['checkPath'] = true;
+        if (isset($value['check_path'])) {
             $this->checkPath = $value['check_path'];
             unset($value['check_path']);
         }
     
-        if (array_key_exists('use_forward', $value)) {
-            $this->_usedProperties['useForward'] = true;
+        if (isset($value['use_forward'])) {
             $this->useForward = $value['use_forward'];
             unset($value['use_forward']);
         }
     
-        if (array_key_exists('require_previous_session', $value)) {
-            $this->_usedProperties['requirePreviousSession'] = true;
+        if (isset($value['require_previous_session'])) {
             $this->requirePreviousSession = $value['require_previous_session'];
             unset($value['require_previous_session']);
         }
     
-        if (array_key_exists('login_path', $value)) {
-            $this->_usedProperties['loginPath'] = true;
+        if (isset($value['login_path'])) {
             $this->loginPath = $value['login_path'];
             unset($value['login_path']);
         }
     
-        if (array_key_exists('username_parameter', $value)) {
-            $this->_usedProperties['usernameParameter'] = true;
+        if (isset($value['username_parameter'])) {
             $this->usernameParameter = $value['username_parameter'];
             unset($value['username_parameter']);
         }
     
-        if (array_key_exists('password_parameter', $value)) {
-            $this->_usedProperties['passwordParameter'] = true;
+        if (isset($value['password_parameter'])) {
             $this->passwordParameter = $value['password_parameter'];
             unset($value['password_parameter']);
         }
     
-        if (array_key_exists('csrf_parameter', $value)) {
-            $this->_usedProperties['csrfParameter'] = true;
+        if (isset($value['csrf_parameter'])) {
             $this->csrfParameter = $value['csrf_parameter'];
             unset($value['csrf_parameter']);
         }
     
-        if (array_key_exists('csrf_token_id', $value)) {
-            $this->_usedProperties['csrfTokenId'] = true;
+        if (isset($value['csrf_token_id'])) {
             $this->csrfTokenId = $value['csrf_token_id'];
             unset($value['csrf_token_id']);
         }
     
-        if (array_key_exists('enable_csrf', $value)) {
-            $this->_usedProperties['enableCsrf'] = true;
+        if (isset($value['enable_csrf'])) {
             $this->enableCsrf = $value['enable_csrf'];
             unset($value['enable_csrf']);
         }
     
-        if (array_key_exists('post_only', $value)) {
-            $this->_usedProperties['postOnly'] = true;
+        if (isset($value['post_only'])) {
             $this->postOnly = $value['post_only'];
             unset($value['post_only']);
         }
     
-        if (array_key_exists('form_only', $value)) {
-            $this->_usedProperties['formOnly'] = true;
+        if (isset($value['form_only'])) {
             $this->formOnly = $value['form_only'];
             unset($value['form_only']);
         }
     
-        if (array_key_exists('always_use_default_target_path', $value)) {
-            $this->_usedProperties['alwaysUseDefaultTargetPath'] = true;
+        if (isset($value['always_use_default_target_path'])) {
             $this->alwaysUseDefaultTargetPath = $value['always_use_default_target_path'];
             unset($value['always_use_default_target_path']);
         }
     
-        if (array_key_exists('default_target_path', $value)) {
-            $this->_usedProperties['defaultTargetPath'] = true;
+        if (isset($value['default_target_path'])) {
             $this->defaultTargetPath = $value['default_target_path'];
             unset($value['default_target_path']);
         }
     
-        if (array_key_exists('target_path_parameter', $value)) {
-            $this->_usedProperties['targetPathParameter'] = true;
+        if (isset($value['target_path_parameter'])) {
             $this->targetPathParameter = $value['target_path_parameter'];
             unset($value['target_path_parameter']);
         }
     
-        if (array_key_exists('use_referer', $value)) {
-            $this->_usedProperties['useReferer'] = true;
+        if (isset($value['use_referer'])) {
             $this->useReferer = $value['use_referer'];
             unset($value['use_referer']);
         }
     
-        if (array_key_exists('failure_path', $value)) {
-            $this->_usedProperties['failurePath'] = true;
+        if (isset($value['failure_path'])) {
             $this->failurePath = $value['failure_path'];
             unset($value['failure_path']);
         }
     
-        if (array_key_exists('failure_forward', $value)) {
-            $this->_usedProperties['failureForward'] = true;
+        if (isset($value['failure_forward'])) {
             $this->failureForward = $value['failure_forward'];
             unset($value['failure_forward']);
         }
     
-        if (array_key_exists('failure_path_parameter', $value)) {
-            $this->_usedProperties['failurePathParameter'] = true;
+        if (isset($value['failure_path_parameter'])) {
             $this->failurePathParameter = $value['failure_path_parameter'];
             unset($value['failure_path_parameter']);
         }
     
-        if (array_key_exists('csrf_token_generator', $value)) {
-            $this->_usedProperties['csrfTokenGenerator'] = true;
+        if (isset($value['csrf_token_generator'])) {
             $this->csrfTokenGenerator = $value['csrf_token_generator'];
             unset($value['csrf_token_generator']);
         }
@@ -485,73 +438,73 @@ class FormLoginConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['provider'])) {
+        if (null !== $this->provider) {
             $output['provider'] = $this->provider;
         }
-        if (isset($this->_usedProperties['rememberMe'])) {
+        if (null !== $this->rememberMe) {
             $output['remember_me'] = $this->rememberMe;
         }
-        if (isset($this->_usedProperties['successHandler'])) {
+        if (null !== $this->successHandler) {
             $output['success_handler'] = $this->successHandler;
         }
-        if (isset($this->_usedProperties['failureHandler'])) {
+        if (null !== $this->failureHandler) {
             $output['failure_handler'] = $this->failureHandler;
         }
-        if (isset($this->_usedProperties['checkPath'])) {
+        if (null !== $this->checkPath) {
             $output['check_path'] = $this->checkPath;
         }
-        if (isset($this->_usedProperties['useForward'])) {
+        if (null !== $this->useForward) {
             $output['use_forward'] = $this->useForward;
         }
-        if (isset($this->_usedProperties['requirePreviousSession'])) {
+        if (null !== $this->requirePreviousSession) {
             $output['require_previous_session'] = $this->requirePreviousSession;
         }
-        if (isset($this->_usedProperties['loginPath'])) {
+        if (null !== $this->loginPath) {
             $output['login_path'] = $this->loginPath;
         }
-        if (isset($this->_usedProperties['usernameParameter'])) {
+        if (null !== $this->usernameParameter) {
             $output['username_parameter'] = $this->usernameParameter;
         }
-        if (isset($this->_usedProperties['passwordParameter'])) {
+        if (null !== $this->passwordParameter) {
             $output['password_parameter'] = $this->passwordParameter;
         }
-        if (isset($this->_usedProperties['csrfParameter'])) {
+        if (null !== $this->csrfParameter) {
             $output['csrf_parameter'] = $this->csrfParameter;
         }
-        if (isset($this->_usedProperties['csrfTokenId'])) {
+        if (null !== $this->csrfTokenId) {
             $output['csrf_token_id'] = $this->csrfTokenId;
         }
-        if (isset($this->_usedProperties['enableCsrf'])) {
+        if (null !== $this->enableCsrf) {
             $output['enable_csrf'] = $this->enableCsrf;
         }
-        if (isset($this->_usedProperties['postOnly'])) {
+        if (null !== $this->postOnly) {
             $output['post_only'] = $this->postOnly;
         }
-        if (isset($this->_usedProperties['formOnly'])) {
+        if (null !== $this->formOnly) {
             $output['form_only'] = $this->formOnly;
         }
-        if (isset($this->_usedProperties['alwaysUseDefaultTargetPath'])) {
+        if (null !== $this->alwaysUseDefaultTargetPath) {
             $output['always_use_default_target_path'] = $this->alwaysUseDefaultTargetPath;
         }
-        if (isset($this->_usedProperties['defaultTargetPath'])) {
+        if (null !== $this->defaultTargetPath) {
             $output['default_target_path'] = $this->defaultTargetPath;
         }
-        if (isset($this->_usedProperties['targetPathParameter'])) {
+        if (null !== $this->targetPathParameter) {
             $output['target_path_parameter'] = $this->targetPathParameter;
         }
-        if (isset($this->_usedProperties['useReferer'])) {
+        if (null !== $this->useReferer) {
             $output['use_referer'] = $this->useReferer;
         }
-        if (isset($this->_usedProperties['failurePath'])) {
+        if (null !== $this->failurePath) {
             $output['failure_path'] = $this->failurePath;
         }
-        if (isset($this->_usedProperties['failureForward'])) {
+        if (null !== $this->failureForward) {
             $output['failure_forward'] = $this->failureForward;
         }
-        if (isset($this->_usedProperties['failurePathParameter'])) {
+        if (null !== $this->failurePathParameter) {
             $output['failure_path_parameter'] = $this->failurePathParameter;
         }
-        if (isset($this->_usedProperties['csrfTokenGenerator'])) {
+        if (null !== $this->csrfTokenGenerator) {
             $output['csrf_token_generator'] = $this->csrfTokenGenerator;
         }
     

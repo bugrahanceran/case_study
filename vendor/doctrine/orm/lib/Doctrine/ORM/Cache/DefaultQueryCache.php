@@ -18,6 +18,7 @@ use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\ORM\UnitOfWork;
 
+use function array_key_exists;
 use function array_map;
 use function array_shift;
 use function array_unshift;
@@ -44,7 +45,7 @@ class DefaultQueryCache implements QueryCache
     /** @var QueryCacheValidator */
     private $validator;
 
-    /** @var CacheLogger|null */
+    /** @var CacheLogger */
     protected $cacheLogger;
 
     /** @var array<string,mixed> */
@@ -384,8 +385,7 @@ class DefaultQueryCache implements QueryCache
     /**
      * @param object $entity
      *
-     * @return mixed[]|object|null
-     * @psalm-return list<mixed>|object|null
+     * @return array<object>|object
      */
     private function getAssociationValue(
         ResultSetMapping $rsm,
@@ -412,11 +412,10 @@ class DefaultQueryCache implements QueryCache
     }
 
     /**
-     * @param mixed $value
-     * @psalm-param array<array-key, array{field: string, class: string}> $path
+     * @param mixed        $value
+     * @param array<mixed> $path
      *
-     * @return mixed[]|object|null
-     * @psalm-return list<mixed>|object|null
+     * @return mixed
      */
     private function getAssociationPathValue($value, array $path)
     {

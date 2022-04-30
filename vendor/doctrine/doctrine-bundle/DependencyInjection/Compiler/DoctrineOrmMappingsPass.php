@@ -2,13 +2,6 @@
 
 namespace Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler;
 
-use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
-use Doctrine\ORM\Mapping\Driver\AttributeDriver;
-use Doctrine\ORM\Mapping\Driver\XmlDriver;
-use Doctrine\ORM\Mapping\Driver\YamlDriver;
-use Doctrine\Persistence\Mapping\Driver\PHPDriver;
-use Doctrine\Persistence\Mapping\Driver\StaticPHPDriver;
-use Doctrine\Persistence\Mapping\Driver\SymfonyFileLocator;
 use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterMappingsPass;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
@@ -66,8 +59,8 @@ class DoctrineOrmMappingsPass extends RegisterMappingsPass
      */
     public static function createXmlMappingDriver(array $namespaces, array $managerParameters = [], $enabledParameter = false, array $aliasMap = [])
     {
-        $locator = new Definition(SymfonyFileLocator::class, [$namespaces, '.orm.xml']);
-        $driver  = new Definition(XmlDriver::class, [$locator]);
+        $locator = new Definition('Doctrine\Persistence\Mapping\Driver\SymfonyFileLocator', [$namespaces, '.orm.xml']);
+        $driver  = new Definition('Doctrine\ORM\Mapping\Driver\XmlDriver', [$locator]);
 
         return new DoctrineOrmMappingsPass($driver, $namespaces, $managerParameters, $enabledParameter, $aliasMap);
     }
@@ -87,8 +80,8 @@ class DoctrineOrmMappingsPass extends RegisterMappingsPass
      */
     public static function createYamlMappingDriver(array $namespaces, array $managerParameters = [], $enabledParameter = false, array $aliasMap = [])
     {
-        $locator = new Definition(SymfonyFileLocator::class, [$namespaces, '.orm.yml']);
-        $driver  = new Definition(YamlDriver::class, [$locator]);
+        $locator = new Definition('Doctrine\Persistence\Mapping\Driver\SymfonyFileLocator', [$namespaces, '.orm.yml']);
+        $driver  = new Definition('Doctrine\ORM\Mapping\Driver\YamlDriver', [$locator]);
 
         return new DoctrineOrmMappingsPass($driver, $namespaces, $managerParameters, $enabledParameter, $aliasMap);
     }
@@ -108,8 +101,8 @@ class DoctrineOrmMappingsPass extends RegisterMappingsPass
      */
     public static function createPhpMappingDriver(array $namespaces, array $managerParameters = [], $enabledParameter = false, array $aliasMap = [])
     {
-        $locator = new Definition(SymfonyFileLocator::class, [$namespaces, '.php']);
-        $driver  = new Definition(PHPDriver::class, [$locator]);
+        $locator = new Definition('Doctrine\Persistence\Mapping\Driver\SymfonyFileLocator', [$namespaces, '.php']);
+        $driver  = new Definition('Doctrine\Persistence\Mapping\Driver\PHPDriver', [$locator]);
 
         return new DoctrineOrmMappingsPass($driver, $namespaces, $managerParameters, $enabledParameter, $aliasMap);
     }
@@ -131,7 +124,7 @@ class DoctrineOrmMappingsPass extends RegisterMappingsPass
     public static function createAnnotationMappingDriver(array $namespaces, array $directories, array $managerParameters = [], $enabledParameter = false, array $aliasMap = [])
     {
         $reader = new Reference('annotation_reader');
-        $driver = new Definition(AnnotationDriver::class, [$reader, $directories]);
+        $driver = new Definition('Doctrine\ORM\Mapping\Driver\AnnotationDriver', [$reader, $directories]);
 
         return new DoctrineOrmMappingsPass($driver, $namespaces, $managerParameters, $enabledParameter, $aliasMap);
     }
@@ -152,7 +145,7 @@ class DoctrineOrmMappingsPass extends RegisterMappingsPass
      */
     public static function createAttributeMappingDriver(array $namespaces, array $directories, array $managerParameters = [], $enabledParameter = false, array $aliasMap = [])
     {
-        $driver = new Definition(AttributeDriver::class, [$directories]);
+        $driver = new Definition('Doctrine\ORM\Mapping\Driver\AttributeDriver', [$directories]);
 
         return new DoctrineOrmMappingsPass($driver, $namespaces, $managerParameters, $enabledParameter, $aliasMap);
     }
@@ -173,7 +166,7 @@ class DoctrineOrmMappingsPass extends RegisterMappingsPass
      */
     public static function createStaticPhpMappingDriver(array $namespaces, array $directories, array $managerParameters = [], $enabledParameter = false, array $aliasMap = [])
     {
-        $driver = new Definition(StaticPHPDriver::class, [$directories]);
+        $driver = new Definition('Doctrine\Persistence\Mapping\Driver\StaticPHPDriver', [$directories]);
 
         return new DoctrineOrmMappingsPass($driver, $namespaces, $managerParameters, $enabledParameter, $aliasMap);
     }

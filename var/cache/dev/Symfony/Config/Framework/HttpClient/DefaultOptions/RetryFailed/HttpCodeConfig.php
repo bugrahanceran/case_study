@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class HttpCodeConfig 
 {
     private $code;
     private $methods;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class HttpCodeConfig
      */
     public function code($value): static
     {
-        $this->_usedProperties['code'] = true;
         $this->code = $value;
     
         return $this;
@@ -36,7 +34,6 @@ class HttpCodeConfig
      */
     public function methods(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['methods'] = true;
         $this->methods = $value;
     
         return $this;
@@ -45,14 +42,12 @@ class HttpCodeConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('code', $value)) {
-            $this->_usedProperties['code'] = true;
+        if (isset($value['code'])) {
             $this->code = $value['code'];
             unset($value['code']);
         }
     
-        if (array_key_exists('methods', $value)) {
-            $this->_usedProperties['methods'] = true;
+        if (isset($value['methods'])) {
             $this->methods = $value['methods'];
             unset($value['methods']);
         }
@@ -65,10 +60,10 @@ class HttpCodeConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['code'])) {
+        if (null !== $this->code) {
             $output['code'] = $this->code;
         }
-        if (isset($this->_usedProperties['methods'])) {
+        if (null !== $this->methods) {
             $output['methods'] = $this->methods;
         }
     

@@ -15,7 +15,6 @@ class AsEntityListener
         public ?string $method = null,
         public ?bool $lazy = null,
         public ?string $entityManager = null,
-        public ?string $entity = null,
     ) {
     }
 }

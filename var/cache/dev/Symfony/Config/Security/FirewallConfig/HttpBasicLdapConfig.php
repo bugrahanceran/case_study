@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class HttpBasicLdapConfig 
 {
@@ -19,7 +19,6 @@ class HttpBasicLdapConfig
     private $queryString;
     private $searchDn;
     private $searchPassword;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -28,7 +27,6 @@ class HttpBasicLdapConfig
      */
     public function provider($value): static
     {
-        $this->_usedProperties['provider'] = true;
         $this->provider = $value;
     
         return $this;
@@ -41,7 +39,6 @@ class HttpBasicLdapConfig
      */
     public function realm($value): static
     {
-        $this->_usedProperties['realm'] = true;
         $this->realm = $value;
     
         return $this;
@@ -54,7 +51,6 @@ class HttpBasicLdapConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -67,7 +63,6 @@ class HttpBasicLdapConfig
      */
     public function dnString($value): static
     {
-        $this->_usedProperties['dnString'] = true;
         $this->dnString = $value;
     
         return $this;
@@ -80,7 +75,6 @@ class HttpBasicLdapConfig
      */
     public function queryString($value): static
     {
-        $this->_usedProperties['queryString'] = true;
         $this->queryString = $value;
     
         return $this;
@@ -92,7 +86,6 @@ class HttpBasicLdapConfig
      */
     public function searchDn($value): static
     {
-        $this->_usedProperties['searchDn'] = true;
         $this->searchDn = $value;
     
         return $this;
@@ -104,7 +97,6 @@ class HttpBasicLdapConfig
      */
     public function searchPassword($value): static
     {
-        $this->_usedProperties['searchPassword'] = true;
         $this->searchPassword = $value;
     
         return $this;
@@ -113,44 +105,37 @@ class HttpBasicLdapConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('provider', $value)) {
-            $this->_usedProperties['provider'] = true;
+        if (isset($value['provider'])) {
             $this->provider = $value['provider'];
             unset($value['provider']);
         }
     
-        if (array_key_exists('realm', $value)) {
-            $this->_usedProperties['realm'] = true;
+        if (isset($value['realm'])) {
             $this->realm = $value['realm'];
             unset($value['realm']);
         }
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
     
-        if (array_key_exists('dn_string', $value)) {
-            $this->_usedProperties['dnString'] = true;
+        if (isset($value['dn_string'])) {
             $this->dnString = $value['dn_string'];
             unset($value['dn_string']);
         }
     
-        if (array_key_exists('query_string', $value)) {
-            $this->_usedProperties['queryString'] = true;
+        if (isset($value['query_string'])) {
             $this->queryString = $value['query_string'];
             unset($value['query_string']);
         }
     
-        if (array_key_exists('search_dn', $value)) {
-            $this->_usedProperties['searchDn'] = true;
+        if (isset($value['search_dn'])) {
             $this->searchDn = $value['search_dn'];
             unset($value['search_dn']);
         }
     
-        if (array_key_exists('search_password', $value)) {
-            $this->_usedProperties['searchPassword'] = true;
+        if (isset($value['search_password'])) {
             $this->searchPassword = $value['search_password'];
             unset($value['search_password']);
         }
@@ -163,25 +148,25 @@ class HttpBasicLdapConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['provider'])) {
+        if (null !== $this->provider) {
             $output['provider'] = $this->provider;
         }
-        if (isset($this->_usedProperties['realm'])) {
+        if (null !== $this->realm) {
             $output['realm'] = $this->realm;
         }
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
-        if (isset($this->_usedProperties['dnString'])) {
+        if (null !== $this->dnString) {
             $output['dn_string'] = $this->dnString;
         }
-        if (isset($this->_usedProperties['queryString'])) {
+        if (null !== $this->queryString) {
             $output['query_string'] = $this->queryString;
         }
-        if (isset($this->_usedProperties['searchDn'])) {
+        if (null !== $this->searchDn) {
             $output['search_dn'] = $this->searchDn;
         }
-        if (isset($this->_usedProperties['searchPassword'])) {
+        if (null !== $this->searchPassword) {
             $output['search_password'] = $this->searchPassword;
         }
     

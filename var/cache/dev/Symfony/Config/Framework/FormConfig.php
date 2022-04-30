@@ -9,14 +9,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class FormConfig 
 {
     private $enabled;
     private $csrfProtection;
     private $legacyErrorMessages;
-    private $_usedProperties = [];
     
     /**
      * @default true
@@ -25,7 +24,6 @@ class FormConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -34,7 +32,6 @@ class FormConfig
     public function csrfProtection(array $value = []): \Symfony\Config\Framework\Form\CsrfProtectionConfig
     {
         if (null === $this->csrfProtection) {
-            $this->_usedProperties['csrfProtection'] = true;
             $this->csrfProtection = new \Symfony\Config\Framework\Form\CsrfProtectionConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "csrfProtection()" has already been initialized. You cannot pass values the second time you call csrfProtection().');
@@ -50,7 +47,6 @@ class FormConfig
      */
     public function legacyErrorMessages($value): static
     {
-        $this->_usedProperties['legacyErrorMessages'] = true;
         $this->legacyErrorMessages = $value;
     
         return $this;
@@ -59,20 +55,17 @@ class FormConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('csrf_protection', $value)) {
-            $this->_usedProperties['csrfProtection'] = true;
+        if (isset($value['csrf_protection'])) {
             $this->csrfProtection = new \Symfony\Config\Framework\Form\CsrfProtectionConfig($value['csrf_protection']);
             unset($value['csrf_protection']);
         }
     
-        if (array_key_exists('legacy_error_messages', $value)) {
-            $this->_usedProperties['legacyErrorMessages'] = true;
+        if (isset($value['legacy_error_messages'])) {
             $this->legacyErrorMessages = $value['legacy_error_messages'];
             unset($value['legacy_error_messages']);
         }
@@ -85,13 +78,13 @@ class FormConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['csrfProtection'])) {
+        if (null !== $this->csrfProtection) {
             $output['csrf_protection'] = $this->csrfProtection->toArray();
         }
-        if (isset($this->_usedProperties['legacyErrorMessages'])) {
+        if (null !== $this->legacyErrorMessages) {
             $output['legacy_error_messages'] = $this->legacyErrorMessages;
         }
     

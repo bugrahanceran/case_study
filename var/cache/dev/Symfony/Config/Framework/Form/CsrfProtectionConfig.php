@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class CsrfProtectionConfig 
 {
     private $enabled;
     private $fieldName;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class CsrfProtectionConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -36,7 +34,6 @@ class CsrfProtectionConfig
      */
     public function fieldName($value): static
     {
-        $this->_usedProperties['fieldName'] = true;
         $this->fieldName = $value;
     
         return $this;
@@ -45,14 +42,12 @@ class CsrfProtectionConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('field_name', $value)) {
-            $this->_usedProperties['fieldName'] = true;
+        if (isset($value['field_name'])) {
             $this->fieldName = $value['field_name'];
             unset($value['field_name']);
         }
@@ -65,10 +60,10 @@ class CsrfProtectionConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['fieldName'])) {
+        if (null !== $this->fieldName) {
             $output['field_name'] = $this->fieldName;
         }
     

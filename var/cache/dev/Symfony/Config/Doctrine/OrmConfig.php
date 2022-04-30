@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class OrmConfig 
 {
@@ -19,7 +19,6 @@ class OrmConfig
     private $proxyNamespace;
     private $entityManagers;
     private $resolveTargetEntities;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -28,7 +27,6 @@ class OrmConfig
      */
     public function defaultEntityManager($value): static
     {
-        $this->_usedProperties['defaultEntityManager'] = true;
         $this->defaultEntityManager = $value;
     
         return $this;
@@ -42,7 +40,6 @@ class OrmConfig
      */
     public function autoGenerateProxyClasses($value): static
     {
-        $this->_usedProperties['autoGenerateProxyClasses'] = true;
         $this->autoGenerateProxyClasses = $value;
     
         return $this;
@@ -55,7 +52,6 @@ class OrmConfig
      */
     public function proxyDir($value): static
     {
-        $this->_usedProperties['proxyDir'] = true;
         $this->proxyDir = $value;
     
         return $this;
@@ -68,7 +64,6 @@ class OrmConfig
      */
     public function proxyNamespace($value): static
     {
-        $this->_usedProperties['proxyNamespace'] = true;
         $this->proxyNamespace = $value;
     
         return $this;
@@ -77,8 +72,6 @@ class OrmConfig
     public function entityManager(string $name, array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig
     {
         if (!isset($this->entityManagers[$name])) {
-            $this->_usedProperties['entityManagers'] = true;
-    
             return $this->entityManagers[$name] = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig($value);
         }
         if ([] === $value) {
@@ -93,7 +86,6 @@ class OrmConfig
      */
     public function resolveTargetEntity(string $interface, mixed $value): static
     {
-        $this->_usedProperties['resolveTargetEntities'] = true;
         $this->resolveTargetEntities[$interface] = $value;
     
         return $this;
@@ -102,38 +94,32 @@ class OrmConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('default_entity_manager', $value)) {
-            $this->_usedProperties['defaultEntityManager'] = true;
+        if (isset($value['default_entity_manager'])) {
             $this->defaultEntityManager = $value['default_entity_manager'];
             unset($value['default_entity_manager']);
         }
     
-        if (array_key_exists('auto_generate_proxy_classes', $value)) {
-            $this->_usedProperties['autoGenerateProxyClasses'] = true;
+        if (isset($value['auto_generate_proxy_classes'])) {
             $this->autoGenerateProxyClasses = $value['auto_generate_proxy_classes'];
             unset($value['auto_generate_proxy_classes']);
         }
     
-        if (array_key_exists('proxy_dir', $value)) {
-            $this->_usedProperties['proxyDir'] = true;
+        if (isset($value['proxy_dir'])) {
             $this->proxyDir = $value['proxy_dir'];
             unset($value['proxy_dir']);
         }
     
-        if (array_key_exists('proxy_namespace', $value)) {
-            $this->_usedProperties['proxyNamespace'] = true;
+        if (isset($value['proxy_namespace'])) {
             $this->proxyNamespace = $value['proxy_namespace'];
             unset($value['proxy_namespace']);
         }
     
-        if (array_key_exists('entity_managers', $value)) {
-            $this->_usedProperties['entityManagers'] = true;
+        if (isset($value['entity_managers'])) {
             $this->entityManagers = array_map(function ($v) { return new \Symfony\Config\Doctrine\Orm\EntityManagerConfig($v); }, $value['entity_managers']);
             unset($value['entity_managers']);
         }
     
-        if (array_key_exists('resolve_target_entities', $value)) {
-            $this->_usedProperties['resolveTargetEntities'] = true;
+        if (isset($value['resolve_target_entities'])) {
             $this->resolveTargetEntities = $value['resolve_target_entities'];
             unset($value['resolve_target_entities']);
         }
@@ -146,22 +132,22 @@ class OrmConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['defaultEntityManager'])) {
+        if (null !== $this->defaultEntityManager) {
             $output['default_entity_manager'] = $this->defaultEntityManager;
         }
-        if (isset($this->_usedProperties['autoGenerateProxyClasses'])) {
+        if (null !== $this->autoGenerateProxyClasses) {
             $output['auto_generate_proxy_classes'] = $this->autoGenerateProxyClasses;
         }
-        if (isset($this->_usedProperties['proxyDir'])) {
+        if (null !== $this->proxyDir) {
             $output['proxy_dir'] = $this->proxyDir;
         }
-        if (isset($this->_usedProperties['proxyNamespace'])) {
+        if (null !== $this->proxyNamespace) {
             $output['proxy_namespace'] = $this->proxyNamespace;
         }
-        if (isset($this->_usedProperties['entityManagers'])) {
+        if (null !== $this->entityManagers) {
             $output['entity_managers'] = array_map(function ($v) { return $v->toArray(); }, $this->entityManagers);
         }
-        if (isset($this->_usedProperties['resolveTargetEntities'])) {
+        if (null !== $this->resolveTargetEntities) {
             $output['resolve_target_entities'] = $this->resolveTargetEntities;
         }
     

@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class HttpCacheConfig 
 {
@@ -22,7 +22,6 @@ class HttpCacheConfig
     private $allowRevalidate;
     private $staleWhileRevalidate;
     private $staleIfError;
-    private $_usedProperties = [];
     
     /**
      * @default false
@@ -31,7 +30,6 @@ class HttpCacheConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -44,7 +42,6 @@ class HttpCacheConfig
      */
     public function debug($value): static
     {
-        $this->_usedProperties['debug'] = true;
         $this->debug = $value;
     
         return $this;
@@ -57,7 +54,6 @@ class HttpCacheConfig
      */
     public function traceLevel($value): static
     {
-        $this->_usedProperties['traceLevel'] = true;
         $this->traceLevel = $value;
     
         return $this;
@@ -70,7 +66,6 @@ class HttpCacheConfig
      */
     public function traceHeader($value): static
     {
-        $this->_usedProperties['traceHeader'] = true;
         $this->traceHeader = $value;
     
         return $this;
@@ -83,7 +78,6 @@ class HttpCacheConfig
      */
     public function defaultTtl($value): static
     {
-        $this->_usedProperties['defaultTtl'] = true;
         $this->defaultTtl = $value;
     
         return $this;
@@ -96,7 +90,6 @@ class HttpCacheConfig
      */
     public function privateHeaders(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['privateHeaders'] = true;
         $this->privateHeaders = $value;
     
         return $this;
@@ -109,7 +102,6 @@ class HttpCacheConfig
      */
     public function allowReload($value): static
     {
-        $this->_usedProperties['allowReload'] = true;
         $this->allowReload = $value;
     
         return $this;
@@ -122,7 +114,6 @@ class HttpCacheConfig
      */
     public function allowRevalidate($value): static
     {
-        $this->_usedProperties['allowRevalidate'] = true;
         $this->allowRevalidate = $value;
     
         return $this;
@@ -135,7 +126,6 @@ class HttpCacheConfig
      */
     public function staleWhileRevalidate($value): static
     {
-        $this->_usedProperties['staleWhileRevalidate'] = true;
         $this->staleWhileRevalidate = $value;
     
         return $this;
@@ -148,7 +138,6 @@ class HttpCacheConfig
      */
     public function staleIfError($value): static
     {
-        $this->_usedProperties['staleIfError'] = true;
         $this->staleIfError = $value;
     
         return $this;
@@ -157,62 +146,52 @@ class HttpCacheConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('debug', $value)) {
-            $this->_usedProperties['debug'] = true;
+        if (isset($value['debug'])) {
             $this->debug = $value['debug'];
             unset($value['debug']);
         }
     
-        if (array_key_exists('trace_level', $value)) {
-            $this->_usedProperties['traceLevel'] = true;
+        if (isset($value['trace_level'])) {
             $this->traceLevel = $value['trace_level'];
             unset($value['trace_level']);
         }
     
-        if (array_key_exists('trace_header', $value)) {
-            $this->_usedProperties['traceHeader'] = true;
+        if (isset($value['trace_header'])) {
             $this->traceHeader = $value['trace_header'];
             unset($value['trace_header']);
         }
     
-        if (array_key_exists('default_ttl', $value)) {
-            $this->_usedProperties['defaultTtl'] = true;
+        if (isset($value['default_ttl'])) {
             $this->defaultTtl = $value['default_ttl'];
             unset($value['default_ttl']);
         }
     
-        if (array_key_exists('private_headers', $value)) {
-            $this->_usedProperties['privateHeaders'] = true;
+        if (isset($value['private_headers'])) {
             $this->privateHeaders = $value['private_headers'];
             unset($value['private_headers']);
         }
     
-        if (array_key_exists('allow_reload', $value)) {
-            $this->_usedProperties['allowReload'] = true;
+        if (isset($value['allow_reload'])) {
             $this->allowReload = $value['allow_reload'];
             unset($value['allow_reload']);
         }
     
-        if (array_key_exists('allow_revalidate', $value)) {
-            $this->_usedProperties['allowRevalidate'] = true;
+        if (isset($value['allow_revalidate'])) {
             $this->allowRevalidate = $value['allow_revalidate'];
             unset($value['allow_revalidate']);
         }
     
-        if (array_key_exists('stale_while_revalidate', $value)) {
-            $this->_usedProperties['staleWhileRevalidate'] = true;
+        if (isset($value['stale_while_revalidate'])) {
             $this->staleWhileRevalidate = $value['stale_while_revalidate'];
             unset($value['stale_while_revalidate']);
         }
     
-        if (array_key_exists('stale_if_error', $value)) {
-            $this->_usedProperties['staleIfError'] = true;
+        if (isset($value['stale_if_error'])) {
             $this->staleIfError = $value['stale_if_error'];
             unset($value['stale_if_error']);
         }
@@ -225,34 +204,34 @@ class HttpCacheConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['debug'])) {
+        if (null !== $this->debug) {
             $output['debug'] = $this->debug;
         }
-        if (isset($this->_usedProperties['traceLevel'])) {
+        if (null !== $this->traceLevel) {
             $output['trace_level'] = $this->traceLevel;
         }
-        if (isset($this->_usedProperties['traceHeader'])) {
+        if (null !== $this->traceHeader) {
             $output['trace_header'] = $this->traceHeader;
         }
-        if (isset($this->_usedProperties['defaultTtl'])) {
+        if (null !== $this->defaultTtl) {
             $output['default_ttl'] = $this->defaultTtl;
         }
-        if (isset($this->_usedProperties['privateHeaders'])) {
+        if (null !== $this->privateHeaders) {
             $output['private_headers'] = $this->privateHeaders;
         }
-        if (isset($this->_usedProperties['allowReload'])) {
+        if (null !== $this->allowReload) {
             $output['allow_reload'] = $this->allowReload;
         }
-        if (isset($this->_usedProperties['allowRevalidate'])) {
+        if (null !== $this->allowRevalidate) {
             $output['allow_revalidate'] = $this->allowRevalidate;
         }
-        if (isset($this->_usedProperties['staleWhileRevalidate'])) {
+        if (null !== $this->staleWhileRevalidate) {
             $output['stale_while_revalidate'] = $this->staleWhileRevalidate;
         }
-        if (isset($this->_usedProperties['staleIfError'])) {
+        if (null !== $this->staleIfError) {
             $output['stale_if_error'] = $this->staleIfError;
         }
     

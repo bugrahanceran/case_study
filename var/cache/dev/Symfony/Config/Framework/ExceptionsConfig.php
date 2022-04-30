@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ExceptionsConfig 
 {
     private $logLevel;
     private $statusCode;
-    private $_usedProperties = [];
     
     /**
      * The level of log message. Null to let Symfony decide.
@@ -24,7 +23,6 @@ class ExceptionsConfig
      */
     public function logLevel($value): static
     {
-        $this->_usedProperties['logLevel'] = true;
         $this->logLevel = $value;
     
         return $this;
@@ -38,7 +36,6 @@ class ExceptionsConfig
      */
     public function statusCode($value): static
     {
-        $this->_usedProperties['statusCode'] = true;
         $this->statusCode = $value;
     
         return $this;
@@ -47,14 +44,12 @@ class ExceptionsConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('log_level', $value)) {
-            $this->_usedProperties['logLevel'] = true;
+        if (isset($value['log_level'])) {
             $this->logLevel = $value['log_level'];
             unset($value['log_level']);
         }
     
-        if (array_key_exists('status_code', $value)) {
-            $this->_usedProperties['statusCode'] = true;
+        if (isset($value['status_code'])) {
             $this->statusCode = $value['status_code'];
             unset($value['status_code']);
         }
@@ -67,10 +62,10 @@ class ExceptionsConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['logLevel'])) {
+        if (null !== $this->logLevel) {
             $output['log_level'] = $this->logLevel;
         }
-        if (isset($this->_usedProperties['statusCode'])) {
+        if (null !== $this->statusCode) {
             $output['status_code'] = $this->statusCode;
         }
     

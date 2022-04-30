@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class JsonLoginLdapConfig 
 {
@@ -27,7 +27,6 @@ class JsonLoginLdapConfig
     private $queryString;
     private $searchDn;
     private $searchPassword;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -36,7 +35,6 @@ class JsonLoginLdapConfig
      */
     public function provider($value): static
     {
-        $this->_usedProperties['provider'] = true;
         $this->provider = $value;
     
         return $this;
@@ -49,7 +47,6 @@ class JsonLoginLdapConfig
      */
     public function rememberMe($value): static
     {
-        $this->_usedProperties['rememberMe'] = true;
         $this->rememberMe = $value;
     
         return $this;
@@ -62,7 +59,6 @@ class JsonLoginLdapConfig
      */
     public function successHandler($value): static
     {
-        $this->_usedProperties['successHandler'] = true;
         $this->successHandler = $value;
     
         return $this;
@@ -75,7 +71,6 @@ class JsonLoginLdapConfig
      */
     public function failureHandler($value): static
     {
-        $this->_usedProperties['failureHandler'] = true;
         $this->failureHandler = $value;
     
         return $this;
@@ -88,7 +83,6 @@ class JsonLoginLdapConfig
      */
     public function checkPath($value): static
     {
-        $this->_usedProperties['checkPath'] = true;
         $this->checkPath = $value;
     
         return $this;
@@ -101,7 +95,6 @@ class JsonLoginLdapConfig
      */
     public function useForward($value): static
     {
-        $this->_usedProperties['useForward'] = true;
         $this->useForward = $value;
     
         return $this;
@@ -114,7 +107,6 @@ class JsonLoginLdapConfig
      */
     public function requirePreviousSession($value): static
     {
-        $this->_usedProperties['requirePreviousSession'] = true;
         $this->requirePreviousSession = $value;
     
         return $this;
@@ -127,7 +119,6 @@ class JsonLoginLdapConfig
      */
     public function loginPath($value): static
     {
-        $this->_usedProperties['loginPath'] = true;
         $this->loginPath = $value;
     
         return $this;
@@ -140,7 +131,6 @@ class JsonLoginLdapConfig
      */
     public function usernamePath($value): static
     {
-        $this->_usedProperties['usernamePath'] = true;
         $this->usernamePath = $value;
     
         return $this;
@@ -153,7 +143,6 @@ class JsonLoginLdapConfig
      */
     public function passwordPath($value): static
     {
-        $this->_usedProperties['passwordPath'] = true;
         $this->passwordPath = $value;
     
         return $this;
@@ -166,7 +155,6 @@ class JsonLoginLdapConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -179,7 +167,6 @@ class JsonLoginLdapConfig
      */
     public function dnString($value): static
     {
-        $this->_usedProperties['dnString'] = true;
         $this->dnString = $value;
     
         return $this;
@@ -192,7 +179,6 @@ class JsonLoginLdapConfig
      */
     public function queryString($value): static
     {
-        $this->_usedProperties['queryString'] = true;
         $this->queryString = $value;
     
         return $this;
@@ -204,7 +190,6 @@ class JsonLoginLdapConfig
      */
     public function searchDn($value): static
     {
-        $this->_usedProperties['searchDn'] = true;
         $this->searchDn = $value;
     
         return $this;
@@ -216,7 +201,6 @@ class JsonLoginLdapConfig
      */
     public function searchPassword($value): static
     {
-        $this->_usedProperties['searchPassword'] = true;
         $this->searchPassword = $value;
     
         return $this;
@@ -225,92 +209,77 @@ class JsonLoginLdapConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('provider', $value)) {
-            $this->_usedProperties['provider'] = true;
+        if (isset($value['provider'])) {
             $this->provider = $value['provider'];
             unset($value['provider']);
         }
     
-        if (array_key_exists('remember_me', $value)) {
-            $this->_usedProperties['rememberMe'] = true;
+        if (isset($value['remember_me'])) {
             $this->rememberMe = $value['remember_me'];
             unset($value['remember_me']);
         }
     
-        if (array_key_exists('success_handler', $value)) {
-            $this->_usedProperties['successHandler'] = true;
+        if (isset($value['success_handler'])) {
             $this->successHandler = $value['success_handler'];
             unset($value['success_handler']);
         }
     
-        if (array_key_exists('failure_handler', $value)) {
-            $this->_usedProperties['failureHandler'] = true;
+        if (isset($value['failure_handler'])) {
             $this->failureHandler = $value['failure_handler'];
             unset($value['failure_handler']);
         }
     
-        if (array_key_exists('check_path', $value)) {
-            $this->_usedProperties['checkPath'] = true;
+        if (isset($value['check_path'])) {
             $this->checkPath = $value['check_path'];
             unset($value['check_path']);
         }
     
-        if (array_key_exists('use_forward', $value)) {
-            $this->_usedProperties['useForward'] = true;
+        if (isset($value['use_forward'])) {
             $this->useForward = $value['use_forward'];
             unset($value['use_forward']);
         }
     
-        if (array_key_exists('require_previous_session', $value)) {
-            $this->_usedProperties['requirePreviousSession'] = true;
+        if (isset($value['require_previous_session'])) {
             $this->requirePreviousSession = $value['require_previous_session'];
             unset($value['require_previous_session']);
         }
     
-        if (array_key_exists('login_path', $value)) {
-            $this->_usedProperties['loginPath'] = true;
+        if (isset($value['login_path'])) {
             $this->loginPath = $value['login_path'];
             unset($value['login_path']);
         }
     
-        if (array_key_exists('username_path', $value)) {
-            $this->_usedProperties['usernamePath'] = true;
+        if (isset($value['username_path'])) {
             $this->usernamePath = $value['username_path'];
             unset($value['username_path']);
         }
     
-        if (array_key_exists('password_path', $value)) {
-            $this->_usedProperties['passwordPath'] = true;
+        if (isset($value['password_path'])) {
             $this->passwordPath = $value['password_path'];
             unset($value['password_path']);
         }
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
     
-        if (array_key_exists('dn_string', $value)) {
-            $this->_usedProperties['dnString'] = true;
+        if (isset($value['dn_string'])) {
             $this->dnString = $value['dn_string'];
             unset($value['dn_string']);
         }
     
-        if (array_key_exists('query_string', $value)) {
-            $this->_usedProperties['queryString'] = true;
+        if (isset($value['query_string'])) {
             $this->queryString = $value['query_string'];
             unset($value['query_string']);
         }
     
-        if (array_key_exists('search_dn', $value)) {
-            $this->_usedProperties['searchDn'] = true;
+        if (isset($value['search_dn'])) {
             $this->searchDn = $value['search_dn'];
             unset($value['search_dn']);
         }
     
-        if (array_key_exists('search_password', $value)) {
-            $this->_usedProperties['searchPassword'] = true;
+        if (isset($value['search_password'])) {
             $this->searchPassword = $value['search_password'];
             unset($value['search_password']);
         }
@@ -323,49 +292,49 @@ class JsonLoginLdapConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['provider'])) {
+        if (null !== $this->provider) {
             $output['provider'] = $this->provider;
         }
-        if (isset($this->_usedProperties['rememberMe'])) {
+        if (null !== $this->rememberMe) {
             $output['remember_me'] = $this->rememberMe;
         }
-        if (isset($this->_usedProperties['successHandler'])) {
+        if (null !== $this->successHandler) {
             $output['success_handler'] = $this->successHandler;
         }
-        if (isset($this->_usedProperties['failureHandler'])) {
+        if (null !== $this->failureHandler) {
             $output['failure_handler'] = $this->failureHandler;
         }
-        if (isset($this->_usedProperties['checkPath'])) {
+        if (null !== $this->checkPath) {
             $output['check_path'] = $this->checkPath;
         }
-        if (isset($this->_usedProperties['useForward'])) {
+        if (null !== $this->useForward) {
             $output['use_forward'] = $this->useForward;
         }
-        if (isset($this->_usedProperties['requirePreviousSession'])) {
+        if (null !== $this->requirePreviousSession) {
             $output['require_previous_session'] = $this->requirePreviousSession;
         }
-        if (isset($this->_usedProperties['loginPath'])) {
+        if (null !== $this->loginPath) {
             $output['login_path'] = $this->loginPath;
         }
-        if (isset($this->_usedProperties['usernamePath'])) {
+        if (null !== $this->usernamePath) {
             $output['username_path'] = $this->usernamePath;
         }
-        if (isset($this->_usedProperties['passwordPath'])) {
+        if (null !== $this->passwordPath) {
             $output['password_path'] = $this->passwordPath;
         }
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
-        if (isset($this->_usedProperties['dnString'])) {
+        if (null !== $this->dnString) {
             $output['dn_string'] = $this->dnString;
         }
-        if (isset($this->_usedProperties['queryString'])) {
+        if (null !== $this->queryString) {
             $output['query_string'] = $this->queryString;
         }
-        if (isset($this->_usedProperties['searchDn'])) {
+        if (null !== $this->searchDn) {
             $output['search_dn'] = $this->searchDn;
         }
-        if (isset($this->_usedProperties['searchPassword'])) {
+        if (null !== $this->searchPassword) {
             $output['search_password'] = $this->searchPassword;
         }
     

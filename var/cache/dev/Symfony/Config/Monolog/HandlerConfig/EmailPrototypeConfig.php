@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class EmailPrototypeConfig 
 {
     private $id;
     private $method;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class EmailPrototypeConfig
      */
     public function id($value): static
     {
-        $this->_usedProperties['id'] = true;
         $this->id = $value;
     
         return $this;
@@ -36,7 +34,6 @@ class EmailPrototypeConfig
      */
     public function method($value): static
     {
-        $this->_usedProperties['method'] = true;
         $this->method = $value;
     
         return $this;
@@ -45,14 +42,12 @@ class EmailPrototypeConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('id', $value)) {
-            $this->_usedProperties['id'] = true;
+        if (isset($value['id'])) {
             $this->id = $value['id'];
             unset($value['id']);
         }
     
-        if (array_key_exists('method', $value)) {
-            $this->_usedProperties['method'] = true;
+        if (isset($value['method'])) {
             $this->method = $value['method'];
             unset($value['method']);
         }
@@ -65,10 +60,10 @@ class EmailPrototypeConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['id'])) {
+        if (null !== $this->id) {
             $output['id'] = $this->id;
         }
-        if (isset($this->_usedProperties['method'])) {
+        if (null !== $this->method) {
             $output['method'] = $this->method;
         }
     

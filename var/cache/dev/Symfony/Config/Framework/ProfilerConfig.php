@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ProfilerConfig 
 {
@@ -18,7 +18,6 @@ class ProfilerConfig
     private $onlyExceptions;
     private $onlyMainRequests;
     private $dsn;
-    private $_usedProperties = [];
     
     /**
      * @default false
@@ -27,7 +26,6 @@ class ProfilerConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -40,7 +38,6 @@ class ProfilerConfig
      */
     public function collect($value): static
     {
-        $this->_usedProperties['collect'] = true;
         $this->collect = $value;
     
         return $this;
@@ -54,7 +51,6 @@ class ProfilerConfig
      */
     public function collectParameter($value): static
     {
-        $this->_usedProperties['collectParameter'] = true;
         $this->collectParameter = $value;
     
         return $this;
@@ -67,7 +63,6 @@ class ProfilerConfig
      */
     public function onlyExceptions($value): static
     {
-        $this->_usedProperties['onlyExceptions'] = true;
         $this->onlyExceptions = $value;
     
         return $this;
@@ -80,7 +75,6 @@ class ProfilerConfig
      */
     public function onlyMainRequests($value): static
     {
-        $this->_usedProperties['onlyMainRequests'] = true;
         $this->onlyMainRequests = $value;
     
         return $this;
@@ -93,7 +87,6 @@ class ProfilerConfig
      */
     public function dsn($value): static
     {
-        $this->_usedProperties['dsn'] = true;
         $this->dsn = $value;
     
         return $this;
@@ -102,38 +95,32 @@ class ProfilerConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('collect', $value)) {
-            $this->_usedProperties['collect'] = true;
+        if (isset($value['collect'])) {
             $this->collect = $value['collect'];
             unset($value['collect']);
         }
     
-        if (array_key_exists('collect_parameter', $value)) {
-            $this->_usedProperties['collectParameter'] = true;
+        if (isset($value['collect_parameter'])) {
             $this->collectParameter = $value['collect_parameter'];
             unset($value['collect_parameter']);
         }
     
-        if (array_key_exists('only_exceptions', $value)) {
-            $this->_usedProperties['onlyExceptions'] = true;
+        if (isset($value['only_exceptions'])) {
             $this->onlyExceptions = $value['only_exceptions'];
             unset($value['only_exceptions']);
         }
     
-        if (array_key_exists('only_main_requests', $value)) {
-            $this->_usedProperties['onlyMainRequests'] = true;
+        if (isset($value['only_main_requests'])) {
             $this->onlyMainRequests = $value['only_main_requests'];
             unset($value['only_main_requests']);
         }
     
-        if (array_key_exists('dsn', $value)) {
-            $this->_usedProperties['dsn'] = true;
+        if (isset($value['dsn'])) {
             $this->dsn = $value['dsn'];
             unset($value['dsn']);
         }
@@ -146,22 +133,22 @@ class ProfilerConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['collect'])) {
+        if (null !== $this->collect) {
             $output['collect'] = $this->collect;
         }
-        if (isset($this->_usedProperties['collectParameter'])) {
+        if (null !== $this->collectParameter) {
             $output['collect_parameter'] = $this->collectParameter;
         }
-        if (isset($this->_usedProperties['onlyExceptions'])) {
+        if (null !== $this->onlyExceptions) {
             $output['only_exceptions'] = $this->onlyExceptions;
         }
-        if (isset($this->_usedProperties['onlyMainRequests'])) {
+        if (null !== $this->onlyMainRequests) {
             $output['only_main_requests'] = $this->onlyMainRequests;
         }
-        if (isset($this->_usedProperties['dsn'])) {
+        if (null !== $this->dsn) {
             $output['dsn'] = $this->dsn;
         }
     

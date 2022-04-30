@@ -9,7 +9,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class RegionConfig 
 {
@@ -20,12 +20,10 @@ class RegionConfig
     private $lifetime;
     private $service;
     private $name;
-    private $_usedProperties = [];
     
     public function cacheDriver(array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig
     {
         if (null === $this->cacheDriver) {
-            $this->_usedProperties['cacheDriver'] = true;
             $this->cacheDriver = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "cacheDriver()" has already been initialized. You cannot pass values the second time you call cacheDriver().');
@@ -41,7 +39,6 @@ class RegionConfig
      */
     public function lockPath($value): static
     {
-        $this->_usedProperties['lockPath'] = true;
         $this->lockPath = $value;
     
         return $this;
@@ -54,7 +51,6 @@ class RegionConfig
      */
     public function lockLifetime($value): static
     {
-        $this->_usedProperties['lockLifetime'] = true;
         $this->lockLifetime = $value;
     
         return $this;
@@ -67,7 +63,6 @@ class RegionConfig
      */
     public function type($value): static
     {
-        $this->_usedProperties['type'] = true;
         $this->type = $value;
     
         return $this;
@@ -80,7 +75,6 @@ class RegionConfig
      */
     public function lifetime($value): static
     {
-        $this->_usedProperties['lifetime'] = true;
         $this->lifetime = $value;
     
         return $this;
@@ -93,7 +87,6 @@ class RegionConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -106,7 +99,6 @@ class RegionConfig
      */
     public function name($value): static
     {
-        $this->_usedProperties['name'] = true;
         $this->name = $value;
     
         return $this;
@@ -115,44 +107,37 @@ class RegionConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('cache_driver', $value)) {
-            $this->_usedProperties['cacheDriver'] = true;
+        if (isset($value['cache_driver'])) {
             $this->cacheDriver = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCache\RegionConfig\CacheDriverConfig($value['cache_driver']);
             unset($value['cache_driver']);
         }
     
-        if (array_key_exists('lock_path', $value)) {
-            $this->_usedProperties['lockPath'] = true;
+        if (isset($value['lock_path'])) {
             $this->lockPath = $value['lock_path'];
             unset($value['lock_path']);
         }
     
-        if (array_key_exists('lock_lifetime', $value)) {
-            $this->_usedProperties['lockLifetime'] = true;
+        if (isset($value['lock_lifetime'])) {
             $this->lockLifetime = $value['lock_lifetime'];
             unset($value['lock_lifetime']);
         }
     
-        if (array_key_exists('type', $value)) {
-            $this->_usedProperties['type'] = true;
+        if (isset($value['type'])) {
             $this->type = $value['type'];
             unset($value['type']);
         }
     
-        if (array_key_exists('lifetime', $value)) {
-            $this->_usedProperties['lifetime'] = true;
+        if (isset($value['lifetime'])) {
             $this->lifetime = $value['lifetime'];
             unset($value['lifetime']);
         }
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
     
-        if (array_key_exists('name', $value)) {
-            $this->_usedProperties['name'] = true;
+        if (isset($value['name'])) {
             $this->name = $value['name'];
             unset($value['name']);
         }
@@ -165,25 +150,25 @@ class RegionConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['cacheDriver'])) {
+        if (null !== $this->cacheDriver) {
             $output['cache_driver'] = $this->cacheDriver->toArray();
         }
-        if (isset($this->_usedProperties['lockPath'])) {
+        if (null !== $this->lockPath) {
             $output['lock_path'] = $this->lockPath;
         }
-        if (isset($this->_usedProperties['lockLifetime'])) {
+        if (null !== $this->lockLifetime) {
             $output['lock_lifetime'] = $this->lockLifetime;
         }
-        if (isset($this->_usedProperties['type'])) {
+        if (null !== $this->type) {
             $output['type'] = $this->type;
         }
-        if (isset($this->_usedProperties['lifetime'])) {
+        if (null !== $this->lifetime) {
             $output['lifetime'] = $this->lifetime;
         }
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
-        if (isset($this->_usedProperties['name'])) {
+        if (null !== $this->name) {
             $output['name'] = $this->name;
         }
     

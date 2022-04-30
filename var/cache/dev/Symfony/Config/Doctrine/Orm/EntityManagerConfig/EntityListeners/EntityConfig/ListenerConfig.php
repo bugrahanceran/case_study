@@ -8,25 +8,21 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ListenerConfig 
 {
     private $events;
-    private $_usedProperties = [];
     
     public function event(array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig\EventConfig
     {
-        $this->_usedProperties['events'] = true;
-    
         return $this->events[] = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig\EventConfig($value);
     }
     
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('events', $value)) {
-            $this->_usedProperties['events'] = true;
+        if (isset($value['events'])) {
             $this->events = array_map(function ($v) { return new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\EntityListeners\EntityConfig\ListenerConfig\EventConfig($v); }, $value['events']);
             unset($value['events']);
         }
@@ -39,7 +35,7 @@ class ListenerConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['events'])) {
+        if (null !== $this->events) {
             $output['events'] = array_map(function ($v) { return $v->toArray(); }, $this->events);
         }
     

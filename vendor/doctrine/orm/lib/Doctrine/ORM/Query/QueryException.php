@@ -5,10 +5,16 @@ declare(strict_types=1);
 namespace Doctrine\ORM\Query;
 
 use Doctrine\ORM\Exception\ORMException;
+use Doctrine\ORM\Mapping\AssociationMetadata;
 use Doctrine\ORM\Query\AST\PathExpression;
 use Exception;
-use Stringable;
+use LogicException;
 
+/**
+ * Description of QueryException.
+ *
+ * @link    www.doctrine-project.org
+ */
 class QueryException extends ORMException
 {
     /**
@@ -123,7 +129,7 @@ class QueryException extends ORMException
     }
 
     /**
-     * @param PathExpression $pathExpr
+     * @param object $pathExpr
      *
      * @return QueryException
      */
@@ -135,7 +141,7 @@ class QueryException extends ORMException
     }
 
     /**
-     * @param string|Stringable $literal
+     * @param string $literal
      *
      * @return QueryException
      */

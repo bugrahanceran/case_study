@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
@@ -17,7 +17,6 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
     private $maxStringLength;
     private $dumpDestination;
     private $theme;
-    private $_usedProperties = [];
     
     /**
      * Max number of displayed items past the first level, -1 means no limit
@@ -27,7 +26,6 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
      */
     public function maxItems($value): static
     {
-        $this->_usedProperties['maxItems'] = true;
         $this->maxItems = $value;
     
         return $this;
@@ -41,7 +39,6 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
      */
     public function minDepth($value): static
     {
-        $this->_usedProperties['minDepth'] = true;
         $this->minDepth = $value;
     
         return $this;
@@ -55,7 +52,6 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
      */
     public function maxStringLength($value): static
     {
-        $this->_usedProperties['maxStringLength'] = true;
         $this->maxStringLength = $value;
     
         return $this;
@@ -70,7 +66,6 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
      */
     public function dumpDestination($value): static
     {
-        $this->_usedProperties['dumpDestination'] = true;
         $this->dumpDestination = $value;
     
         return $this;
@@ -85,7 +80,6 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
      */
     public function theme($value): static
     {
-        $this->_usedProperties['theme'] = true;
         $this->theme = $value;
     
         return $this;
@@ -99,32 +93,27 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('max_items', $value)) {
-            $this->_usedProperties['maxItems'] = true;
+        if (isset($value['max_items'])) {
             $this->maxItems = $value['max_items'];
             unset($value['max_items']);
         }
     
-        if (array_key_exists('min_depth', $value)) {
-            $this->_usedProperties['minDepth'] = true;
+        if (isset($value['min_depth'])) {
             $this->minDepth = $value['min_depth'];
             unset($value['min_depth']);
         }
     
-        if (array_key_exists('max_string_length', $value)) {
-            $this->_usedProperties['maxStringLength'] = true;
+        if (isset($value['max_string_length'])) {
             $this->maxStringLength = $value['max_string_length'];
             unset($value['max_string_length']);
         }
     
-        if (array_key_exists('dump_destination', $value)) {
-            $this->_usedProperties['dumpDestination'] = true;
+        if (isset($value['dump_destination'])) {
             $this->dumpDestination = $value['dump_destination'];
             unset($value['dump_destination']);
         }
     
-        if (array_key_exists('theme', $value)) {
-            $this->_usedProperties['theme'] = true;
+        if (isset($value['theme'])) {
             $this->theme = $value['theme'];
             unset($value['theme']);
         }
@@ -137,19 +126,19 @@ class DebugConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInte
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['maxItems'])) {
+        if (null !== $this->maxItems) {
             $output['max_items'] = $this->maxItems;
         }
-        if (isset($this->_usedProperties['minDepth'])) {
+        if (null !== $this->minDepth) {
             $output['min_depth'] = $this->minDepth;
         }
-        if (isset($this->_usedProperties['maxStringLength'])) {
+        if (null !== $this->maxStringLength) {
             $output['max_string_length'] = $this->maxStringLength;
         }
-        if (isset($this->_usedProperties['dumpDestination'])) {
+        if (null !== $this->dumpDestination) {
             $output['dump_destination'] = $this->dumpDestination;
         }
-        if (isset($this->_usedProperties['theme'])) {
+        if (null !== $this->theme) {
             $output['theme'] = $this->theme;
         }
     

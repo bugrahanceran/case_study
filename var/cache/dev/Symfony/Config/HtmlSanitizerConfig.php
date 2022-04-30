@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class HtmlSanitizerConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
     private $defaultSanitizer;
     private $sanitizers;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class HtmlSanitizerConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function defaultSanitizer($value): static
     {
-        $this->_usedProperties['defaultSanitizer'] = true;
         $this->defaultSanitizer = $value;
     
         return $this;
@@ -34,7 +32,6 @@ class HtmlSanitizerConfig implements \Symfony\Component\Config\Builder\ConfigBui
      */
     public function sanitizers(string $name, mixed $value): static
     {
-        $this->_usedProperties['sanitizers'] = true;
         $this->sanitizers[$name] = $value;
     
         return $this;
@@ -48,14 +45,12 @@ class HtmlSanitizerConfig implements \Symfony\Component\Config\Builder\ConfigBui
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('default_sanitizer', $value)) {
-            $this->_usedProperties['defaultSanitizer'] = true;
+        if (isset($value['default_sanitizer'])) {
             $this->defaultSanitizer = $value['default_sanitizer'];
             unset($value['default_sanitizer']);
         }
     
-        if (array_key_exists('sanitizers', $value)) {
-            $this->_usedProperties['sanitizers'] = true;
+        if (isset($value['sanitizers'])) {
             $this->sanitizers = $value['sanitizers'];
             unset($value['sanitizers']);
         }
@@ -68,10 +63,10 @@ class HtmlSanitizerConfig implements \Symfony\Component\Config\Builder\ConfigBui
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['defaultSanitizer'])) {
+        if (null !== $this->defaultSanitizer) {
             $output['default_sanitizer'] = $this->defaultSanitizer;
         }
-        if (isset($this->_usedProperties['sanitizers'])) {
+        if (null !== $this->sanitizers) {
             $output['sanitizers'] = $this->sanitizers;
         }
     

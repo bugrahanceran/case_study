@@ -8,14 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class X509Config 
 {
     private $provider;
     private $user;
     private $credentials;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -24,7 +23,6 @@ class X509Config
      */
     public function provider($value): static
     {
-        $this->_usedProperties['provider'] = true;
         $this->provider = $value;
     
         return $this;
@@ -37,7 +35,6 @@ class X509Config
      */
     public function user($value): static
     {
-        $this->_usedProperties['user'] = true;
         $this->user = $value;
     
         return $this;
@@ -50,7 +47,6 @@ class X509Config
      */
     public function credentials($value): static
     {
-        $this->_usedProperties['credentials'] = true;
         $this->credentials = $value;
     
         return $this;
@@ -59,20 +55,17 @@ class X509Config
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('provider', $value)) {
-            $this->_usedProperties['provider'] = true;
+        if (isset($value['provider'])) {
             $this->provider = $value['provider'];
             unset($value['provider']);
         }
     
-        if (array_key_exists('user', $value)) {
-            $this->_usedProperties['user'] = true;
+        if (isset($value['user'])) {
             $this->user = $value['user'];
             unset($value['user']);
         }
     
-        if (array_key_exists('credentials', $value)) {
-            $this->_usedProperties['credentials'] = true;
+        if (isset($value['credentials'])) {
             $this->credentials = $value['credentials'];
             unset($value['credentials']);
         }
@@ -85,13 +78,13 @@ class X509Config
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['provider'])) {
+        if (null !== $this->provider) {
             $output['provider'] = $this->provider;
         }
-        if (isset($this->_usedProperties['user'])) {
+        if (null !== $this->user) {
             $output['user'] = $this->user;
         }
-        if (isset($this->_usedProperties['credentials'])) {
+        if (null !== $this->credentials) {
             $output['credentials'] = $this->credentials;
         }
     

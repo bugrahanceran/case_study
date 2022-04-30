@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class LdapConfig 
 {
@@ -21,7 +21,6 @@ class LdapConfig
     private $uidKey;
     private $filter;
     private $passwordAttribute;
-    private $_usedProperties = [];
     
     /**
      * @default 'ldap'
@@ -30,7 +29,6 @@ class LdapConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -43,7 +41,6 @@ class LdapConfig
      */
     public function baseDn($value): static
     {
-        $this->_usedProperties['baseDn'] = true;
         $this->baseDn = $value;
     
         return $this;
@@ -56,7 +53,6 @@ class LdapConfig
      */
     public function searchDn($value): static
     {
-        $this->_usedProperties['searchDn'] = true;
         $this->searchDn = $value;
     
         return $this;
@@ -69,7 +65,6 @@ class LdapConfig
      */
     public function searchPassword($value): static
     {
-        $this->_usedProperties['searchPassword'] = true;
         $this->searchPassword = $value;
     
         return $this;
@@ -82,7 +77,6 @@ class LdapConfig
      */
     public function extraFields(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['extraFields'] = true;
         $this->extraFields = $value;
     
         return $this;
@@ -95,7 +89,6 @@ class LdapConfig
      */
     public function defaultRoles(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['defaultRoles'] = true;
         $this->defaultRoles = $value;
     
         return $this;
@@ -108,7 +101,6 @@ class LdapConfig
      */
     public function uidKey($value): static
     {
-        $this->_usedProperties['uidKey'] = true;
         $this->uidKey = $value;
     
         return $this;
@@ -121,7 +113,6 @@ class LdapConfig
      */
     public function filter($value): static
     {
-        $this->_usedProperties['filter'] = true;
         $this->filter = $value;
     
         return $this;
@@ -134,7 +125,6 @@ class LdapConfig
      */
     public function passwordAttribute($value): static
     {
-        $this->_usedProperties['passwordAttribute'] = true;
         $this->passwordAttribute = $value;
     
         return $this;
@@ -143,56 +133,47 @@ class LdapConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
     
-        if (array_key_exists('base_dn', $value)) {
-            $this->_usedProperties['baseDn'] = true;
+        if (isset($value['base_dn'])) {
             $this->baseDn = $value['base_dn'];
             unset($value['base_dn']);
         }
     
-        if (array_key_exists('search_dn', $value)) {
-            $this->_usedProperties['searchDn'] = true;
+        if (isset($value['search_dn'])) {
             $this->searchDn = $value['search_dn'];
             unset($value['search_dn']);
         }
     
-        if (array_key_exists('search_password', $value)) {
-            $this->_usedProperties['searchPassword'] = true;
+        if (isset($value['search_password'])) {
             $this->searchPassword = $value['search_password'];
             unset($value['search_password']);
         }
     
-        if (array_key_exists('extra_fields', $value)) {
-            $this->_usedProperties['extraFields'] = true;
+        if (isset($value['extra_fields'])) {
             $this->extraFields = $value['extra_fields'];
             unset($value['extra_fields']);
         }
     
-        if (array_key_exists('default_roles', $value)) {
-            $this->_usedProperties['defaultRoles'] = true;
+        if (isset($value['default_roles'])) {
             $this->defaultRoles = $value['default_roles'];
             unset($value['default_roles']);
         }
     
-        if (array_key_exists('uid_key', $value)) {
-            $this->_usedProperties['uidKey'] = true;
+        if (isset($value['uid_key'])) {
             $this->uidKey = $value['uid_key'];
             unset($value['uid_key']);
         }
     
-        if (array_key_exists('filter', $value)) {
-            $this->_usedProperties['filter'] = true;
+        if (isset($value['filter'])) {
             $this->filter = $value['filter'];
             unset($value['filter']);
         }
     
-        if (array_key_exists('password_attribute', $value)) {
-            $this->_usedProperties['passwordAttribute'] = true;
+        if (isset($value['password_attribute'])) {
             $this->passwordAttribute = $value['password_attribute'];
             unset($value['password_attribute']);
         }
@@ -205,31 +186,31 @@ class LdapConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
-        if (isset($this->_usedProperties['baseDn'])) {
+        if (null !== $this->baseDn) {
             $output['base_dn'] = $this->baseDn;
         }
-        if (isset($this->_usedProperties['searchDn'])) {
+        if (null !== $this->searchDn) {
             $output['search_dn'] = $this->searchDn;
         }
-        if (isset($this->_usedProperties['searchPassword'])) {
+        if (null !== $this->searchPassword) {
             $output['search_password'] = $this->searchPassword;
         }
-        if (isset($this->_usedProperties['extraFields'])) {
+        if (null !== $this->extraFields) {
             $output['extra_fields'] = $this->extraFields;
         }
-        if (isset($this->_usedProperties['defaultRoles'])) {
+        if (null !== $this->defaultRoles) {
             $output['default_roles'] = $this->defaultRoles;
         }
-        if (isset($this->_usedProperties['uidKey'])) {
+        if (null !== $this->uidKey) {
             $output['uid_key'] = $this->uidKey;
         }
-        if (isset($this->_usedProperties['filter'])) {
+        if (null !== $this->filter) {
             $output['filter'] = $this->filter;
         }
-        if (isset($this->_usedProperties['passwordAttribute'])) {
+        if (null !== $this->passwordAttribute) {
             $output['password_attribute'] = $this->passwordAttribute;
         }
     

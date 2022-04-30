@@ -73,7 +73,7 @@ class XmlExporter extends AbstractExporter
             $discriminatorColumnXml->addAttribute('type', $metadata->discriminatorColumn['type']);
 
             if (isset($metadata->discriminatorColumn['length'])) {
-                $discriminatorColumnXml->addAttribute('length', (string) $metadata->discriminatorColumn['length']);
+                $discriminatorColumnXml->addAttribute('length', $metadata->discriminatorColumn['length']);
             }
         }
 
@@ -90,7 +90,7 @@ class XmlExporter extends AbstractExporter
         $trackingPolicy = $this->_getChangeTrackingPolicyString($metadata->changeTrackingPolicy);
 
         if ($trackingPolicy !== 'DEFERRED_IMPLICIT') {
-            $root->addAttribute('change-tracking-policy', $trackingPolicy);
+            $root->addChild('change-tracking-policy', $trackingPolicy);
         }
 
         if (isset($metadata->table['indexes'])) {
@@ -178,7 +178,10 @@ class XmlExporter extends AbstractExporter
                 $fieldXml = $root->addChild('field');
                 $fieldXml->addAttribute('name', $field['fieldName']);
                 $fieldXml->addAttribute('type', $field['type']);
-                $fieldXml->addAttribute('column', $field['columnName']);
+
+                if (isset($field['columnName'])) {
+                    $fieldXml->addAttribute('column', $field['columnName']);
+                }
 
                 if (isset($field['length'])) {
                     $fieldXml->addAttribute('length', (string) $field['length']);
@@ -214,14 +217,6 @@ class XmlExporter extends AbstractExporter
 
                 if (isset($field['nullable'])) {
                     $fieldXml->addAttribute('nullable', $field['nullable'] ? 'true' : 'false');
-                }
-
-                if (isset($field['notInsertable'])) {
-                    $fieldXml->addAttribute('insertable', 'false');
-                }
-
-                if (isset($field['notUpdatable'])) {
-                    $fieldXml->addAttribute('updatable', 'false');
                 }
             }
         }
@@ -339,7 +334,7 @@ class XmlExporter extends AbstractExporter
                     }
 
                     if (isset($inverseJoinColumn['nullable'])) {
-                        $inverseJoinColumnXml->addAttribute('nullable', $inverseJoinColumn['nullable'] ? 'true' : 'false');
+                        $inverseJoinColumnXml->addAttribute('nullable', $inverseJoinColumn['nullable']);
                     }
 
                     if (isset($inverseJoinColumn['orderBy'])) {
@@ -365,7 +360,7 @@ class XmlExporter extends AbstractExporter
                     }
 
                     if (isset($joinColumn['nullable'])) {
-                        $joinColumnXml->addAttribute('nullable', $joinColumn['nullable'] ? 'true' : 'false');
+                        $joinColumnXml->addAttribute('nullable', $joinColumn['nullable']);
                     }
                 }
             }

@@ -104,7 +104,6 @@ return [
         'en_MS' => 'Anglëe (Monserâte)',
         'en_MT' => 'Anglëe (Mâlta)',
         'en_MU' => 'Anglëe (Mörîsi)',
-        'en_MV' => 'Anglëe (Maldîva)',
         'en_MW' => 'Anglëe (Malawïi)',
         'en_MY' => 'Anglëe (Malezïi)',
         'en_NA' => 'Anglëe (Namibùii)',

@@ -22,30 +22,17 @@ class IframeSrcSanitizer
 
     private $allowedSchemes;
     private $allowedHosts;
-    private $allowRelativeLinks;
     private $forceHttps;
 
-    public function __construct(array $allowedSchemes, ?array $allowedHosts, bool $allowRelativeLinks, bool $forceHttps)
+    public function __construct(array $allowedSchemes, ?array $allowedHosts, bool $forceHttps)
     {
         $this->allowedSchemes = $allowedSchemes;
         $this->allowedHosts = $allowedHosts;
-        $this->allowRelativeLinks = $allowRelativeLinks;
         $this->forceHttps = $forceHttps;
     }
 
     public function sanitize(?string $input): ?string
     {
-        $allowedSchemes = $this->allowedSchemes;
-        $allowedHosts = $this->allowedHosts;
-
-        if ($this->allowRelativeLinks) {
-            $allowedSchemes[] = null;
-
-            if (\is_array($this->allowedHosts)) {
-                $allowedHosts[] = null;
-            }
-        }
-
-        return $this->sanitizeUrl($input, $allowedSchemes, $allowedHosts, $this->forceHttps);
+        return $this->sanitizeUrl($input, $this->allowedSchemes, $this->allowedHosts, $this->forceHttps);
     }
 }

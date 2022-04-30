@@ -101,10 +101,6 @@ $catalogue = new MessageCatalogue('he', array (
     'This value should satisfy at least one of the following constraints:' => 'ערך זה אמור לעמוד לפחות באחד התנאים הבאים:',
     'Each element of this collection should satisfy its own set of constraints.' => 'כל אלמנט באוסף זה אמור לעמוד בקבוצת התנאים שלו.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'ערך זה אינו מספר זיהוי ניירות ערך בינלאומי תקף (ISIN).',
-    'This value should be a valid expression.' => 'ערך זה חייב להיות ביטוי חוקי.',
-    'This value is not a valid CSS color.' => 'ערך זה אינו צבע CSS חוקי.',
-    'This value is not a valid CIDR notation.' => 'ערך זה אינו סימון CIDR חוקי.',
-    'The value of the netmask should be between {{ min }} and {{ max }}.' => 'הערך של מסכת הרשת חייב להיות בין {{ min }} ו {{ max }}.',
     'This form should not contain extra fields.' => 'הטופס לא צריך להכיל שדות נוספים.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'הקובץ שהועלה גדול מדי. נסה להעלות קובץ קטן יותר.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'אסימון CSRF אינו חוקי. אנא נסה לשלוח שוב את הטופס.',
@@ -158,8 +154,6 @@ $catalogue = new MessageCatalogue('he', array (
     'Account is locked.' => 'החשבון נעול.',
     'Too many failed login attempts, please try again later.' => 'יותר מדי ניסיונות כניסה כושלים, אנא נסה שוב מאוחר יותר.',
     'Invalid or expired login link.' => 'קישור כניסה לא חוקי או שפג תוקפו.',
-    'Too many failed login attempts, please try again in %minutes% minute.' => 'יותר מדי ניסיונות כניסה כושלים, אנא נסה שוב בוד %minutes% דקה.',
-    'Too many failed login attempts, please try again in %minutes% minutes.' => 'יותר מדי ניסיונות כניסה כושלים, אנא נסה שוב בוד %minutes% דקות.',
   ),
 ));
 

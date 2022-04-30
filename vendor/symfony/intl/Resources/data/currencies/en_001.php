@@ -26,6 +26,10 @@ return [
             0 => 'LVR',
             1 => 'Latvian Rouble',
         ],
+        'PHP' => [
+            0 => '₱',
+            1 => 'Philippine Peso',
+        ],
         'RUB' => [
             0 => 'RUB',
             1 => 'Russian Rouble',

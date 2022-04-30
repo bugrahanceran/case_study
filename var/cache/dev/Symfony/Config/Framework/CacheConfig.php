@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class CacheConfig 
 {
@@ -23,7 +23,6 @@ class CacheConfig
     private $defaultDoctrineDbalProvider;
     private $defaultPdoProvider;
     private $pools;
-    private $_usedProperties = [];
     
     /**
      * Used to namespace cache keys when using several apps with the same shared backend
@@ -34,7 +33,6 @@ class CacheConfig
      */
     public function prefixSeed($value): static
     {
-        $this->_usedProperties['prefixSeed'] = true;
         $this->prefixSeed = $value;
     
         return $this;
@@ -48,7 +46,6 @@ class CacheConfig
      */
     public function app($value): static
     {
-        $this->_usedProperties['app'] = true;
         $this->app = $value;
     
         return $this;
@@ -62,7 +59,6 @@ class CacheConfig
      */
     public function system($value): static
     {
-        $this->_usedProperties['system'] = true;
         $this->system = $value;
     
         return $this;
@@ -75,7 +71,6 @@ class CacheConfig
      */
     public function directory($value): static
     {
-        $this->_usedProperties['directory'] = true;
         $this->directory = $value;
     
         return $this;
@@ -88,7 +83,6 @@ class CacheConfig
      */
     public function defaultPsr6Provider($value): static
     {
-        $this->_usedProperties['defaultPsr6Provider'] = true;
         $this->defaultPsr6Provider = $value;
     
         return $this;
@@ -101,7 +95,6 @@ class CacheConfig
      */
     public function defaultRedisProvider($value): static
     {
-        $this->_usedProperties['defaultRedisProvider'] = true;
         $this->defaultRedisProvider = $value;
     
         return $this;
@@ -114,7 +107,6 @@ class CacheConfig
      */
     public function defaultMemcachedProvider($value): static
     {
-        $this->_usedProperties['defaultMemcachedProvider'] = true;
         $this->defaultMemcachedProvider = $value;
     
         return $this;
@@ -127,20 +119,18 @@ class CacheConfig
      */
     public function defaultDoctrineDbalProvider($value): static
     {
-        $this->_usedProperties['defaultDoctrineDbalProvider'] = true;
         $this->defaultDoctrineDbalProvider = $value;
     
         return $this;
     }
     
     /**
-     * @default null
+     * @default 'database_connection'
      * @param ParamConfigurator|mixed $value
      * @return $this
      */
     public function defaultPdoProvider($value): static
     {
-        $this->_usedProperties['defaultPdoProvider'] = true;
         $this->defaultPdoProvider = $value;
     
         return $this;
@@ -149,8 +139,6 @@ class CacheConfig
     public function pool(string $name, array $value = []): \Symfony\Config\Framework\Cache\PoolConfig
     {
         if (!isset($this->pools[$name])) {
-            $this->_usedProperties['pools'] = true;
-    
             return $this->pools[$name] = new \Symfony\Config\Framework\Cache\PoolConfig($value);
         }
         if ([] === $value) {
@@ -163,62 +151,52 @@ class CacheConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('prefix_seed', $value)) {
-            $this->_usedProperties['prefixSeed'] = true;
+        if (isset($value['prefix_seed'])) {
             $this->prefixSeed = $value['prefix_seed'];
             unset($value['prefix_seed']);
         }
     
-        if (array_key_exists('app', $value)) {
-            $this->_usedProperties['app'] = true;
+        if (isset($value['app'])) {
             $this->app = $value['app'];
             unset($value['app']);
         }
     
-        if (array_key_exists('system', $value)) {
-            $this->_usedProperties['system'] = true;
+        if (isset($value['system'])) {
             $this->system = $value['system'];
             unset($value['system']);
         }
     
-        if (array_key_exists('directory', $value)) {
-            $this->_usedProperties['directory'] = true;
+        if (isset($value['directory'])) {
             $this->directory = $value['directory'];
             unset($value['directory']);
         }
     
-        if (array_key_exists('default_psr6_provider', $value)) {
-            $this->_usedProperties['defaultPsr6Provider'] = true;
+        if (isset($value['default_psr6_provider'])) {
             $this->defaultPsr6Provider = $value['default_psr6_provider'];
             unset($value['default_psr6_provider']);
         }
     
-        if (array_key_exists('default_redis_provider', $value)) {
-            $this->_usedProperties['defaultRedisProvider'] = true;
+        if (isset($value['default_redis_provider'])) {
             $this->defaultRedisProvider = $value['default_redis_provider'];
             unset($value['default_redis_provider']);
         }
     
-        if (array_key_exists('default_memcached_provider', $value)) {
-            $this->_usedProperties['defaultMemcachedProvider'] = true;
+        if (isset($value['default_memcached_provider'])) {
             $this->defaultMemcachedProvider = $value['default_memcached_provider'];
             unset($value['default_memcached_provider']);
         }
     
-        if (array_key_exists('default_doctrine_dbal_provider', $value)) {
-            $this->_usedProperties['defaultDoctrineDbalProvider'] = true;
+        if (isset($value['default_doctrine_dbal_provider'])) {
             $this->defaultDoctrineDbalProvider = $value['default_doctrine_dbal_provider'];
             unset($value['default_doctrine_dbal_provider']);
         }
     
-        if (array_key_exists('default_pdo_provider', $value)) {
-            $this->_usedProperties['defaultPdoProvider'] = true;
+        if (isset($value['default_pdo_provider'])) {
             $this->defaultPdoProvider = $value['default_pdo_provider'];
             unset($value['default_pdo_provider']);
         }
     
-        if (array_key_exists('pools', $value)) {
-            $this->_usedProperties['pools'] = true;
+        if (isset($value['pools'])) {
             $this->pools = array_map(function ($v) { return new \Symfony\Config\Framework\Cache\PoolConfig($v); }, $value['pools']);
             unset($value['pools']);
         }
@@ -231,34 +209,34 @@ class CacheConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['prefixSeed'])) {
+        if (null !== $this->prefixSeed) {
             $output['prefix_seed'] = $this->prefixSeed;
         }
-        if (isset($this->_usedProperties['app'])) {
+        if (null !== $this->app) {
             $output['app'] = $this->app;
         }
-        if (isset($this->_usedProperties['system'])) {
+        if (null !== $this->system) {
             $output['system'] = $this->system;
         }
-        if (isset($this->_usedProperties['directory'])) {
+        if (null !== $this->directory) {
             $output['directory'] = $this->directory;
         }
-        if (isset($this->_usedProperties['defaultPsr6Provider'])) {
+        if (null !== $this->defaultPsr6Provider) {
             $output['default_psr6_provider'] = $this->defaultPsr6Provider;
         }
-        if (isset($this->_usedProperties['defaultRedisProvider'])) {
+        if (null !== $this->defaultRedisProvider) {
             $output['default_redis_provider'] = $this->defaultRedisProvider;
         }
-        if (isset($this->_usedProperties['defaultMemcachedProvider'])) {
+        if (null !== $this->defaultMemcachedProvider) {
             $output['default_memcached_provider'] = $this->defaultMemcachedProvider;
         }
-        if (isset($this->_usedProperties['defaultDoctrineDbalProvider'])) {
+        if (null !== $this->defaultDoctrineDbalProvider) {
             $output['default_doctrine_dbal_provider'] = $this->defaultDoctrineDbalProvider;
         }
-        if (isset($this->_usedProperties['defaultPdoProvider'])) {
+        if (null !== $this->defaultPdoProvider) {
             $output['default_pdo_provider'] = $this->defaultPdoProvider;
         }
-        if (isset($this->_usedProperties['pools'])) {
+        if (null !== $this->pools) {
             $output['pools'] = array_map(function ($v) { return $v->toArray(); }, $this->pools);
         }
     

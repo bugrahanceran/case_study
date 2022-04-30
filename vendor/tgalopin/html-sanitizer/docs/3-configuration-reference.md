@@ -220,9 +220,6 @@ $sanitizer = HtmlSanitizer\Sanitizer::create([
         'tr' => [
             'allowed_attributes' => [],
         ],
-        'u' => [
-            'allowed_attributes' => [],
-        ],
         'ul' => [
             'allowed_attributes' => [],
         ],

@@ -107,7 +107,7 @@ return [
         'cop' => 'koptština',
         'cps' => 'kapiznonština',
         'cr' => 'kríjština',
-        'crh' => 'tatarština (krymská)',
+        'crh' => 'turečtina (krymská)',
         'crs' => 'kreolština (seychelská)',
         'cs' => 'čeština',
         'csb' => 'kašubština',

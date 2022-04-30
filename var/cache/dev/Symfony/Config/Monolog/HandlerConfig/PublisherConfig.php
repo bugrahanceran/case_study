@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class PublisherConfig 
 {
@@ -16,7 +16,6 @@ class PublisherConfig
     private $hostname;
     private $port;
     private $chunkSize;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -25,7 +24,6 @@ class PublisherConfig
      */
     public function id($value): static
     {
-        $this->_usedProperties['id'] = true;
         $this->id = $value;
     
         return $this;
@@ -38,7 +36,6 @@ class PublisherConfig
      */
     public function hostname($value): static
     {
-        $this->_usedProperties['hostname'] = true;
         $this->hostname = $value;
     
         return $this;
@@ -51,7 +48,6 @@ class PublisherConfig
      */
     public function port($value): static
     {
-        $this->_usedProperties['port'] = true;
         $this->port = $value;
     
         return $this;
@@ -64,7 +60,6 @@ class PublisherConfig
      */
     public function chunkSize($value): static
     {
-        $this->_usedProperties['chunkSize'] = true;
         $this->chunkSize = $value;
     
         return $this;
@@ -73,26 +68,22 @@ class PublisherConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('id', $value)) {
-            $this->_usedProperties['id'] = true;
+        if (isset($value['id'])) {
             $this->id = $value['id'];
             unset($value['id']);
         }
     
-        if (array_key_exists('hostname', $value)) {
-            $this->_usedProperties['hostname'] = true;
+        if (isset($value['hostname'])) {
             $this->hostname = $value['hostname'];
             unset($value['hostname']);
         }
     
-        if (array_key_exists('port', $value)) {
-            $this->_usedProperties['port'] = true;
+        if (isset($value['port'])) {
             $this->port = $value['port'];
             unset($value['port']);
         }
     
-        if (array_key_exists('chunk_size', $value)) {
-            $this->_usedProperties['chunkSize'] = true;
+        if (isset($value['chunk_size'])) {
             $this->chunkSize = $value['chunk_size'];
             unset($value['chunk_size']);
         }
@@ -105,16 +96,16 @@ class PublisherConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['id'])) {
+        if (null !== $this->id) {
             $output['id'] = $this->id;
         }
-        if (isset($this->_usedProperties['hostname'])) {
+        if (null !== $this->hostname) {
             $output['hostname'] = $this->hostname;
         }
-        if (isset($this->_usedProperties['port'])) {
+        if (null !== $this->port) {
             $output['port'] = $this->port;
         }
-        if (isset($this->_usedProperties['chunkSize'])) {
+        if (null !== $this->chunkSize) {
             $output['chunk_size'] = $this->chunkSize;
         }
     

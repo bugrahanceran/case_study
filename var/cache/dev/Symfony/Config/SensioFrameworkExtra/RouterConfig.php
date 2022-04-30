@@ -8,12 +8,11 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class RouterConfig 
 {
     private $annotations;
-    private $_usedProperties = [];
     
     /**
      * @default true
@@ -22,7 +21,6 @@ class RouterConfig
      */
     public function annotations($value): static
     {
-        $this->_usedProperties['annotations'] = true;
         $this->annotations = $value;
     
         return $this;
@@ -31,8 +29,7 @@ class RouterConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('annotations', $value)) {
-            $this->_usedProperties['annotations'] = true;
+        if (isset($value['annotations'])) {
             $this->annotations = $value['annotations'];
             unset($value['annotations']);
         }
@@ -45,7 +42,7 @@ class RouterConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['annotations'])) {
+        if (null !== $this->annotations) {
             $output['annotations'] = $this->annotations;
         }
     

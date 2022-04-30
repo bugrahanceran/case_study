@@ -8,14 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class RequestConfig 
 {
     private $converters;
     private $autoConvert;
     private $disable;
-    private $_usedProperties = [];
     
     /**
      * @default true
@@ -24,7 +23,6 @@ class RequestConfig
      */
     public function converters($value): static
     {
-        $this->_usedProperties['converters'] = true;
         $this->converters = $value;
     
         return $this;
@@ -37,7 +35,6 @@ class RequestConfig
      */
     public function autoConvert($value): static
     {
-        $this->_usedProperties['autoConvert'] = true;
         $this->autoConvert = $value;
     
         return $this;
@@ -50,7 +47,6 @@ class RequestConfig
      */
     public function disable(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['disable'] = true;
         $this->disable = $value;
     
         return $this;
@@ -59,20 +55,17 @@ class RequestConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('converters', $value)) {
-            $this->_usedProperties['converters'] = true;
+        if (isset($value['converters'])) {
             $this->converters = $value['converters'];
             unset($value['converters']);
         }
     
-        if (array_key_exists('auto_convert', $value)) {
-            $this->_usedProperties['autoConvert'] = true;
+        if (isset($value['auto_convert'])) {
             $this->autoConvert = $value['auto_convert'];
             unset($value['auto_convert']);
         }
     
-        if (array_key_exists('disable', $value)) {
-            $this->_usedProperties['disable'] = true;
+        if (isset($value['disable'])) {
             $this->disable = $value['disable'];
             unset($value['disable']);
         }
@@ -85,13 +78,13 @@ class RequestConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['converters'])) {
+        if (null !== $this->converters) {
             $output['converters'] = $this->converters;
         }
-        if (isset($this->_usedProperties['autoConvert'])) {
+        if (null !== $this->autoConvert) {
             $output['auto_convert'] = $this->autoConvert;
         }
-        if (isset($this->_usedProperties['disable'])) {
+        if (null !== $this->disable) {
             $output['disable'] = $this->disable;
         }
     

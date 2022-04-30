@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Doctrine\ORM\Tools\Pagination;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Doctrine\DBAL\Platforms\SQLServer2012Platform;
 use Doctrine\DBAL\Platforms\SQLServerPlatform;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\AST\SelectStatement;
-use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\ParserResult;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\ORM\Query\SqlWalker;
@@ -29,8 +29,6 @@ use function sprintf;
  *
  * Works with composite keys but cannot deal with queries that have multiple
  * root entities (e.g. `SELECT f, b from Foo, Bar`)
- *
- * @psalm-import-type QueryComponent from Parser
  */
 class CountOutputWalker extends SqlWalker
 {
@@ -40,6 +38,9 @@ class CountOutputWalker extends SqlWalker
     /** @var ResultSetMapping */
     private $rsm;
 
+    /** @var mixed[] */
+    private $queryComponents;
+
     /**
      * Stores various parameters that are otherwise unavailable
      * because Doctrine\ORM\Query\SqlWalker keeps everything private without
@@ -48,12 +49,12 @@ class CountOutputWalker extends SqlWalker
      * @param Query        $query
      * @param ParserResult $parserResult
      * @param mixed[]      $queryComponents
-     * @psalm-param array<string, QueryComponent> $queryComponents
      */
     public function __construct($query, $parserResult, array $queryComponents)
     {
-        $this->platform = $query->getEntityManager()->getConnection()->getDatabasePlatform();
-        $this->rsm      = $parserResult->getResultSetMapping();
+        $this->platform        = $query->getEntityManager()->getConnection()->getDatabasePlatform();
+        $this->rsm             = $parserResult->getResultSetMapping();
+        $this->queryComponents = $queryComponents;
 
         parent::__construct($query, $parserResult, $queryComponents);
     }
@@ -71,7 +72,7 @@ class CountOutputWalker extends SqlWalker
      */
     public function walkSelectStatement(SelectStatement $AST)
     {
-        if ($this->platform instanceof SQLServerPlatform) {
+        if ($this->platform instanceof SQLServer2012Platform || $this->platform instanceof SQLServerPlatform) {
             $AST->orderByClause = null;
         }
 
@@ -79,7 +80,8 @@ class CountOutputWalker extends SqlWalker
 
         if ($AST->groupByClause) {
             return sprintf(
-                'SELECT COUNT(*) AS dctrn_count FROM (%s) dctrn_table',
+                'SELECT %s AS dctrn_count FROM (%s) dctrn_table',
+                $this->platform->getCountExpression('*'),
                 $sql
             );
         }
@@ -97,7 +99,7 @@ class CountOutputWalker extends SqlWalker
 
         $fromRoot       = reset($from);
         $rootAlias      = $fromRoot->rangeVariableDeclaration->aliasIdentificationVariable;
-        $rootClass      = $this->getMetadataForDqlAlias($rootAlias);
+        $rootClass      = $this->queryComponents[$rootAlias]['metadata'];
         $rootIdentifier = $rootClass->identifier;
 
         // For every identifier, find out the SQL alias by combing through the ResultSetMapping
@@ -131,7 +133,8 @@ class CountOutputWalker extends SqlWalker
 
         // Build the counter query
         return sprintf(
-            'SELECT COUNT(*) AS dctrn_count FROM (SELECT DISTINCT %s FROM (%s) dctrn_result) dctrn_table',
+            'SELECT %s AS dctrn_count FROM (SELECT DISTINCT %s FROM (%s) dctrn_result) dctrn_table',
+            $this->platform->getCountExpression('*'),
             implode(', ', $sqlIdentifier),
             $sql
         );

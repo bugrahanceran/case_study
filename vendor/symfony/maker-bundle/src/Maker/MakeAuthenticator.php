@@ -60,17 +60,14 @@ final class MakeAuthenticator extends AbstractMaker
 
     private $doctrineHelper;
 
-    private $securityControllerBuilder;
-
     private $useSecurity52 = false;
 
-    public function __construct(FileManager $fileManager, SecurityConfigUpdater $configUpdater, Generator $generator, DoctrineHelper $doctrineHelper, SecurityControllerBuilder $securityControllerBuilder)
+    public function __construct(FileManager $fileManager, SecurityConfigUpdater $configUpdater, Generator $generator, DoctrineHelper $doctrineHelper)
     {
         $this->fileManager = $fileManager;
         $this->configUpdater = $configUpdater;
         $this->generator = $generator;
         $this->doctrineHelper = $doctrineHelper;
-        $this->securityControllerBuilder = $securityControllerBuilder;
     }
 
     public static function getCommandName(): string
@@ -326,10 +323,10 @@ final class MakeAuthenticator extends AbstractMaker
 
         $manipulator = new ClassSourceManipulator($controllerSourceCode, true);
 
-        $this->securityControllerBuilder->addLoginMethod($manipulator);
-
+        $securityControllerBuilder = new SecurityControllerBuilder();
+        $securityControllerBuilder->addLoginMethod($manipulator);
         if ($logoutSetup) {
-            $this->securityControllerBuilder->addLogoutMethod($manipulator);
+            $securityControllerBuilder->addLogoutMethod($manipulator);
         }
 
         $this->generator->dumpFile($controllerPath, $manipulator->getSourceCode());
@@ -371,8 +368,7 @@ final class MakeAuthenticator extends AbstractMaker
                 $nextTexts[] = sprintf('- Review <info>%s::getUser()</info> to make sure it matches your needs.', $authenticatorClass);
             }
 
-            // this only applies to Guard authentication AND if the user does not have a hasher configured
-            if (!$this->useSecurity52 && !$this->userClassHasEncoder($securityData, $userClass)) {
+            if (!$this->userClassHasEncoder($securityData, $userClass)) {
                 $nextTexts[] = sprintf('- Check the user\'s password in <info>%s::checkCredentials()</info>.', $authenticatorClass);
             }
 
@@ -385,11 +381,11 @@ final class MakeAuthenticator extends AbstractMaker
     private function userClassHasEncoder(array $securityData, string $userClass): bool
     {
         $userNeedsEncoder = false;
-        $hashersData = $securityData['security']['encoders'] ?? $securityData['security']['encoders'] ?? [];
-
-        foreach ($hashersData as $userClassWithEncoder => $encoder) {
-            if ($userClass === $userClassWithEncoder || is_subclass_of($userClass, $userClassWithEncoder) || class_implements($userClass, $userClassWithEncoder)) {
-                $userNeedsEncoder = true;
+        if (isset($securityData['security']['encoders']) && $securityData['security']['encoders']) {
+            foreach ($securityData['security']['encoders'] as $userClassWithEncoder => $encoder) {
+                if ($userClass === $userClassWithEncoder || is_subclass_of($userClass, $userClassWithEncoder)) {
+                    $userNeedsEncoder = true;
+                }
             }
         }
 

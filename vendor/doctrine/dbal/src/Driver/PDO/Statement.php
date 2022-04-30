@@ -80,13 +80,7 @@ final class Statement implements StatementInterface
         $type = $this->convertParamType($type);
 
         try {
-            return $this->stmt->bindParam(
-                $param,
-                $variable,
-                $type,
-                $length ?? 0,
-                ...array_slice(func_get_args(), 4)
-            );
+            return $this->stmt->bindParam($param, $variable, $type, ...array_slice(func_get_args(), 3));
         } catch (PDOException $exception) {
             throw Exception::new($exception);
         }

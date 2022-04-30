@@ -9,13 +9,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class SerializerConfig 
 {
     private $defaultSerializer;
     private $symfonySerializer;
-    private $_usedProperties = [];
     
     /**
      * Service id to use as the default serializer for the transports.
@@ -25,7 +24,6 @@ class SerializerConfig
      */
     public function defaultSerializer($value): static
     {
-        $this->_usedProperties['defaultSerializer'] = true;
         $this->defaultSerializer = $value;
     
         return $this;
@@ -34,7 +32,6 @@ class SerializerConfig
     public function symfonySerializer(array $value = []): \Symfony\Config\Framework\Messenger\Serializer\SymfonySerializerConfig
     {
         if (null === $this->symfonySerializer) {
-            $this->_usedProperties['symfonySerializer'] = true;
             $this->symfonySerializer = new \Symfony\Config\Framework\Messenger\Serializer\SymfonySerializerConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "symfonySerializer()" has already been initialized. You cannot pass values the second time you call symfonySerializer().');
@@ -46,14 +43,12 @@ class SerializerConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('default_serializer', $value)) {
-            $this->_usedProperties['defaultSerializer'] = true;
+        if (isset($value['default_serializer'])) {
             $this->defaultSerializer = $value['default_serializer'];
             unset($value['default_serializer']);
         }
     
-        if (array_key_exists('symfony_serializer', $value)) {
-            $this->_usedProperties['symfonySerializer'] = true;
+        if (isset($value['symfony_serializer'])) {
             $this->symfonySerializer = new \Symfony\Config\Framework\Messenger\Serializer\SymfonySerializerConfig($value['symfony_serializer']);
             unset($value['symfony_serializer']);
         }
@@ -66,10 +61,10 @@ class SerializerConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['defaultSerializer'])) {
+        if (null !== $this->defaultSerializer) {
             $output['default_serializer'] = $this->defaultSerializer;
         }
-        if (isset($this->_usedProperties['symfonySerializer'])) {
+        if (null !== $this->symfonySerializer) {
             $output['symfony_serializer'] = $this->symfonySerializer->toArray();
         }
     

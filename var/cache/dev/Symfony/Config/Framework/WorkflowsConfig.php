@@ -9,13 +9,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class WorkflowsConfig 
 {
     private $enabled;
     private $workflows;
-    private $_usedProperties = [];
     
     /**
      * @default false
@@ -24,7 +23,6 @@ class WorkflowsConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -33,8 +31,6 @@ class WorkflowsConfig
     public function workflows(string $name, array $value = []): \Symfony\Config\Framework\Workflows\WorkflowsConfig
     {
         if (!isset($this->workflows[$name])) {
-            $this->_usedProperties['workflows'] = true;
-    
             return $this->workflows[$name] = new \Symfony\Config\Framework\Workflows\WorkflowsConfig($value);
         }
         if ([] === $value) {
@@ -47,14 +43,12 @@ class WorkflowsConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('workflows', $value)) {
-            $this->_usedProperties['workflows'] = true;
+        if (isset($value['workflows'])) {
             $this->workflows = array_map(function ($v) { return new \Symfony\Config\Framework\Workflows\WorkflowsConfig($v); }, $value['workflows']);
             unset($value['workflows']);
         }
@@ -67,10 +61,10 @@ class WorkflowsConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['workflows'])) {
+        if (null !== $this->workflows) {
             $output['workflows'] = array_map(function ($v) { return $v->toArray(); }, $this->workflows);
         }
     

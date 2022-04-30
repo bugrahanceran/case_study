@@ -7,8 +7,6 @@ use Doctrine\DBAL\ParameterType;
 /**
  * Connection interface.
  * Driver connections must implement this interface.
- *
- * @method resource|object getNativeConnection()
  */
 interface Connection
 {
@@ -30,7 +28,7 @@ interface Connection
      * Quotes a string for use in a query.
      *
      * The usage of this method is discouraged. Use prepared statements
-     * or {@see AbstractPlatform::quoteStringLiteral()} instead.
+     * or {@link AbstractPlatform::quoteStringLiteral()} instead.
      *
      * @param mixed $value
      * @param int   $type

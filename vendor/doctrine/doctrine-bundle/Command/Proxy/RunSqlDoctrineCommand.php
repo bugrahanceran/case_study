@@ -27,7 +27,10 @@ class RunSqlDoctrineCommand extends RunSqlCommand
         $this->connectionProvider = $connectionProvider;
     }
 
-    protected function configure(): void
+    /**
+     * {@inheritDoc}
+     */
+    protected function configure()
     {
         parent::configure();
 

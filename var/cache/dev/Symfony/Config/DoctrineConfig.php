@@ -9,18 +9,16 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
     private $dbal;
     private $orm;
-    private $_usedProperties = [];
     
     public function dbal(array $value = []): \Symfony\Config\Doctrine\DbalConfig
     {
         if (null === $this->dbal) {
-            $this->_usedProperties['dbal'] = true;
             $this->dbal = new \Symfony\Config\Doctrine\DbalConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "dbal()" has already been initialized. You cannot pass values the second time you call dbal().');
@@ -32,7 +30,6 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function orm(array $value = []): \Symfony\Config\Doctrine\OrmConfig
     {
         if (null === $this->orm) {
-            $this->_usedProperties['orm'] = true;
             $this->orm = new \Symfony\Config\Doctrine\OrmConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "orm()" has already been initialized. You cannot pass values the second time you call orm().');
@@ -49,14 +46,12 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('dbal', $value)) {
-            $this->_usedProperties['dbal'] = true;
+        if (isset($value['dbal'])) {
             $this->dbal = new \Symfony\Config\Doctrine\DbalConfig($value['dbal']);
             unset($value['dbal']);
         }
     
-        if (array_key_exists('orm', $value)) {
-            $this->_usedProperties['orm'] = true;
+        if (isset($value['orm'])) {
             $this->orm = new \Symfony\Config\Doctrine\OrmConfig($value['orm']);
             unset($value['orm']);
         }
@@ -69,10 +64,10 @@ class DoctrineConfig implements \Symfony\Component\Config\Builder\ConfigBuilderI
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['dbal'])) {
+        if (null !== $this->dbal) {
             $output['dbal'] = $this->dbal->toArray();
         }
-        if (isset($this->_usedProperties['orm'])) {
+        if (null !== $this->orm) {
             $output['orm'] = $this->orm->toArray();
         }
     

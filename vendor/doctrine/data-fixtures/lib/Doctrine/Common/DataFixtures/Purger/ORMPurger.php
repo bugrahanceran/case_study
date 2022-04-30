@@ -158,9 +158,9 @@ class ORMPurger implements PurgerInterface, ORMPurgerInterface
             }
 
             if ($this->purgeMode === self::PURGE_MODE_DELETE) {
-                $connection->executeStatement($this->getDeleteFromTableSQL($tbl, $platform));
+                $connection->executeUpdate($this->getDeleteFromTableSQL($tbl, $platform));
             } else {
-                $connection->executeStatement($platform->getTruncateTableSQL($tbl, true));
+                $connection->executeUpdate($platform->getTruncateTableSQL($tbl, true));
             }
         }
     }

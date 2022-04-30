@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class PropertyAccessConfig 
 {
@@ -18,7 +18,6 @@ class PropertyAccessConfig
     private $magicSet;
     private $throwExceptionOnInvalidIndex;
     private $throwExceptionOnInvalidPropertyPath;
-    private $_usedProperties = [];
     
     /**
      * @default true
@@ -27,7 +26,6 @@ class PropertyAccessConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -40,7 +38,6 @@ class PropertyAccessConfig
      */
     public function magicCall($value): static
     {
-        $this->_usedProperties['magicCall'] = true;
         $this->magicCall = $value;
     
         return $this;
@@ -53,7 +50,6 @@ class PropertyAccessConfig
      */
     public function magicGet($value): static
     {
-        $this->_usedProperties['magicGet'] = true;
         $this->magicGet = $value;
     
         return $this;
@@ -66,7 +62,6 @@ class PropertyAccessConfig
      */
     public function magicSet($value): static
     {
-        $this->_usedProperties['magicSet'] = true;
         $this->magicSet = $value;
     
         return $this;
@@ -79,7 +74,6 @@ class PropertyAccessConfig
      */
     public function throwExceptionOnInvalidIndex($value): static
     {
-        $this->_usedProperties['throwExceptionOnInvalidIndex'] = true;
         $this->throwExceptionOnInvalidIndex = $value;
     
         return $this;
@@ -92,7 +86,6 @@ class PropertyAccessConfig
      */
     public function throwExceptionOnInvalidPropertyPath($value): static
     {
-        $this->_usedProperties['throwExceptionOnInvalidPropertyPath'] = true;
         $this->throwExceptionOnInvalidPropertyPath = $value;
     
         return $this;
@@ -101,38 +94,32 @@ class PropertyAccessConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('magic_call', $value)) {
-            $this->_usedProperties['magicCall'] = true;
+        if (isset($value['magic_call'])) {
             $this->magicCall = $value['magic_call'];
             unset($value['magic_call']);
         }
     
-        if (array_key_exists('magic_get', $value)) {
-            $this->_usedProperties['magicGet'] = true;
+        if (isset($value['magic_get'])) {
             $this->magicGet = $value['magic_get'];
             unset($value['magic_get']);
         }
     
-        if (array_key_exists('magic_set', $value)) {
-            $this->_usedProperties['magicSet'] = true;
+        if (isset($value['magic_set'])) {
             $this->magicSet = $value['magic_set'];
             unset($value['magic_set']);
         }
     
-        if (array_key_exists('throw_exception_on_invalid_index', $value)) {
-            $this->_usedProperties['throwExceptionOnInvalidIndex'] = true;
+        if (isset($value['throw_exception_on_invalid_index'])) {
             $this->throwExceptionOnInvalidIndex = $value['throw_exception_on_invalid_index'];
             unset($value['throw_exception_on_invalid_index']);
         }
     
-        if (array_key_exists('throw_exception_on_invalid_property_path', $value)) {
-            $this->_usedProperties['throwExceptionOnInvalidPropertyPath'] = true;
+        if (isset($value['throw_exception_on_invalid_property_path'])) {
             $this->throwExceptionOnInvalidPropertyPath = $value['throw_exception_on_invalid_property_path'];
             unset($value['throw_exception_on_invalid_property_path']);
         }
@@ -145,22 +132,22 @@ class PropertyAccessConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['magicCall'])) {
+        if (null !== $this->magicCall) {
             $output['magic_call'] = $this->magicCall;
         }
-        if (isset($this->_usedProperties['magicGet'])) {
+        if (null !== $this->magicGet) {
             $output['magic_get'] = $this->magicGet;
         }
-        if (isset($this->_usedProperties['magicSet'])) {
+        if (null !== $this->magicSet) {
             $output['magic_set'] = $this->magicSet;
         }
-        if (isset($this->_usedProperties['throwExceptionOnInvalidIndex'])) {
+        if (null !== $this->throwExceptionOnInvalidIndex) {
             $output['throw_exception_on_invalid_index'] = $this->throwExceptionOnInvalidIndex;
         }
-        if (isset($this->_usedProperties['throwExceptionOnInvalidPropertyPath'])) {
+        if (null !== $this->throwExceptionOnInvalidPropertyPath) {
             $output['throw_exception_on_invalid_property_path'] = $this->throwExceptionOnInvalidPropertyPath;
         }
     

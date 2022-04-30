@@ -8,12 +8,11 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ChainConfig 
 {
     private $providers;
-    private $_usedProperties = [];
     
     /**
      * @param ParamConfigurator|list<ParamConfigurator|mixed> $value
@@ -22,7 +21,6 @@ class ChainConfig
      */
     public function providers(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['providers'] = true;
         $this->providers = $value;
     
         return $this;
@@ -31,8 +29,7 @@ class ChainConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('providers', $value)) {
-            $this->_usedProperties['providers'] = true;
+        if (isset($value['providers'])) {
             $this->providers = $value['providers'];
             unset($value['providers']);
         }
@@ -45,7 +42,7 @@ class ChainConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['providers'])) {
+        if (null !== $this->providers) {
             $output['providers'] = $this->providers;
         }
     

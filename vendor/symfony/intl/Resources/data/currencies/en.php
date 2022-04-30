@@ -800,7 +800,7 @@ return [
         ],
         'PHP' => [
             0 => '₱',
-            1 => 'Philippine Peso',
+            1 => 'Philippine Piso',
         ],
         'PKR' => [
             0 => 'PKR',
@@ -897,10 +897,6 @@ return [
         'SKK' => [
             0 => 'SKK',
             1 => 'Slovak Koruna',
-        ],
-        'SLE' => [
-            0 => 'SLE',
-            1 => 'Sierra Leonean New Leone',
         ],
         'SLL' => [
             0 => 'SLL',
@@ -1049,10 +1045,6 @@ return [
         'VEB' => [
             0 => 'VEB',
             1 => 'Venezuelan Bolívar (1871–2008)',
-        ],
-        'VED' => [
-            0 => 'VED',
-            1 => 'Bolívar Soberano',
         ],
         'VEF' => [
             0 => 'VEF',

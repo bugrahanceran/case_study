@@ -8,14 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class NumberFormatConfig 
 {
     private $decimals;
     private $decimalPoint;
     private $thousandsSeparator;
-    private $_usedProperties = [];
     
     /**
      * @default 0
@@ -24,7 +23,6 @@ class NumberFormatConfig
      */
     public function decimals($value): static
     {
-        $this->_usedProperties['decimals'] = true;
         $this->decimals = $value;
     
         return $this;
@@ -37,7 +35,6 @@ class NumberFormatConfig
      */
     public function decimalPoint($value): static
     {
-        $this->_usedProperties['decimalPoint'] = true;
         $this->decimalPoint = $value;
     
         return $this;
@@ -50,7 +47,6 @@ class NumberFormatConfig
      */
     public function thousandsSeparator($value): static
     {
-        $this->_usedProperties['thousandsSeparator'] = true;
         $this->thousandsSeparator = $value;
     
         return $this;
@@ -59,20 +55,17 @@ class NumberFormatConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('decimals', $value)) {
-            $this->_usedProperties['decimals'] = true;
+        if (isset($value['decimals'])) {
             $this->decimals = $value['decimals'];
             unset($value['decimals']);
         }
     
-        if (array_key_exists('decimal_point', $value)) {
-            $this->_usedProperties['decimalPoint'] = true;
+        if (isset($value['decimal_point'])) {
             $this->decimalPoint = $value['decimal_point'];
             unset($value['decimal_point']);
         }
     
-        if (array_key_exists('thousands_separator', $value)) {
-            $this->_usedProperties['thousandsSeparator'] = true;
+        if (isset($value['thousands_separator'])) {
             $this->thousandsSeparator = $value['thousands_separator'];
             unset($value['thousands_separator']);
         }
@@ -85,13 +78,13 @@ class NumberFormatConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['decimals'])) {
+        if (null !== $this->decimals) {
             $output['decimals'] = $this->decimals;
         }
-        if (isset($this->_usedProperties['decimalPoint'])) {
+        if (null !== $this->decimalPoint) {
             $output['decimal_point'] = $this->decimalPoint;
         }
-        if (isset($this->_usedProperties['thousandsSeparator'])) {
+        if (null !== $this->thousandsSeparator) {
             $output['thousands_separator'] = $this->thousandsSeparator;
         }
     

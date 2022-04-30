@@ -12,7 +12,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class WorkflowsConfig 
 {
@@ -26,12 +26,10 @@ class WorkflowsConfig
     private $places;
     private $transitions;
     private $metadata;
-    private $_usedProperties = [];
     
     public function auditTrail(array $value = []): \Symfony\Config\Framework\Workflows\WorkflowsConfig\AuditTrailConfig
     {
         if (null === $this->auditTrail) {
-            $this->_usedProperties['auditTrail'] = true;
             $this->auditTrail = new \Symfony\Config\Framework\Workflows\WorkflowsConfig\AuditTrailConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "auditTrail()" has already been initialized. You cannot pass values the second time you call auditTrail().');
@@ -47,7 +45,6 @@ class WorkflowsConfig
      */
     public function type($value): static
     {
-        $this->_usedProperties['type'] = true;
         $this->type = $value;
     
         return $this;
@@ -56,7 +53,6 @@ class WorkflowsConfig
     public function markingStore(array $value = []): \Symfony\Config\Framework\Workflows\WorkflowsConfig\MarkingStoreConfig
     {
         if (null === $this->markingStore) {
-            $this->_usedProperties['markingStore'] = true;
             $this->markingStore = new \Symfony\Config\Framework\Workflows\WorkflowsConfig\MarkingStoreConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "markingStore()" has already been initialized. You cannot pass values the second time you call markingStore().');
@@ -72,7 +68,6 @@ class WorkflowsConfig
      */
     public function supports(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['supports'] = true;
         $this->supports = $value;
     
         return $this;
@@ -85,7 +80,6 @@ class WorkflowsConfig
      */
     public function supportStrategy($value): static
     {
-        $this->_usedProperties['supportStrategy'] = true;
         $this->supportStrategy = $value;
     
         return $this;
@@ -98,7 +92,6 @@ class WorkflowsConfig
      */
     public function initialMarking(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['initialMarking'] = true;
         $this->initialMarking = $value;
     
         return $this;
@@ -115,7 +108,6 @@ class WorkflowsConfig
      */
     public function eventsToDispatch(mixed $value = NULL): static
     {
-        $this->_usedProperties['eventsToDispatch'] = true;
         $this->eventsToDispatch = $value;
     
         return $this;
@@ -123,15 +115,11 @@ class WorkflowsConfig
     
     public function place(array $value = []): \Symfony\Config\Framework\Workflows\WorkflowsConfig\PlaceConfig
     {
-        $this->_usedProperties['places'] = true;
-    
         return $this->places[] = new \Symfony\Config\Framework\Workflows\WorkflowsConfig\PlaceConfig($value);
     }
     
     public function transition(array $value = []): \Symfony\Config\Framework\Workflows\WorkflowsConfig\TransitionConfig
     {
-        $this->_usedProperties['transitions'] = true;
-    
         return $this->transitions[] = new \Symfony\Config\Framework\Workflows\WorkflowsConfig\TransitionConfig($value);
     }
     
@@ -142,7 +130,6 @@ class WorkflowsConfig
      */
     public function metadata(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['metadata'] = true;
         $this->metadata = $value;
     
         return $this;
@@ -151,62 +138,52 @@ class WorkflowsConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('audit_trail', $value)) {
-            $this->_usedProperties['auditTrail'] = true;
+        if (isset($value['audit_trail'])) {
             $this->auditTrail = new \Symfony\Config\Framework\Workflows\WorkflowsConfig\AuditTrailConfig($value['audit_trail']);
             unset($value['audit_trail']);
         }
     
-        if (array_key_exists('type', $value)) {
-            $this->_usedProperties['type'] = true;
+        if (isset($value['type'])) {
             $this->type = $value['type'];
             unset($value['type']);
         }
     
-        if (array_key_exists('marking_store', $value)) {
-            $this->_usedProperties['markingStore'] = true;
+        if (isset($value['marking_store'])) {
             $this->markingStore = new \Symfony\Config\Framework\Workflows\WorkflowsConfig\MarkingStoreConfig($value['marking_store']);
             unset($value['marking_store']);
         }
     
-        if (array_key_exists('supports', $value)) {
-            $this->_usedProperties['supports'] = true;
+        if (isset($value['supports'])) {
             $this->supports = $value['supports'];
             unset($value['supports']);
         }
     
-        if (array_key_exists('support_strategy', $value)) {
-            $this->_usedProperties['supportStrategy'] = true;
+        if (isset($value['support_strategy'])) {
             $this->supportStrategy = $value['support_strategy'];
             unset($value['support_strategy']);
         }
     
-        if (array_key_exists('initial_marking', $value)) {
-            $this->_usedProperties['initialMarking'] = true;
+        if (isset($value['initial_marking'])) {
             $this->initialMarking = $value['initial_marking'];
             unset($value['initial_marking']);
         }
     
-        if (array_key_exists('events_to_dispatch', $value)) {
-            $this->_usedProperties['eventsToDispatch'] = true;
+        if (isset($value['events_to_dispatch'])) {
             $this->eventsToDispatch = $value['events_to_dispatch'];
             unset($value['events_to_dispatch']);
         }
     
-        if (array_key_exists('places', $value)) {
-            $this->_usedProperties['places'] = true;
+        if (isset($value['places'])) {
             $this->places = array_map(function ($v) { return new \Symfony\Config\Framework\Workflows\WorkflowsConfig\PlaceConfig($v); }, $value['places']);
             unset($value['places']);
         }
     
-        if (array_key_exists('transitions', $value)) {
-            $this->_usedProperties['transitions'] = true;
+        if (isset($value['transitions'])) {
             $this->transitions = array_map(function ($v) { return new \Symfony\Config\Framework\Workflows\WorkflowsConfig\TransitionConfig($v); }, $value['transitions']);
             unset($value['transitions']);
         }
     
-        if (array_key_exists('metadata', $value)) {
-            $this->_usedProperties['metadata'] = true;
+        if (isset($value['metadata'])) {
             $this->metadata = $value['metadata'];
             unset($value['metadata']);
         }
@@ -219,34 +196,34 @@ class WorkflowsConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['auditTrail'])) {
+        if (null !== $this->auditTrail) {
             $output['audit_trail'] = $this->auditTrail->toArray();
         }
-        if (isset($this->_usedProperties['type'])) {
+        if (null !== $this->type) {
             $output['type'] = $this->type;
         }
-        if (isset($this->_usedProperties['markingStore'])) {
+        if (null !== $this->markingStore) {
             $output['marking_store'] = $this->markingStore->toArray();
         }
-        if (isset($this->_usedProperties['supports'])) {
+        if (null !== $this->supports) {
             $output['supports'] = $this->supports;
         }
-        if (isset($this->_usedProperties['supportStrategy'])) {
+        if (null !== $this->supportStrategy) {
             $output['support_strategy'] = $this->supportStrategy;
         }
-        if (isset($this->_usedProperties['initialMarking'])) {
+        if (null !== $this->initialMarking) {
             $output['initial_marking'] = $this->initialMarking;
         }
-        if (isset($this->_usedProperties['eventsToDispatch'])) {
+        if (null !== $this->eventsToDispatch) {
             $output['events_to_dispatch'] = $this->eventsToDispatch;
         }
-        if (isset($this->_usedProperties['places'])) {
+        if (null !== $this->places) {
             $output['places'] = array_map(function ($v) { return $v->toArray(); }, $this->places);
         }
-        if (isset($this->_usedProperties['transitions'])) {
+        if (null !== $this->transitions) {
             $output['transitions'] = array_map(function ($v) { return $v->toArray(); }, $this->transitions);
         }
-        if (isset($this->_usedProperties['metadata'])) {
+        if (null !== $this->metadata) {
             $output['metadata'] = $this->metadata;
         }
     

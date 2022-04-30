@@ -14,18 +14,17 @@ use Symfony\Component\DependencyInjection\Reference;
 
 use function array_keys;
 use function assert;
-use function in_array;
 use function is_a;
 use function trigger_deprecation;
 
 /** @internal  */
 final class CacheCompatibilityPass implements CompilerPassInterface
 {
-    private const CONFIGURATION_TAG          = 'doctrine.orm.configuration';
-    private const CACHE_METHODS_PSR6_SUPPORT = [
-        'setMetadataCache',
-        'setQueryCache',
-        'setResultCache',
+    private const CONFIGURATION_TAG              = 'doctrine.orm.configuration';
+    private const CACHE_METHODS_PSR6_SUPPORT_MAP = [
+        'setMetadataCache' => true,
+        'setQueryCacheImpl' => false,
+        'setResultCacheImpl' => false,
     ];
 
     public function process(ContainerBuilder $container): void
@@ -37,14 +36,15 @@ final class CacheCompatibilityPass implements CompilerPassInterface
                     continue;
                 }
 
-                if (! in_array($methodCall[0], self::CACHE_METHODS_PSR6_SUPPORT, true)) {
+                if (! isset(self::CACHE_METHODS_PSR6_SUPPORT_MAP[$methodCall[0]])) {
                     continue;
                 }
 
                 $aliasId      = (string) $methodCall[1][0];
                 $definitionId = (string) $container->getAlias($aliasId);
+                $shouldBePsr6 = self::CACHE_METHODS_PSR6_SUPPORT_MAP[$methodCall[0]];
 
-                $this->wrapIfNecessary($container, $aliasId, $definitionId, true);
+                $this->wrapIfNecessary($container, $aliasId, $definitionId, $shouldBePsr6);
             }
         }
     }
@@ -66,11 +66,6 @@ final class CacheCompatibilityPass implements CompilerPassInterface
                 }
 
                 $regionDefinition = $container->getDefinition($factoryMethodCall[1][0]);
-
-                // Get inner service for FileLock
-                if ($regionDefinition->getClass() === '%doctrine.orm.second_level_cache.filelock_region.class%') {
-                    $regionDefinition = $container->getDefinition($regionDefinition->getArgument(0));
-                }
 
                 // We don't know how to adjust custom region classes
                 if ($regionDefinition->getClass() !== '%doctrine.orm.second_level_cache.default_region.class%') {

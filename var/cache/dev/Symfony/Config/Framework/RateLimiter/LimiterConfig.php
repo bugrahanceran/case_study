@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class LimiterConfig 
 {
@@ -20,7 +20,6 @@ class LimiterConfig
     private $limit;
     private $interval;
     private $rate;
-    private $_usedProperties = [];
     
     /**
      * The service ID of the lock factory used by this limiter (or null to disable locking)
@@ -30,7 +29,6 @@ class LimiterConfig
      */
     public function lockFactory($value): static
     {
-        $this->_usedProperties['lockFactory'] = true;
         $this->lockFactory = $value;
     
         return $this;
@@ -44,7 +42,6 @@ class LimiterConfig
      */
     public function cachePool($value): static
     {
-        $this->_usedProperties['cachePool'] = true;
         $this->cachePool = $value;
     
         return $this;
@@ -58,7 +55,6 @@ class LimiterConfig
      */
     public function storageService($value): static
     {
-        $this->_usedProperties['storageService'] = true;
         $this->storageService = $value;
     
         return $this;
@@ -72,7 +68,6 @@ class LimiterConfig
      */
     public function policy($value): static
     {
-        $this->_usedProperties['policy'] = true;
         $this->policy = $value;
     
         return $this;
@@ -86,7 +81,6 @@ class LimiterConfig
      */
     public function limit($value): static
     {
-        $this->_usedProperties['limit'] = true;
         $this->limit = $value;
     
         return $this;
@@ -100,7 +94,6 @@ class LimiterConfig
      */
     public function interval($value): static
     {
-        $this->_usedProperties['interval'] = true;
         $this->interval = $value;
     
         return $this;
@@ -109,7 +102,6 @@ class LimiterConfig
     public function rate(array $value = []): \Symfony\Config\Framework\RateLimiter\LimiterConfig\RateConfig
     {
         if (null === $this->rate) {
-            $this->_usedProperties['rate'] = true;
             $this->rate = new \Symfony\Config\Framework\RateLimiter\LimiterConfig\RateConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "rate()" has already been initialized. You cannot pass values the second time you call rate().');
@@ -121,44 +113,37 @@ class LimiterConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('lock_factory', $value)) {
-            $this->_usedProperties['lockFactory'] = true;
+        if (isset($value['lock_factory'])) {
             $this->lockFactory = $value['lock_factory'];
             unset($value['lock_factory']);
         }
     
-        if (array_key_exists('cache_pool', $value)) {
-            $this->_usedProperties['cachePool'] = true;
+        if (isset($value['cache_pool'])) {
             $this->cachePool = $value['cache_pool'];
             unset($value['cache_pool']);
         }
     
-        if (array_key_exists('storage_service', $value)) {
-            $this->_usedProperties['storageService'] = true;
+        if (isset($value['storage_service'])) {
             $this->storageService = $value['storage_service'];
             unset($value['storage_service']);
         }
     
-        if (array_key_exists('policy', $value)) {
-            $this->_usedProperties['policy'] = true;
+        if (isset($value['policy'])) {
             $this->policy = $value['policy'];
             unset($value['policy']);
         }
     
-        if (array_key_exists('limit', $value)) {
-            $this->_usedProperties['limit'] = true;
+        if (isset($value['limit'])) {
             $this->limit = $value['limit'];
             unset($value['limit']);
         }
     
-        if (array_key_exists('interval', $value)) {
-            $this->_usedProperties['interval'] = true;
+        if (isset($value['interval'])) {
             $this->interval = $value['interval'];
             unset($value['interval']);
         }
     
-        if (array_key_exists('rate', $value)) {
-            $this->_usedProperties['rate'] = true;
+        if (isset($value['rate'])) {
             $this->rate = new \Symfony\Config\Framework\RateLimiter\LimiterConfig\RateConfig($value['rate']);
             unset($value['rate']);
         }
@@ -171,25 +156,25 @@ class LimiterConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['lockFactory'])) {
+        if (null !== $this->lockFactory) {
             $output['lock_factory'] = $this->lockFactory;
         }
-        if (isset($this->_usedProperties['cachePool'])) {
+        if (null !== $this->cachePool) {
             $output['cache_pool'] = $this->cachePool;
         }
-        if (isset($this->_usedProperties['storageService'])) {
+        if (null !== $this->storageService) {
             $output['storage_service'] = $this->storageService;
         }
-        if (isset($this->_usedProperties['policy'])) {
+        if (null !== $this->policy) {
             $output['policy'] = $this->policy;
         }
-        if (isset($this->_usedProperties['limit'])) {
+        if (null !== $this->limit) {
             $output['limit'] = $this->limit;
         }
-        if (isset($this->_usedProperties['interval'])) {
+        if (null !== $this->interval) {
             $output['interval'] = $this->interval;
         }
-        if (isset($this->_usedProperties['rate'])) {
+        if (null !== $this->rate) {
             $output['rate'] = $this->rate->toArray();
         }
     

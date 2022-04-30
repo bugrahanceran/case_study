@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class MongoConfig 
 {
@@ -19,7 +19,6 @@ class MongoConfig
     private $pass;
     private $database;
     private $collection;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -28,7 +27,6 @@ class MongoConfig
      */
     public function id($value): static
     {
-        $this->_usedProperties['id'] = true;
         $this->id = $value;
     
         return $this;
@@ -41,7 +39,6 @@ class MongoConfig
      */
     public function host($value): static
     {
-        $this->_usedProperties['host'] = true;
         $this->host = $value;
     
         return $this;
@@ -54,7 +51,6 @@ class MongoConfig
      */
     public function port($value): static
     {
-        $this->_usedProperties['port'] = true;
         $this->port = $value;
     
         return $this;
@@ -67,7 +63,6 @@ class MongoConfig
      */
     public function user($value): static
     {
-        $this->_usedProperties['user'] = true;
         $this->user = $value;
     
         return $this;
@@ -80,7 +75,6 @@ class MongoConfig
      */
     public function pass($value): static
     {
-        $this->_usedProperties['pass'] = true;
         $this->pass = $value;
     
         return $this;
@@ -93,7 +87,6 @@ class MongoConfig
      */
     public function database($value): static
     {
-        $this->_usedProperties['database'] = true;
         $this->database = $value;
     
         return $this;
@@ -106,7 +99,6 @@ class MongoConfig
      */
     public function collection($value): static
     {
-        $this->_usedProperties['collection'] = true;
         $this->collection = $value;
     
         return $this;
@@ -115,44 +107,37 @@ class MongoConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('id', $value)) {
-            $this->_usedProperties['id'] = true;
+        if (isset($value['id'])) {
             $this->id = $value['id'];
             unset($value['id']);
         }
     
-        if (array_key_exists('host', $value)) {
-            $this->_usedProperties['host'] = true;
+        if (isset($value['host'])) {
             $this->host = $value['host'];
             unset($value['host']);
         }
     
-        if (array_key_exists('port', $value)) {
-            $this->_usedProperties['port'] = true;
+        if (isset($value['port'])) {
             $this->port = $value['port'];
             unset($value['port']);
         }
     
-        if (array_key_exists('user', $value)) {
-            $this->_usedProperties['user'] = true;
+        if (isset($value['user'])) {
             $this->user = $value['user'];
             unset($value['user']);
         }
     
-        if (array_key_exists('pass', $value)) {
-            $this->_usedProperties['pass'] = true;
+        if (isset($value['pass'])) {
             $this->pass = $value['pass'];
             unset($value['pass']);
         }
     
-        if (array_key_exists('database', $value)) {
-            $this->_usedProperties['database'] = true;
+        if (isset($value['database'])) {
             $this->database = $value['database'];
             unset($value['database']);
         }
     
-        if (array_key_exists('collection', $value)) {
-            $this->_usedProperties['collection'] = true;
+        if (isset($value['collection'])) {
             $this->collection = $value['collection'];
             unset($value['collection']);
         }
@@ -165,25 +150,25 @@ class MongoConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['id'])) {
+        if (null !== $this->id) {
             $output['id'] = $this->id;
         }
-        if (isset($this->_usedProperties['host'])) {
+        if (null !== $this->host) {
             $output['host'] = $this->host;
         }
-        if (isset($this->_usedProperties['port'])) {
+        if (null !== $this->port) {
             $output['port'] = $this->port;
         }
-        if (isset($this->_usedProperties['user'])) {
+        if (null !== $this->user) {
             $output['user'] = $this->user;
         }
-        if (isset($this->_usedProperties['pass'])) {
+        if (null !== $this->pass) {
             $output['pass'] = $this->pass;
         }
-        if (isset($this->_usedProperties['database'])) {
+        if (null !== $this->database) {
             $output['database'] = $this->database;
         }
-        if (isset($this->_usedProperties['collection'])) {
+        if (null !== $this->collection) {
             $output['collection'] = $this->collection;
         }
     

@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class VerbosityLevelsConfig 
 {
@@ -17,7 +17,6 @@ class VerbosityLevelsConfig
     private $vERBOSITYVERBOSE;
     private $vERBOSITYVERYVERBOSE;
     private $vERBOSITYDEBUG;
-    private $_usedProperties = [];
     
     /**
      * @default 'ERROR'
@@ -26,7 +25,6 @@ class VerbosityLevelsConfig
      */
     public function vERBOSITYQUIET($value): static
     {
-        $this->_usedProperties['vERBOSITYQUIET'] = true;
         $this->vERBOSITYQUIET = $value;
     
         return $this;
@@ -39,7 +37,6 @@ class VerbosityLevelsConfig
      */
     public function vERBOSITYNORMAL($value): static
     {
-        $this->_usedProperties['vERBOSITYNORMAL'] = true;
         $this->vERBOSITYNORMAL = $value;
     
         return $this;
@@ -52,7 +49,6 @@ class VerbosityLevelsConfig
      */
     public function vERBOSITYVERBOSE($value): static
     {
-        $this->_usedProperties['vERBOSITYVERBOSE'] = true;
         $this->vERBOSITYVERBOSE = $value;
     
         return $this;
@@ -65,7 +61,6 @@ class VerbosityLevelsConfig
      */
     public function vERBOSITYVERYVERBOSE($value): static
     {
-        $this->_usedProperties['vERBOSITYVERYVERBOSE'] = true;
         $this->vERBOSITYVERYVERBOSE = $value;
     
         return $this;
@@ -78,7 +73,6 @@ class VerbosityLevelsConfig
      */
     public function vERBOSITYDEBUG($value): static
     {
-        $this->_usedProperties['vERBOSITYDEBUG'] = true;
         $this->vERBOSITYDEBUG = $value;
     
         return $this;
@@ -87,32 +81,27 @@ class VerbosityLevelsConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('VERBOSITY_QUIET', $value)) {
-            $this->_usedProperties['vERBOSITYQUIET'] = true;
+        if (isset($value['VERBOSITY_QUIET'])) {
             $this->vERBOSITYQUIET = $value['VERBOSITY_QUIET'];
             unset($value['VERBOSITY_QUIET']);
         }
     
-        if (array_key_exists('VERBOSITY_NORMAL', $value)) {
-            $this->_usedProperties['vERBOSITYNORMAL'] = true;
+        if (isset($value['VERBOSITY_NORMAL'])) {
             $this->vERBOSITYNORMAL = $value['VERBOSITY_NORMAL'];
             unset($value['VERBOSITY_NORMAL']);
         }
     
-        if (array_key_exists('VERBOSITY_VERBOSE', $value)) {
-            $this->_usedProperties['vERBOSITYVERBOSE'] = true;
+        if (isset($value['VERBOSITY_VERBOSE'])) {
             $this->vERBOSITYVERBOSE = $value['VERBOSITY_VERBOSE'];
             unset($value['VERBOSITY_VERBOSE']);
         }
     
-        if (array_key_exists('VERBOSITY_VERY_VERBOSE', $value)) {
-            $this->_usedProperties['vERBOSITYVERYVERBOSE'] = true;
+        if (isset($value['VERBOSITY_VERY_VERBOSE'])) {
             $this->vERBOSITYVERYVERBOSE = $value['VERBOSITY_VERY_VERBOSE'];
             unset($value['VERBOSITY_VERY_VERBOSE']);
         }
     
-        if (array_key_exists('VERBOSITY_DEBUG', $value)) {
-            $this->_usedProperties['vERBOSITYDEBUG'] = true;
+        if (isset($value['VERBOSITY_DEBUG'])) {
             $this->vERBOSITYDEBUG = $value['VERBOSITY_DEBUG'];
             unset($value['VERBOSITY_DEBUG']);
         }
@@ -125,19 +114,19 @@ class VerbosityLevelsConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['vERBOSITYQUIET'])) {
+        if (null !== $this->vERBOSITYQUIET) {
             $output['VERBOSITY_QUIET'] = $this->vERBOSITYQUIET;
         }
-        if (isset($this->_usedProperties['vERBOSITYNORMAL'])) {
+        if (null !== $this->vERBOSITYNORMAL) {
             $output['VERBOSITY_NORMAL'] = $this->vERBOSITYNORMAL;
         }
-        if (isset($this->_usedProperties['vERBOSITYVERBOSE'])) {
+        if (null !== $this->vERBOSITYVERBOSE) {
             $output['VERBOSITY_VERBOSE'] = $this->vERBOSITYVERBOSE;
         }
-        if (isset($this->_usedProperties['vERBOSITYVERYVERBOSE'])) {
+        if (null !== $this->vERBOSITYVERYVERBOSE) {
             $output['VERBOSITY_VERY_VERBOSE'] = $this->vERBOSITYVERYVERBOSE;
         }
-        if (isset($this->_usedProperties['vERBOSITYDEBUG'])) {
+        if (null !== $this->vERBOSITYDEBUG) {
             $output['VERBOSITY_DEBUG'] = $this->vERBOSITYDEBUG;
         }
     

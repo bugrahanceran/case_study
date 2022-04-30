@@ -10,7 +10,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ScopedClientConfig 
 {
@@ -39,7 +39,6 @@ class ScopedClientConfig
     private $ciphers;
     private $peerFingerprint;
     private $retryFailed;
-    private $_usedProperties = [];
     
     /**
      * The regular expression that the request URL must match before adding the other options. When none is provided, the base URI is used instead.
@@ -49,7 +48,6 @@ class ScopedClientConfig
      */
     public function scope($value): static
     {
-        $this->_usedProperties['scope'] = true;
         $this->scope = $value;
     
         return $this;
@@ -63,7 +61,6 @@ class ScopedClientConfig
      */
     public function baseUri($value): static
     {
-        $this->_usedProperties['baseUri'] = true;
         $this->baseUri = $value;
     
         return $this;
@@ -77,7 +74,6 @@ class ScopedClientConfig
      */
     public function authBasic($value): static
     {
-        $this->_usedProperties['authBasic'] = true;
         $this->authBasic = $value;
     
         return $this;
@@ -91,7 +87,6 @@ class ScopedClientConfig
      */
     public function authBearer($value): static
     {
-        $this->_usedProperties['authBearer'] = true;
         $this->authBearer = $value;
     
         return $this;
@@ -105,7 +100,6 @@ class ScopedClientConfig
      */
     public function authNtlm($value): static
     {
-        $this->_usedProperties['authNtlm'] = true;
         $this->authNtlm = $value;
     
         return $this;
@@ -116,7 +110,6 @@ class ScopedClientConfig
      */
     public function query(string $key, mixed $value): static
     {
-        $this->_usedProperties['query'] = true;
         $this->query[$key] = $value;
     
         return $this;
@@ -127,7 +120,6 @@ class ScopedClientConfig
      */
     public function header(string $name, mixed $value): static
     {
-        $this->_usedProperties['headers'] = true;
         $this->headers[$name] = $value;
     
         return $this;
@@ -141,7 +133,6 @@ class ScopedClientConfig
      */
     public function maxRedirects($value): static
     {
-        $this->_usedProperties['maxRedirects'] = true;
         $this->maxRedirects = $value;
     
         return $this;
@@ -155,7 +146,6 @@ class ScopedClientConfig
      */
     public function httpVersion($value): static
     {
-        $this->_usedProperties['httpVersion'] = true;
         $this->httpVersion = $value;
     
         return $this;
@@ -166,7 +156,6 @@ class ScopedClientConfig
      */
     public function resolve(string $host, mixed $value): static
     {
-        $this->_usedProperties['resolve'] = true;
         $this->resolve[$host] = $value;
     
         return $this;
@@ -180,7 +169,6 @@ class ScopedClientConfig
      */
     public function proxy($value): static
     {
-        $this->_usedProperties['proxy'] = true;
         $this->proxy = $value;
     
         return $this;
@@ -194,7 +182,6 @@ class ScopedClientConfig
      */
     public function noProxy($value): static
     {
-        $this->_usedProperties['noProxy'] = true;
         $this->noProxy = $value;
     
         return $this;
@@ -208,7 +195,6 @@ class ScopedClientConfig
      */
     public function timeout($value): static
     {
-        $this->_usedProperties['timeout'] = true;
         $this->timeout = $value;
     
         return $this;
@@ -222,7 +208,6 @@ class ScopedClientConfig
      */
     public function maxDuration($value): static
     {
-        $this->_usedProperties['maxDuration'] = true;
         $this->maxDuration = $value;
     
         return $this;
@@ -236,7 +221,6 @@ class ScopedClientConfig
      */
     public function bindto($value): static
     {
-        $this->_usedProperties['bindto'] = true;
         $this->bindto = $value;
     
         return $this;
@@ -250,7 +234,6 @@ class ScopedClientConfig
      */
     public function verifyPeer($value): static
     {
-        $this->_usedProperties['verifyPeer'] = true;
         $this->verifyPeer = $value;
     
         return $this;
@@ -264,7 +247,6 @@ class ScopedClientConfig
      */
     public function verifyHost($value): static
     {
-        $this->_usedProperties['verifyHost'] = true;
         $this->verifyHost = $value;
     
         return $this;
@@ -278,7 +260,6 @@ class ScopedClientConfig
      */
     public function cafile($value): static
     {
-        $this->_usedProperties['cafile'] = true;
         $this->cafile = $value;
     
         return $this;
@@ -292,7 +273,6 @@ class ScopedClientConfig
      */
     public function capath($value): static
     {
-        $this->_usedProperties['capath'] = true;
         $this->capath = $value;
     
         return $this;
@@ -306,7 +286,6 @@ class ScopedClientConfig
      */
     public function localCert($value): static
     {
-        $this->_usedProperties['localCert'] = true;
         $this->localCert = $value;
     
         return $this;
@@ -320,7 +299,6 @@ class ScopedClientConfig
      */
     public function localPk($value): static
     {
-        $this->_usedProperties['localPk'] = true;
         $this->localPk = $value;
     
         return $this;
@@ -334,7 +312,6 @@ class ScopedClientConfig
      */
     public function passphrase($value): static
     {
-        $this->_usedProperties['passphrase'] = true;
         $this->passphrase = $value;
     
         return $this;
@@ -348,7 +325,6 @@ class ScopedClientConfig
      */
     public function ciphers($value): static
     {
-        $this->_usedProperties['ciphers'] = true;
         $this->ciphers = $value;
     
         return $this;
@@ -357,7 +333,6 @@ class ScopedClientConfig
     public function peerFingerprint(array $value = []): \Symfony\Config\Framework\HttpClient\ScopedClientConfig\PeerFingerprintConfig
     {
         if (null === $this->peerFingerprint) {
-            $this->_usedProperties['peerFingerprint'] = true;
             $this->peerFingerprint = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\PeerFingerprintConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "peerFingerprint()" has already been initialized. You cannot pass values the second time you call peerFingerprint().');
@@ -369,7 +344,6 @@ class ScopedClientConfig
     public function retryFailed(array $value = []): \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig
     {
         if (null === $this->retryFailed) {
-            $this->_usedProperties['retryFailed'] = true;
             $this->retryFailed = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "retryFailed()" has already been initialized. You cannot pass values the second time you call retryFailed().');
@@ -381,152 +355,127 @@ class ScopedClientConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('scope', $value)) {
-            $this->_usedProperties['scope'] = true;
+        if (isset($value['scope'])) {
             $this->scope = $value['scope'];
             unset($value['scope']);
         }
     
-        if (array_key_exists('base_uri', $value)) {
-            $this->_usedProperties['baseUri'] = true;
+        if (isset($value['base_uri'])) {
             $this->baseUri = $value['base_uri'];
             unset($value['base_uri']);
         }
     
-        if (array_key_exists('auth_basic', $value)) {
-            $this->_usedProperties['authBasic'] = true;
+        if (isset($value['auth_basic'])) {
             $this->authBasic = $value['auth_basic'];
             unset($value['auth_basic']);
         }
     
-        if (array_key_exists('auth_bearer', $value)) {
-            $this->_usedProperties['authBearer'] = true;
+        if (isset($value['auth_bearer'])) {
             $this->authBearer = $value['auth_bearer'];
             unset($value['auth_bearer']);
         }
     
-        if (array_key_exists('auth_ntlm', $value)) {
-            $this->_usedProperties['authNtlm'] = true;
+        if (isset($value['auth_ntlm'])) {
             $this->authNtlm = $value['auth_ntlm'];
             unset($value['auth_ntlm']);
         }
     
-        if (array_key_exists('query', $value)) {
-            $this->_usedProperties['query'] = true;
+        if (isset($value['query'])) {
             $this->query = $value['query'];
             unset($value['query']);
         }
     
-        if (array_key_exists('headers', $value)) {
-            $this->_usedProperties['headers'] = true;
+        if (isset($value['headers'])) {
             $this->headers = $value['headers'];
             unset($value['headers']);
         }
     
-        if (array_key_exists('max_redirects', $value)) {
-            $this->_usedProperties['maxRedirects'] = true;
+        if (isset($value['max_redirects'])) {
             $this->maxRedirects = $value['max_redirects'];
             unset($value['max_redirects']);
         }
     
-        if (array_key_exists('http_version', $value)) {
-            $this->_usedProperties['httpVersion'] = true;
+        if (isset($value['http_version'])) {
             $this->httpVersion = $value['http_version'];
             unset($value['http_version']);
         }
     
-        if (array_key_exists('resolve', $value)) {
-            $this->_usedProperties['resolve'] = true;
+        if (isset($value['resolve'])) {
             $this->resolve = $value['resolve'];
             unset($value['resolve']);
         }
     
-        if (array_key_exists('proxy', $value)) {
-            $this->_usedProperties['proxy'] = true;
+        if (isset($value['proxy'])) {
             $this->proxy = $value['proxy'];
             unset($value['proxy']);
         }
     
-        if (array_key_exists('no_proxy', $value)) {
-            $this->_usedProperties['noProxy'] = true;
+        if (isset($value['no_proxy'])) {
             $this->noProxy = $value['no_proxy'];
             unset($value['no_proxy']);
         }
     
-        if (array_key_exists('timeout', $value)) {
-            $this->_usedProperties['timeout'] = true;
+        if (isset($value['timeout'])) {
             $this->timeout = $value['timeout'];
             unset($value['timeout']);
         }
     
-        if (array_key_exists('max_duration', $value)) {
-            $this->_usedProperties['maxDuration'] = true;
+        if (isset($value['max_duration'])) {
             $this->maxDuration = $value['max_duration'];
             unset($value['max_duration']);
         }
     
-        if (array_key_exists('bindto', $value)) {
-            $this->_usedProperties['bindto'] = true;
+        if (isset($value['bindto'])) {
             $this->bindto = $value['bindto'];
             unset($value['bindto']);
         }
     
-        if (array_key_exists('verify_peer', $value)) {
-            $this->_usedProperties['verifyPeer'] = true;
+        if (isset($value['verify_peer'])) {
             $this->verifyPeer = $value['verify_peer'];
             unset($value['verify_peer']);
         }
     
-        if (array_key_exists('verify_host', $value)) {
-            $this->_usedProperties['verifyHost'] = true;
+        if (isset($value['verify_host'])) {
             $this->verifyHost = $value['verify_host'];
             unset($value['verify_host']);
         }
     
-        if (array_key_exists('cafile', $value)) {
-            $this->_usedProperties['cafile'] = true;
+        if (isset($value['cafile'])) {
             $this->cafile = $value['cafile'];
             unset($value['cafile']);
         }
     
-        if (array_key_exists('capath', $value)) {
-            $this->_usedProperties['capath'] = true;
+        if (isset($value['capath'])) {
             $this->capath = $value['capath'];
             unset($value['capath']);
         }
     
-        if (array_key_exists('local_cert', $value)) {
-            $this->_usedProperties['localCert'] = true;
+        if (isset($value['local_cert'])) {
             $this->localCert = $value['local_cert'];
             unset($value['local_cert']);
         }
     
-        if (array_key_exists('local_pk', $value)) {
-            $this->_usedProperties['localPk'] = true;
+        if (isset($value['local_pk'])) {
             $this->localPk = $value['local_pk'];
             unset($value['local_pk']);
         }
     
-        if (array_key_exists('passphrase', $value)) {
-            $this->_usedProperties['passphrase'] = true;
+        if (isset($value['passphrase'])) {
             $this->passphrase = $value['passphrase'];
             unset($value['passphrase']);
         }
     
-        if (array_key_exists('ciphers', $value)) {
-            $this->_usedProperties['ciphers'] = true;
+        if (isset($value['ciphers'])) {
             $this->ciphers = $value['ciphers'];
             unset($value['ciphers']);
         }
     
-        if (array_key_exists('peer_fingerprint', $value)) {
-            $this->_usedProperties['peerFingerprint'] = true;
+        if (isset($value['peer_fingerprint'])) {
             $this->peerFingerprint = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\PeerFingerprintConfig($value['peer_fingerprint']);
             unset($value['peer_fingerprint']);
         }
     
-        if (array_key_exists('retry_failed', $value)) {
-            $this->_usedProperties['retryFailed'] = true;
+        if (isset($value['retry_failed'])) {
             $this->retryFailed = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailedConfig($value['retry_failed']);
             unset($value['retry_failed']);
         }
@@ -539,79 +488,79 @@ class ScopedClientConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['scope'])) {
+        if (null !== $this->scope) {
             $output['scope'] = $this->scope;
         }
-        if (isset($this->_usedProperties['baseUri'])) {
+        if (null !== $this->baseUri) {
             $output['base_uri'] = $this->baseUri;
         }
-        if (isset($this->_usedProperties['authBasic'])) {
+        if (null !== $this->authBasic) {
             $output['auth_basic'] = $this->authBasic;
         }
-        if (isset($this->_usedProperties['authBearer'])) {
+        if (null !== $this->authBearer) {
             $output['auth_bearer'] = $this->authBearer;
         }
-        if (isset($this->_usedProperties['authNtlm'])) {
+        if (null !== $this->authNtlm) {
             $output['auth_ntlm'] = $this->authNtlm;
         }
-        if (isset($this->_usedProperties['query'])) {
+        if (null !== $this->query) {
             $output['query'] = $this->query;
         }
-        if (isset($this->_usedProperties['headers'])) {
+        if (null !== $this->headers) {
             $output['headers'] = $this->headers;
         }
-        if (isset($this->_usedProperties['maxRedirects'])) {
+        if (null !== $this->maxRedirects) {
             $output['max_redirects'] = $this->maxRedirects;
         }
-        if (isset($this->_usedProperties['httpVersion'])) {
+        if (null !== $this->httpVersion) {
             $output['http_version'] = $this->httpVersion;
         }
-        if (isset($this->_usedProperties['resolve'])) {
+        if (null !== $this->resolve) {
             $output['resolve'] = $this->resolve;
         }
-        if (isset($this->_usedProperties['proxy'])) {
+        if (null !== $this->proxy) {
             $output['proxy'] = $this->proxy;
         }
-        if (isset($this->_usedProperties['noProxy'])) {
+        if (null !== $this->noProxy) {
             $output['no_proxy'] = $this->noProxy;
         }
-        if (isset($this->_usedProperties['timeout'])) {
+        if (null !== $this->timeout) {
             $output['timeout'] = $this->timeout;
         }
-        if (isset($this->_usedProperties['maxDuration'])) {
+        if (null !== $this->maxDuration) {
             $output['max_duration'] = $this->maxDuration;
         }
-        if (isset($this->_usedProperties['bindto'])) {
+        if (null !== $this->bindto) {
             $output['bindto'] = $this->bindto;
         }
-        if (isset($this->_usedProperties['verifyPeer'])) {
+        if (null !== $this->verifyPeer) {
             $output['verify_peer'] = $this->verifyPeer;
         }
-        if (isset($this->_usedProperties['verifyHost'])) {
+        if (null !== $this->verifyHost) {
             $output['verify_host'] = $this->verifyHost;
         }
-        if (isset($this->_usedProperties['cafile'])) {
+        if (null !== $this->cafile) {
             $output['cafile'] = $this->cafile;
         }
-        if (isset($this->_usedProperties['capath'])) {
+        if (null !== $this->capath) {
             $output['capath'] = $this->capath;
         }
-        if (isset($this->_usedProperties['localCert'])) {
+        if (null !== $this->localCert) {
             $output['local_cert'] = $this->localCert;
         }
-        if (isset($this->_usedProperties['localPk'])) {
+        if (null !== $this->localPk) {
             $output['local_pk'] = $this->localPk;
         }
-        if (isset($this->_usedProperties['passphrase'])) {
+        if (null !== $this->passphrase) {
             $output['passphrase'] = $this->passphrase;
         }
-        if (isset($this->_usedProperties['ciphers'])) {
+        if (null !== $this->ciphers) {
             $output['ciphers'] = $this->ciphers;
         }
-        if (isset($this->_usedProperties['peerFingerprint'])) {
+        if (null !== $this->peerFingerprint) {
             $output['peer_fingerprint'] = $this->peerFingerprint->toArray();
         }
-        if (isset($this->_usedProperties['retryFailed'])) {
+        if (null !== $this->retryFailed) {
             $output['retry_failed'] = $this->retryFailed->toArray();
         }
     

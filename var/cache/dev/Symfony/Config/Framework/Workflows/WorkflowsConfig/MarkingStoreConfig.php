@@ -8,14 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class MarkingStoreConfig 
 {
     private $type;
     private $property;
     private $service;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -24,7 +23,6 @@ class MarkingStoreConfig
      */
     public function type($value): static
     {
-        $this->_usedProperties['type'] = true;
         $this->type = $value;
     
         return $this;
@@ -37,7 +35,6 @@ class MarkingStoreConfig
      */
     public function property($value): static
     {
-        $this->_usedProperties['property'] = true;
         $this->property = $value;
     
         return $this;
@@ -50,7 +47,6 @@ class MarkingStoreConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -59,20 +55,17 @@ class MarkingStoreConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('type', $value)) {
-            $this->_usedProperties['type'] = true;
+        if (isset($value['type'])) {
             $this->type = $value['type'];
             unset($value['type']);
         }
     
-        if (array_key_exists('property', $value)) {
-            $this->_usedProperties['property'] = true;
+        if (isset($value['property'])) {
             $this->property = $value['property'];
             unset($value['property']);
         }
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
@@ -85,13 +78,13 @@ class MarkingStoreConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['type'])) {
+        if (null !== $this->type) {
             $output['type'] = $this->type;
         }
-        if (isset($this->_usedProperties['property'])) {
+        if (null !== $this->property) {
             $output['property'] = $this->property;
         }
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
     

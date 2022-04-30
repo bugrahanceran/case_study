@@ -23,7 +23,6 @@ return [
         'ce' => 'Chechen',
         'ceb' => 'Cebụanọ',
         'chr' => 'Cheroke',
-        'ckb' => 'Kurdish ọsote',
         'co' => 'Kọsịan',
         'cs' => 'Cheekị',
         'cu' => 'Church slavic',

@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ShardConfig 
 {
@@ -43,7 +43,6 @@ class ShardConfig
     private $useSavepoints;
     private $instancename;
     private $connectstring;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -52,7 +51,6 @@ class ShardConfig
      */
     public function id($value): static
     {
-        $this->_usedProperties['id'] = true;
         $this->id = $value;
     
         return $this;
@@ -66,7 +64,6 @@ class ShardConfig
      */
     public function url($value): static
     {
-        $this->_usedProperties['url'] = true;
         $this->url = $value;
     
         return $this;
@@ -79,7 +76,6 @@ class ShardConfig
      */
     public function dbname($value): static
     {
-        $this->_usedProperties['dbname'] = true;
         $this->dbname = $value;
     
         return $this;
@@ -93,7 +89,6 @@ class ShardConfig
      */
     public function host($value): static
     {
-        $this->_usedProperties['host'] = true;
         $this->host = $value;
     
         return $this;
@@ -107,7 +102,6 @@ class ShardConfig
      */
     public function port($value): static
     {
-        $this->_usedProperties['port'] = true;
         $this->port = $value;
     
         return $this;
@@ -121,7 +115,6 @@ class ShardConfig
      */
     public function user($value): static
     {
-        $this->_usedProperties['user'] = true;
         $this->user = $value;
     
         return $this;
@@ -135,7 +128,6 @@ class ShardConfig
      */
     public function password($value): static
     {
-        $this->_usedProperties['password'] = true;
         $this->password = $value;
     
         return $this;
@@ -149,7 +141,6 @@ class ShardConfig
      */
     public function overrideUrl($value): static
     {
-        $this->_usedProperties['overrideUrl'] = true;
         $this->overrideUrl = $value;
     
         return $this;
@@ -162,7 +153,6 @@ class ShardConfig
      */
     public function dbnameSuffix($value): static
     {
-        $this->_usedProperties['dbnameSuffix'] = true;
         $this->dbnameSuffix = $value;
     
         return $this;
@@ -175,7 +165,6 @@ class ShardConfig
      */
     public function applicationName($value): static
     {
-        $this->_usedProperties['applicationName'] = true;
         $this->applicationName = $value;
     
         return $this;
@@ -188,7 +177,6 @@ class ShardConfig
      */
     public function charset($value): static
     {
-        $this->_usedProperties['charset'] = true;
         $this->charset = $value;
     
         return $this;
@@ -201,7 +189,6 @@ class ShardConfig
      */
     public function path($value): static
     {
-        $this->_usedProperties['path'] = true;
         $this->path = $value;
     
         return $this;
@@ -214,7 +201,6 @@ class ShardConfig
      */
     public function memory($value): static
     {
-        $this->_usedProperties['memory'] = true;
         $this->memory = $value;
     
         return $this;
@@ -228,7 +214,6 @@ class ShardConfig
      */
     public function unixSocket($value): static
     {
-        $this->_usedProperties['unixSocket'] = true;
         $this->unixSocket = $value;
     
         return $this;
@@ -242,7 +227,6 @@ class ShardConfig
      */
     public function persistent($value): static
     {
-        $this->_usedProperties['persistent'] = true;
         $this->persistent = $value;
     
         return $this;
@@ -256,7 +240,6 @@ class ShardConfig
      */
     public function protocol($value): static
     {
-        $this->_usedProperties['protocol'] = true;
         $this->protocol = $value;
     
         return $this;
@@ -270,7 +253,6 @@ class ShardConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -284,7 +266,6 @@ class ShardConfig
      */
     public function servicename($value): static
     {
-        $this->_usedProperties['servicename'] = true;
         $this->servicename = $value;
     
         return $this;
@@ -298,7 +279,6 @@ class ShardConfig
      */
     public function sessionMode($value): static
     {
-        $this->_usedProperties['sessionMode'] = true;
         $this->sessionMode = $value;
     
         return $this;
@@ -312,7 +292,6 @@ class ShardConfig
      */
     public function server($value): static
     {
-        $this->_usedProperties['server'] = true;
         $this->server = $value;
     
         return $this;
@@ -326,7 +305,6 @@ class ShardConfig
      */
     public function defaultDbname($value): static
     {
-        $this->_usedProperties['defaultDbname'] = true;
         $this->defaultDbname = $value;
     
         return $this;
@@ -340,7 +318,6 @@ class ShardConfig
      */
     public function sslmode($value): static
     {
-        $this->_usedProperties['sslmode'] = true;
         $this->sslmode = $value;
     
         return $this;
@@ -354,7 +331,6 @@ class ShardConfig
      */
     public function sslrootcert($value): static
     {
-        $this->_usedProperties['sslrootcert'] = true;
         $this->sslrootcert = $value;
     
         return $this;
@@ -368,7 +344,6 @@ class ShardConfig
      */
     public function sslcert($value): static
     {
-        $this->_usedProperties['sslcert'] = true;
         $this->sslcert = $value;
     
         return $this;
@@ -382,7 +357,6 @@ class ShardConfig
      */
     public function sslkey($value): static
     {
-        $this->_usedProperties['sslkey'] = true;
         $this->sslkey = $value;
     
         return $this;
@@ -396,7 +370,6 @@ class ShardConfig
      */
     public function sslcrl($value): static
     {
-        $this->_usedProperties['sslcrl'] = true;
         $this->sslcrl = $value;
     
         return $this;
@@ -410,7 +383,6 @@ class ShardConfig
      */
     public function pooled($value): static
     {
-        $this->_usedProperties['pooled'] = true;
         $this->pooled = $value;
     
         return $this;
@@ -424,7 +396,6 @@ class ShardConfig
      */
     public function multipleActiveResultSets($value): static
     {
-        $this->_usedProperties['multipleActiveResultSets'] = true;
         $this->multipleActiveResultSets = $value;
     
         return $this;
@@ -438,7 +409,6 @@ class ShardConfig
      */
     public function useSavepoints($value): static
     {
-        $this->_usedProperties['useSavepoints'] = true;
         $this->useSavepoints = $value;
     
         return $this;
@@ -452,7 +422,6 @@ class ShardConfig
      */
     public function instancename($value): static
     {
-        $this->_usedProperties['instancename'] = true;
         $this->instancename = $value;
     
         return $this;
@@ -466,7 +435,6 @@ class ShardConfig
      */
     public function connectstring($value): static
     {
-        $this->_usedProperties['connectstring'] = true;
         $this->connectstring = $value;
     
         return $this;
@@ -475,188 +443,157 @@ class ShardConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('id', $value)) {
-            $this->_usedProperties['id'] = true;
+        if (isset($value['id'])) {
             $this->id = $value['id'];
             unset($value['id']);
         }
     
-        if (array_key_exists('url', $value)) {
-            $this->_usedProperties['url'] = true;
+        if (isset($value['url'])) {
             $this->url = $value['url'];
             unset($value['url']);
         }
     
-        if (array_key_exists('dbname', $value)) {
-            $this->_usedProperties['dbname'] = true;
+        if (isset($value['dbname'])) {
             $this->dbname = $value['dbname'];
             unset($value['dbname']);
         }
     
-        if (array_key_exists('host', $value)) {
-            $this->_usedProperties['host'] = true;
+        if (isset($value['host'])) {
             $this->host = $value['host'];
             unset($value['host']);
         }
     
-        if (array_key_exists('port', $value)) {
-            $this->_usedProperties['port'] = true;
+        if (isset($value['port'])) {
             $this->port = $value['port'];
             unset($value['port']);
         }
     
-        if (array_key_exists('user', $value)) {
-            $this->_usedProperties['user'] = true;
+        if (isset($value['user'])) {
             $this->user = $value['user'];
             unset($value['user']);
         }
     
-        if (array_key_exists('password', $value)) {
-            $this->_usedProperties['password'] = true;
+        if (isset($value['password'])) {
             $this->password = $value['password'];
             unset($value['password']);
         }
     
-        if (array_key_exists('override_url', $value)) {
-            $this->_usedProperties['overrideUrl'] = true;
+        if (isset($value['override_url'])) {
             $this->overrideUrl = $value['override_url'];
             unset($value['override_url']);
         }
     
-        if (array_key_exists('dbname_suffix', $value)) {
-            $this->_usedProperties['dbnameSuffix'] = true;
+        if (isset($value['dbname_suffix'])) {
             $this->dbnameSuffix = $value['dbname_suffix'];
             unset($value['dbname_suffix']);
         }
     
-        if (array_key_exists('application_name', $value)) {
-            $this->_usedProperties['applicationName'] = true;
+        if (isset($value['application_name'])) {
             $this->applicationName = $value['application_name'];
             unset($value['application_name']);
         }
     
-        if (array_key_exists('charset', $value)) {
-            $this->_usedProperties['charset'] = true;
+        if (isset($value['charset'])) {
             $this->charset = $value['charset'];
             unset($value['charset']);
         }
     
-        if (array_key_exists('path', $value)) {
-            $this->_usedProperties['path'] = true;
+        if (isset($value['path'])) {
             $this->path = $value['path'];
             unset($value['path']);
         }
     
-        if (array_key_exists('memory', $value)) {
-            $this->_usedProperties['memory'] = true;
+        if (isset($value['memory'])) {
             $this->memory = $value['memory'];
             unset($value['memory']);
         }
     
-        if (array_key_exists('unix_socket', $value)) {
-            $this->_usedProperties['unixSocket'] = true;
+        if (isset($value['unix_socket'])) {
             $this->unixSocket = $value['unix_socket'];
             unset($value['unix_socket']);
         }
     
-        if (array_key_exists('persistent', $value)) {
-            $this->_usedProperties['persistent'] = true;
+        if (isset($value['persistent'])) {
             $this->persistent = $value['persistent'];
             unset($value['persistent']);
         }
     
-        if (array_key_exists('protocol', $value)) {
-            $this->_usedProperties['protocol'] = true;
+        if (isset($value['protocol'])) {
             $this->protocol = $value['protocol'];
             unset($value['protocol']);
         }
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
     
-        if (array_key_exists('servicename', $value)) {
-            $this->_usedProperties['servicename'] = true;
+        if (isset($value['servicename'])) {
             $this->servicename = $value['servicename'];
             unset($value['servicename']);
         }
     
-        if (array_key_exists('sessionMode', $value)) {
-            $this->_usedProperties['sessionMode'] = true;
+        if (isset($value['sessionMode'])) {
             $this->sessionMode = $value['sessionMode'];
             unset($value['sessionMode']);
         }
     
-        if (array_key_exists('server', $value)) {
-            $this->_usedProperties['server'] = true;
+        if (isset($value['server'])) {
             $this->server = $value['server'];
             unset($value['server']);
         }
     
-        if (array_key_exists('default_dbname', $value)) {
-            $this->_usedProperties['defaultDbname'] = true;
+        if (isset($value['default_dbname'])) {
             $this->defaultDbname = $value['default_dbname'];
             unset($value['default_dbname']);
         }
     
-        if (array_key_exists('sslmode', $value)) {
-            $this->_usedProperties['sslmode'] = true;
+        if (isset($value['sslmode'])) {
             $this->sslmode = $value['sslmode'];
             unset($value['sslmode']);
         }
     
-        if (array_key_exists('sslrootcert', $value)) {
-            $this->_usedProperties['sslrootcert'] = true;
+        if (isset($value['sslrootcert'])) {
             $this->sslrootcert = $value['sslrootcert'];
             unset($value['sslrootcert']);
         }
     
-        if (array_key_exists('sslcert', $value)) {
-            $this->_usedProperties['sslcert'] = true;
+        if (isset($value['sslcert'])) {
             $this->sslcert = $value['sslcert'];
             unset($value['sslcert']);
         }
     
-        if (array_key_exists('sslkey', $value)) {
-            $this->_usedProperties['sslkey'] = true;
+        if (isset($value['sslkey'])) {
             $this->sslkey = $value['sslkey'];
             unset($value['sslkey']);
         }
     
-        if (array_key_exists('sslcrl', $value)) {
-            $this->_usedProperties['sslcrl'] = true;
+        if (isset($value['sslcrl'])) {
             $this->sslcrl = $value['sslcrl'];
             unset($value['sslcrl']);
         }
     
-        if (array_key_exists('pooled', $value)) {
-            $this->_usedProperties['pooled'] = true;
+        if (isset($value['pooled'])) {
             $this->pooled = $value['pooled'];
             unset($value['pooled']);
         }
     
-        if (array_key_exists('MultipleActiveResultSets', $value)) {
-            $this->_usedProperties['multipleActiveResultSets'] = true;
+        if (isset($value['MultipleActiveResultSets'])) {
             $this->multipleActiveResultSets = $value['MultipleActiveResultSets'];
             unset($value['MultipleActiveResultSets']);
         }
     
-        if (array_key_exists('use_savepoints', $value)) {
-            $this->_usedProperties['useSavepoints'] = true;
+        if (isset($value['use_savepoints'])) {
             $this->useSavepoints = $value['use_savepoints'];
             unset($value['use_savepoints']);
         }
     
-        if (array_key_exists('instancename', $value)) {
-            $this->_usedProperties['instancename'] = true;
+        if (isset($value['instancename'])) {
             $this->instancename = $value['instancename'];
             unset($value['instancename']);
         }
     
-        if (array_key_exists('connectstring', $value)) {
-            $this->_usedProperties['connectstring'] = true;
+        if (isset($value['connectstring'])) {
             $this->connectstring = $value['connectstring'];
             unset($value['connectstring']);
         }
@@ -669,97 +606,97 @@ class ShardConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['id'])) {
+        if (null !== $this->id) {
             $output['id'] = $this->id;
         }
-        if (isset($this->_usedProperties['url'])) {
+        if (null !== $this->url) {
             $output['url'] = $this->url;
         }
-        if (isset($this->_usedProperties['dbname'])) {
+        if (null !== $this->dbname) {
             $output['dbname'] = $this->dbname;
         }
-        if (isset($this->_usedProperties['host'])) {
+        if (null !== $this->host) {
             $output['host'] = $this->host;
         }
-        if (isset($this->_usedProperties['port'])) {
+        if (null !== $this->port) {
             $output['port'] = $this->port;
         }
-        if (isset($this->_usedProperties['user'])) {
+        if (null !== $this->user) {
             $output['user'] = $this->user;
         }
-        if (isset($this->_usedProperties['password'])) {
+        if (null !== $this->password) {
             $output['password'] = $this->password;
         }
-        if (isset($this->_usedProperties['overrideUrl'])) {
+        if (null !== $this->overrideUrl) {
             $output['override_url'] = $this->overrideUrl;
         }
-        if (isset($this->_usedProperties['dbnameSuffix'])) {
+        if (null !== $this->dbnameSuffix) {
             $output['dbname_suffix'] = $this->dbnameSuffix;
         }
-        if (isset($this->_usedProperties['applicationName'])) {
+        if (null !== $this->applicationName) {
             $output['application_name'] = $this->applicationName;
         }
-        if (isset($this->_usedProperties['charset'])) {
+        if (null !== $this->charset) {
             $output['charset'] = $this->charset;
         }
-        if (isset($this->_usedProperties['path'])) {
+        if (null !== $this->path) {
             $output['path'] = $this->path;
         }
-        if (isset($this->_usedProperties['memory'])) {
+        if (null !== $this->memory) {
             $output['memory'] = $this->memory;
         }
-        if (isset($this->_usedProperties['unixSocket'])) {
+        if (null !== $this->unixSocket) {
             $output['unix_socket'] = $this->unixSocket;
         }
-        if (isset($this->_usedProperties['persistent'])) {
+        if (null !== $this->persistent) {
             $output['persistent'] = $this->persistent;
         }
-        if (isset($this->_usedProperties['protocol'])) {
+        if (null !== $this->protocol) {
             $output['protocol'] = $this->protocol;
         }
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
-        if (isset($this->_usedProperties['servicename'])) {
+        if (null !== $this->servicename) {
             $output['servicename'] = $this->servicename;
         }
-        if (isset($this->_usedProperties['sessionMode'])) {
+        if (null !== $this->sessionMode) {
             $output['sessionMode'] = $this->sessionMode;
         }
-        if (isset($this->_usedProperties['server'])) {
+        if (null !== $this->server) {
             $output['server'] = $this->server;
         }
-        if (isset($this->_usedProperties['defaultDbname'])) {
+        if (null !== $this->defaultDbname) {
             $output['default_dbname'] = $this->defaultDbname;
         }
-        if (isset($this->_usedProperties['sslmode'])) {
+        if (null !== $this->sslmode) {
             $output['sslmode'] = $this->sslmode;
         }
-        if (isset($this->_usedProperties['sslrootcert'])) {
+        if (null !== $this->sslrootcert) {
             $output['sslrootcert'] = $this->sslrootcert;
         }
-        if (isset($this->_usedProperties['sslcert'])) {
+        if (null !== $this->sslcert) {
             $output['sslcert'] = $this->sslcert;
         }
-        if (isset($this->_usedProperties['sslkey'])) {
+        if (null !== $this->sslkey) {
             $output['sslkey'] = $this->sslkey;
         }
-        if (isset($this->_usedProperties['sslcrl'])) {
+        if (null !== $this->sslcrl) {
             $output['sslcrl'] = $this->sslcrl;
         }
-        if (isset($this->_usedProperties['pooled'])) {
+        if (null !== $this->pooled) {
             $output['pooled'] = $this->pooled;
         }
-        if (isset($this->_usedProperties['multipleActiveResultSets'])) {
+        if (null !== $this->multipleActiveResultSets) {
             $output['MultipleActiveResultSets'] = $this->multipleActiveResultSets;
         }
-        if (isset($this->_usedProperties['useSavepoints'])) {
+        if (null !== $this->useSavepoints) {
             $output['use_savepoints'] = $this->useSavepoints;
         }
-        if (isset($this->_usedProperties['instancename'])) {
+        if (null !== $this->instancename) {
             $output['instancename'] = $this->instancename;
         }
-        if (isset($this->_usedProperties['connectstring'])) {
+        if (null !== $this->connectstring) {
             $output['connectstring'] = $this->connectstring;
         }
     

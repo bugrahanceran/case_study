@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class PseudoLocalizationConfig 
 {
@@ -18,7 +18,6 @@ class PseudoLocalizationConfig
     private $brackets;
     private $parseHtml;
     private $localizableHtmlAttributes;
-    private $_usedProperties = [];
     
     /**
      * @default false
@@ -27,7 +26,6 @@ class PseudoLocalizationConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -40,7 +38,6 @@ class PseudoLocalizationConfig
      */
     public function accents($value): static
     {
-        $this->_usedProperties['accents'] = true;
         $this->accents = $value;
     
         return $this;
@@ -53,7 +50,6 @@ class PseudoLocalizationConfig
      */
     public function expansionFactor($value): static
     {
-        $this->_usedProperties['expansionFactor'] = true;
         $this->expansionFactor = $value;
     
         return $this;
@@ -66,7 +62,6 @@ class PseudoLocalizationConfig
      */
     public function brackets($value): static
     {
-        $this->_usedProperties['brackets'] = true;
         $this->brackets = $value;
     
         return $this;
@@ -79,7 +74,6 @@ class PseudoLocalizationConfig
      */
     public function parseHtml($value): static
     {
-        $this->_usedProperties['parseHtml'] = true;
         $this->parseHtml = $value;
     
         return $this;
@@ -92,7 +86,6 @@ class PseudoLocalizationConfig
      */
     public function localizableHtmlAttributes(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['localizableHtmlAttributes'] = true;
         $this->localizableHtmlAttributes = $value;
     
         return $this;
@@ -101,38 +94,32 @@ class PseudoLocalizationConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('accents', $value)) {
-            $this->_usedProperties['accents'] = true;
+        if (isset($value['accents'])) {
             $this->accents = $value['accents'];
             unset($value['accents']);
         }
     
-        if (array_key_exists('expansion_factor', $value)) {
-            $this->_usedProperties['expansionFactor'] = true;
+        if (isset($value['expansion_factor'])) {
             $this->expansionFactor = $value['expansion_factor'];
             unset($value['expansion_factor']);
         }
     
-        if (array_key_exists('brackets', $value)) {
-            $this->_usedProperties['brackets'] = true;
+        if (isset($value['brackets'])) {
             $this->brackets = $value['brackets'];
             unset($value['brackets']);
         }
     
-        if (array_key_exists('parse_html', $value)) {
-            $this->_usedProperties['parseHtml'] = true;
+        if (isset($value['parse_html'])) {
             $this->parseHtml = $value['parse_html'];
             unset($value['parse_html']);
         }
     
-        if (array_key_exists('localizable_html_attributes', $value)) {
-            $this->_usedProperties['localizableHtmlAttributes'] = true;
+        if (isset($value['localizable_html_attributes'])) {
             $this->localizableHtmlAttributes = $value['localizable_html_attributes'];
             unset($value['localizable_html_attributes']);
         }
@@ -145,22 +132,22 @@ class PseudoLocalizationConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['accents'])) {
+        if (null !== $this->accents) {
             $output['accents'] = $this->accents;
         }
-        if (isset($this->_usedProperties['expansionFactor'])) {
+        if (null !== $this->expansionFactor) {
             $output['expansion_factor'] = $this->expansionFactor;
         }
-        if (isset($this->_usedProperties['brackets'])) {
+        if (null !== $this->brackets) {
             $output['brackets'] = $this->brackets;
         }
-        if (isset($this->_usedProperties['parseHtml'])) {
+        if (null !== $this->parseHtml) {
             $output['parse_html'] = $this->parseHtml;
         }
-        if (isset($this->_usedProperties['localizableHtmlAttributes'])) {
+        if (null !== $this->localizableHtmlAttributes) {
             $output['localizable_html_attributes'] = $this->localizableHtmlAttributes;
         }
     

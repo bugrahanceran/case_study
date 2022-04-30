@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class PhpErrorsConfig 
 {
     private $log;
     private $throw;
-    private $_usedProperties = [];
     
     /**
      * Use the application logger instead of the PHP logger for logging PHP errors.
@@ -26,7 +25,6 @@ class PhpErrorsConfig
      */
     public function log(mixed $value = true): static
     {
-        $this->_usedProperties['log'] = true;
         $this->log = $value;
     
         return $this;
@@ -40,7 +38,6 @@ class PhpErrorsConfig
      */
     public function throw($value): static
     {
-        $this->_usedProperties['throw'] = true;
         $this->throw = $value;
     
         return $this;
@@ -49,14 +46,12 @@ class PhpErrorsConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('log', $value)) {
-            $this->_usedProperties['log'] = true;
+        if (isset($value['log'])) {
             $this->log = $value['log'];
             unset($value['log']);
         }
     
-        if (array_key_exists('throw', $value)) {
-            $this->_usedProperties['throw'] = true;
+        if (isset($value['throw'])) {
             $this->throw = $value['throw'];
             unset($value['throw']);
         }
@@ -69,10 +64,10 @@ class PhpErrorsConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['log'])) {
+        if (null !== $this->log) {
             $output['log'] = $this->log;
         }
-        if (isset($this->_usedProperties['throw'])) {
+        if (null !== $this->throw) {
             $output['throw'] = $this->throw;
         }
     

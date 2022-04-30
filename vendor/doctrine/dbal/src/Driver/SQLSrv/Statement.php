@@ -47,14 +47,14 @@ final class Statement implements StatementInterface
     /**
      * References to the variables bound as statement parameters.
      *
-     * @var array<int, mixed>
+     * @var mixed
      */
     private $variables = [];
 
     /**
      * Bound parameter types.
      *
-     * @var array<int, int>
+     * @var int[]
      */
     private $types = [];
 

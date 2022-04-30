@@ -327,9 +327,9 @@ class QueryBuilder
     /**
      * Executes this query using the bound parameters and their types.
      *
-     * @deprecated Use {@see executeQuery()} or {@see executeStatement()} instead.
+     * @deprecated Use {@link executeQuery()} or {@link executeStatement()} instead.
      *
-     * @return Result|int|string
+     * @return Result|int
      *
      * @throws Exception
      */
@@ -1437,7 +1437,7 @@ class QueryBuilder
     /**
      * Creates a new named parameter and bind the value $value to it.
      *
-     * This method provides a shortcut for {@see Statement::bindValue()}
+     * This method provides a shortcut for {@link Statement::bindValue()}
      * when using prepared statements.
      *
      * The parameter $value specifies the value that you want to bind. If

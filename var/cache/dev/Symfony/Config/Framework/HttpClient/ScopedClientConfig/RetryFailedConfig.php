@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class RetryFailedConfig 
 {
@@ -21,7 +21,6 @@ class RetryFailedConfig
     private $multiplier;
     private $maxDelay;
     private $jitter;
-    private $_usedProperties = [];
     
     /**
      * @default false
@@ -30,7 +29,6 @@ class RetryFailedConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -44,7 +42,6 @@ class RetryFailedConfig
      */
     public function retryStrategy($value): static
     {
-        $this->_usedProperties['retryStrategy'] = true;
         $this->retryStrategy = $value;
     
         return $this;
@@ -53,8 +50,6 @@ class RetryFailedConfig
     public function httpCode(string $code, array $value = []): \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailed\HttpCodeConfig
     {
         if (!isset($this->httpCodes[$code])) {
-            $this->_usedProperties['httpCodes'] = true;
-    
             return $this->httpCodes[$code] = new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailed\HttpCodeConfig($value);
         }
         if ([] === $value) {
@@ -71,7 +66,6 @@ class RetryFailedConfig
      */
     public function maxRetries($value): static
     {
-        $this->_usedProperties['maxRetries'] = true;
         $this->maxRetries = $value;
     
         return $this;
@@ -85,7 +79,6 @@ class RetryFailedConfig
      */
     public function delay($value): static
     {
-        $this->_usedProperties['delay'] = true;
         $this->delay = $value;
     
         return $this;
@@ -99,7 +92,6 @@ class RetryFailedConfig
      */
     public function multiplier($value): static
     {
-        $this->_usedProperties['multiplier'] = true;
         $this->multiplier = $value;
     
         return $this;
@@ -113,7 +105,6 @@ class RetryFailedConfig
      */
     public function maxDelay($value): static
     {
-        $this->_usedProperties['maxDelay'] = true;
         $this->maxDelay = $value;
     
         return $this;
@@ -127,7 +118,6 @@ class RetryFailedConfig
      */
     public function jitter($value): static
     {
-        $this->_usedProperties['jitter'] = true;
         $this->jitter = $value;
     
         return $this;
@@ -136,50 +126,42 @@ class RetryFailedConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('retry_strategy', $value)) {
-            $this->_usedProperties['retryStrategy'] = true;
+        if (isset($value['retry_strategy'])) {
             $this->retryStrategy = $value['retry_strategy'];
             unset($value['retry_strategy']);
         }
     
-        if (array_key_exists('http_codes', $value)) {
-            $this->_usedProperties['httpCodes'] = true;
+        if (isset($value['http_codes'])) {
             $this->httpCodes = array_map(function ($v) { return new \Symfony\Config\Framework\HttpClient\ScopedClientConfig\RetryFailed\HttpCodeConfig($v); }, $value['http_codes']);
             unset($value['http_codes']);
         }
     
-        if (array_key_exists('max_retries', $value)) {
-            $this->_usedProperties['maxRetries'] = true;
+        if (isset($value['max_retries'])) {
             $this->maxRetries = $value['max_retries'];
             unset($value['max_retries']);
         }
     
-        if (array_key_exists('delay', $value)) {
-            $this->_usedProperties['delay'] = true;
+        if (isset($value['delay'])) {
             $this->delay = $value['delay'];
             unset($value['delay']);
         }
     
-        if (array_key_exists('multiplier', $value)) {
-            $this->_usedProperties['multiplier'] = true;
+        if (isset($value['multiplier'])) {
             $this->multiplier = $value['multiplier'];
             unset($value['multiplier']);
         }
     
-        if (array_key_exists('max_delay', $value)) {
-            $this->_usedProperties['maxDelay'] = true;
+        if (isset($value['max_delay'])) {
             $this->maxDelay = $value['max_delay'];
             unset($value['max_delay']);
         }
     
-        if (array_key_exists('jitter', $value)) {
-            $this->_usedProperties['jitter'] = true;
+        if (isset($value['jitter'])) {
             $this->jitter = $value['jitter'];
             unset($value['jitter']);
         }
@@ -192,28 +174,28 @@ class RetryFailedConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['retryStrategy'])) {
+        if (null !== $this->retryStrategy) {
             $output['retry_strategy'] = $this->retryStrategy;
         }
-        if (isset($this->_usedProperties['httpCodes'])) {
+        if (null !== $this->httpCodes) {
             $output['http_codes'] = array_map(function ($v) { return $v->toArray(); }, $this->httpCodes);
         }
-        if (isset($this->_usedProperties['maxRetries'])) {
+        if (null !== $this->maxRetries) {
             $output['max_retries'] = $this->maxRetries;
         }
-        if (isset($this->_usedProperties['delay'])) {
+        if (null !== $this->delay) {
             $output['delay'] = $this->delay;
         }
-        if (isset($this->_usedProperties['multiplier'])) {
+        if (null !== $this->multiplier) {
             $output['multiplier'] = $this->multiplier;
         }
-        if (isset($this->_usedProperties['maxDelay'])) {
+        if (null !== $this->maxDelay) {
             $output['max_delay'] = $this->maxDelay;
         }
-        if (isset($this->_usedProperties['jitter'])) {
+        if (null !== $this->jitter) {
             $output['jitter'] = $this->jitter;
         }
     

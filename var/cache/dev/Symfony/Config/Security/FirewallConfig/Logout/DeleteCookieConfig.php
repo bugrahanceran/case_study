@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class DeleteCookieConfig 
 {
@@ -16,7 +16,6 @@ class DeleteCookieConfig
     private $domain;
     private $secure;
     private $samesite;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -25,7 +24,6 @@ class DeleteCookieConfig
      */
     public function path($value): static
     {
-        $this->_usedProperties['path'] = true;
         $this->path = $value;
     
         return $this;
@@ -38,7 +36,6 @@ class DeleteCookieConfig
      */
     public function domain($value): static
     {
-        $this->_usedProperties['domain'] = true;
         $this->domain = $value;
     
         return $this;
@@ -51,7 +48,6 @@ class DeleteCookieConfig
      */
     public function secure($value): static
     {
-        $this->_usedProperties['secure'] = true;
         $this->secure = $value;
     
         return $this;
@@ -64,7 +60,6 @@ class DeleteCookieConfig
      */
     public function samesite($value): static
     {
-        $this->_usedProperties['samesite'] = true;
         $this->samesite = $value;
     
         return $this;
@@ -73,26 +68,22 @@ class DeleteCookieConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('path', $value)) {
-            $this->_usedProperties['path'] = true;
+        if (isset($value['path'])) {
             $this->path = $value['path'];
             unset($value['path']);
         }
     
-        if (array_key_exists('domain', $value)) {
-            $this->_usedProperties['domain'] = true;
+        if (isset($value['domain'])) {
             $this->domain = $value['domain'];
             unset($value['domain']);
         }
     
-        if (array_key_exists('secure', $value)) {
-            $this->_usedProperties['secure'] = true;
+        if (isset($value['secure'])) {
             $this->secure = $value['secure'];
             unset($value['secure']);
         }
     
-        if (array_key_exists('samesite', $value)) {
-            $this->_usedProperties['samesite'] = true;
+        if (isset($value['samesite'])) {
             $this->samesite = $value['samesite'];
             unset($value['samesite']);
         }
@@ -105,16 +96,16 @@ class DeleteCookieConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['path'])) {
+        if (null !== $this->path) {
             $output['path'] = $this->path;
         }
-        if (isset($this->_usedProperties['domain'])) {
+        if (null !== $this->domain) {
             $output['domain'] = $this->domain;
         }
-        if (isset($this->_usedProperties['secure'])) {
+        if (null !== $this->secure) {
             $output['secure'] = $this->secure;
         }
-        if (isset($this->_usedProperties['samesite'])) {
+        if (null !== $this->samesite) {
             $output['samesite'] = $this->samesite;
         }
     

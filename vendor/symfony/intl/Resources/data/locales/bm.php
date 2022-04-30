@@ -106,7 +106,6 @@ return [
         'en_MS' => 'angilɛkan (Moŋsera)',
         'en_MT' => 'angilɛkan (Malti)',
         'en_MU' => 'angilɛkan (Morisi)',
-        'en_MV' => 'angilɛkan (Maldivi)',
         'en_MW' => 'angilɛkan (Malawi)',
         'en_MY' => 'angilɛkan (Malɛzi)',
         'en_NA' => 'angilɛkan (Namibi)',

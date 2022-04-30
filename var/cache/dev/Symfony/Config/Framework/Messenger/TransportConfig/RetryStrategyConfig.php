@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class RetryStrategyConfig 
 {
@@ -17,7 +17,6 @@ class RetryStrategyConfig
     private $delay;
     private $multiplier;
     private $maxDelay;
-    private $_usedProperties = [];
     
     /**
      * Service id to override the retry strategy entirely
@@ -27,7 +26,6 @@ class RetryStrategyConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -40,7 +38,6 @@ class RetryStrategyConfig
      */
     public function maxRetries($value): static
     {
-        $this->_usedProperties['maxRetries'] = true;
         $this->maxRetries = $value;
     
         return $this;
@@ -54,7 +51,6 @@ class RetryStrategyConfig
      */
     public function delay($value): static
     {
-        $this->_usedProperties['delay'] = true;
         $this->delay = $value;
     
         return $this;
@@ -68,7 +64,6 @@ class RetryStrategyConfig
      */
     public function multiplier($value): static
     {
-        $this->_usedProperties['multiplier'] = true;
         $this->multiplier = $value;
     
         return $this;
@@ -82,7 +77,6 @@ class RetryStrategyConfig
      */
     public function maxDelay($value): static
     {
-        $this->_usedProperties['maxDelay'] = true;
         $this->maxDelay = $value;
     
         return $this;
@@ -91,32 +85,27 @@ class RetryStrategyConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
     
-        if (array_key_exists('max_retries', $value)) {
-            $this->_usedProperties['maxRetries'] = true;
+        if (isset($value['max_retries'])) {
             $this->maxRetries = $value['max_retries'];
             unset($value['max_retries']);
         }
     
-        if (array_key_exists('delay', $value)) {
-            $this->_usedProperties['delay'] = true;
+        if (isset($value['delay'])) {
             $this->delay = $value['delay'];
             unset($value['delay']);
         }
     
-        if (array_key_exists('multiplier', $value)) {
-            $this->_usedProperties['multiplier'] = true;
+        if (isset($value['multiplier'])) {
             $this->multiplier = $value['multiplier'];
             unset($value['multiplier']);
         }
     
-        if (array_key_exists('max_delay', $value)) {
-            $this->_usedProperties['maxDelay'] = true;
+        if (isset($value['max_delay'])) {
             $this->maxDelay = $value['max_delay'];
             unset($value['max_delay']);
         }
@@ -129,19 +118,19 @@ class RetryStrategyConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
-        if (isset($this->_usedProperties['maxRetries'])) {
+        if (null !== $this->maxRetries) {
             $output['max_retries'] = $this->maxRetries;
         }
-        if (isset($this->_usedProperties['delay'])) {
+        if (null !== $this->delay) {
             $output['delay'] = $this->delay;
         }
-        if (isset($this->_usedProperties['multiplier'])) {
+        if (null !== $this->multiplier) {
             $output['multiplier'] = $this->multiplier;
         }
-        if (isset($this->_usedProperties['maxDelay'])) {
+        if (null !== $this->maxDelay) {
             $output['max_delay'] = $this->maxDelay;
         }
     

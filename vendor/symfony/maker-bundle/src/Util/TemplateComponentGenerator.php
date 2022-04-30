@@ -11,9 +11,6 @@
 
 namespace Symfony\Bundle\MakerBundle\Util;
 
-use ReflectionClass;
-use ReflectionException;
-
 /**
  * @author Jesse Rushlow <jr@rushlow.dev>
  *
@@ -98,15 +95,5 @@ final class TemplateComponentGenerator
         }
 
         return sprintf('%s ', $classNameDetails->getShortName());
-    }
-
-    /**
-     * @throws ReflectionException
-     */
-    public function repositoryHasAddRemoveMethods(string $repositoryFullClassName): bool
-    {
-        $reflectedComponents = new ReflectionClass($repositoryFullClassName);
-
-        return $reflectedComponents->hasMethod('add') && $reflectedComponents->hasMethod('remove');
     }
 }

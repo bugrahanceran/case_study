@@ -8,14 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class EntityConfig 
 {
     private $class;
     private $property;
     private $managerName;
-    private $_usedProperties = [];
     
     /**
      * The full entity class name of your user class.
@@ -25,7 +24,6 @@ class EntityConfig
      */
     public function class($value): static
     {
-        $this->_usedProperties['class'] = true;
         $this->class = $value;
     
         return $this;
@@ -38,7 +36,6 @@ class EntityConfig
      */
     public function property($value): static
     {
-        $this->_usedProperties['property'] = true;
         $this->property = $value;
     
         return $this;
@@ -51,7 +48,6 @@ class EntityConfig
      */
     public function managerName($value): static
     {
-        $this->_usedProperties['managerName'] = true;
         $this->managerName = $value;
     
         return $this;
@@ -60,20 +56,17 @@ class EntityConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('class', $value)) {
-            $this->_usedProperties['class'] = true;
+        if (isset($value['class'])) {
             $this->class = $value['class'];
             unset($value['class']);
         }
     
-        if (array_key_exists('property', $value)) {
-            $this->_usedProperties['property'] = true;
+        if (isset($value['property'])) {
             $this->property = $value['property'];
             unset($value['property']);
         }
     
-        if (array_key_exists('manager_name', $value)) {
-            $this->_usedProperties['managerName'] = true;
+        if (isset($value['manager_name'])) {
             $this->managerName = $value['manager_name'];
             unset($value['manager_name']);
         }
@@ -86,13 +79,13 @@ class EntityConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['class'])) {
+        if (null !== $this->class) {
             $output['class'] = $this->class;
         }
-        if (isset($this->_usedProperties['property'])) {
+        if (null !== $this->property) {
             $output['property'] = $this->property;
         }
-        if (isset($this->_usedProperties['managerName'])) {
+        if (null !== $this->managerName) {
             $output['manager_name'] = $this->managerName;
         }
     

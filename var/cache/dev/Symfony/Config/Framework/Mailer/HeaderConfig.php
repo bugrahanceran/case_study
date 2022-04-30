@@ -8,12 +8,11 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class HeaderConfig 
 {
     private $value;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class HeaderConfig
      */
     public function value(mixed $value): static
     {
-        $this->_usedProperties['value'] = true;
         $this->value = $value;
     
         return $this;
@@ -32,8 +30,7 @@ class HeaderConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('value', $value)) {
-            $this->_usedProperties['value'] = true;
+        if (isset($value['value'])) {
             $this->value = $value['value'];
             unset($value['value']);
         }
@@ -46,7 +43,7 @@ class HeaderConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['value'])) {
+        if (null !== $this->value) {
             $output['value'] = $this->value;
         }
     

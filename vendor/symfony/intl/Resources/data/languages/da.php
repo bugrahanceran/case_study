@@ -89,7 +89,7 @@ return [
         'co' => 'korsikansk',
         'cop' => 'koptisk',
         'cr' => 'cree',
-        'crh' => 'krimtatarisk',
+        'crh' => 'krim-tyrkisk',
         'crs' => 'seselwa (kreol-fransk)',
         'cs' => 'tjekkisk',
         'csb' => 'kasjubisk',

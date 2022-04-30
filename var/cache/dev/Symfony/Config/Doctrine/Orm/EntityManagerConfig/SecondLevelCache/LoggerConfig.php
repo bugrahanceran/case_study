@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class LoggerConfig 
 {
     private $name;
     private $service;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class LoggerConfig
      */
     public function name($value): static
     {
-        $this->_usedProperties['name'] = true;
         $this->name = $value;
     
         return $this;
@@ -36,7 +34,6 @@ class LoggerConfig
      */
     public function service($value): static
     {
-        $this->_usedProperties['service'] = true;
         $this->service = $value;
     
         return $this;
@@ -45,14 +42,12 @@ class LoggerConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('name', $value)) {
-            $this->_usedProperties['name'] = true;
+        if (isset($value['name'])) {
             $this->name = $value['name'];
             unset($value['name']);
         }
     
-        if (array_key_exists('service', $value)) {
-            $this->_usedProperties['service'] = true;
+        if (isset($value['service'])) {
             $this->service = $value['service'];
             unset($value['service']);
         }
@@ -65,10 +60,10 @@ class LoggerConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['name'])) {
+        if (null !== $this->name) {
             $output['name'] = $this->name;
         }
-        if (isset($this->_usedProperties['service'])) {
+        if (null !== $this->service) {
             $output['service'] = $this->service;
         }
     

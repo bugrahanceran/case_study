@@ -107,7 +107,7 @@ return [
         'cop' => 'Kıptice',
         'cps' => 'Capiznon',
         'cr' => 'Krice',
-        'crh' => 'Kırım Tatarcası',
+        'crh' => 'Kırım Türkçesi',
         'crs' => 'Seselwa Kreole Fransızcası',
         'cs' => 'Çekçe',
         'csb' => 'Kashubian',

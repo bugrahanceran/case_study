@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Tools\Console;
 
-use Composer\InstalledVersions;
 use Doctrine\DBAL\Tools\Console as DBALConsole;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\ConnectionFromManagerProvider;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\HelperSetManagerProvider;
 use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
 use OutOfBoundsException;
+use PackageVersions\Versions;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Helper\HelperSet;
 
-use function assert;
 use function class_exists;
 
 /**
@@ -25,8 +24,6 @@ final class ConsoleRunner
 {
     /**
      * Create a Symfony Console HelperSet
-     *
-     * @deprecated This method will be removed in ORM 3.0 without replacement.
      */
     public static function createHelperSet(EntityManagerInterface $entityManager): HelperSet
     {
@@ -62,10 +59,7 @@ final class ConsoleRunner
      */
     public static function createApplication($helperSetOrProvider, array $commands = []): Application
     {
-        $version = InstalledVersions::getVersion('doctrine/orm');
-        assert($version !== null);
-
-        $cli = new Application('Doctrine Command Line Interface', $version);
+        $cli = new Application('Doctrine Command Line Interface', Versions::getVersion('doctrine/orm'));
         $cli->setCatchExceptions(true);
 
         if ($helperSetOrProvider instanceof HelperSet) {
@@ -122,9 +116,6 @@ final class ConsoleRunner
         );
     }
 
-    /**
-     * @deprecated This method will be removed in ORM 3.0 without replacement.
-     */
     public static function printCliConfigTemplate(): void
     {
         echo <<<'HELP'

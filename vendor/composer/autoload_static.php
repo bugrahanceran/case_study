@@ -119,8 +119,10 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+            'ProxyManager\\' => 13,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
+            'PackageVersions\\' => 16,
         ),
         'M' => 
         array (
@@ -132,6 +134,7 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'League\\Uri\\' => 11,
             'League\\Config\\' => 14,
             'League\\CommonMark\\' => 18,
+            'Laminas\\Code\\' => 13,
         ),
         'H' => 
         array (
@@ -151,6 +154,7 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'Doctrine\\SqlFormatter\\' => 22,
             'Doctrine\\Persistence\\' => 21,
             'Doctrine\\ORM\\' => 13,
+            'Doctrine\\Migrations\\' => 20,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Deprecations\\' => 22,
@@ -161,6 +165,7 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
+            'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\FixturesBundle\\' => 31,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
             'Dflydev\\DotAccessData\\' => 22,
@@ -178,8 +183,8 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -471,7 +476,7 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         ),
         'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/src',
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
@@ -485,6 +490,10 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'ProxyManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager',
+        ),
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
@@ -492,6 +501,10 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PackageVersions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
         ),
         'Monolog\\' => 
         array (
@@ -512,6 +525,10 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         'League\\CommonMark\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
+        ),
+        'Laminas\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
         ),
         'HtmlSanitizer\\Bundle\\' => 
         array (
@@ -535,11 +552,15 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         ),
         'Doctrine\\Persistence\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence',
+            0 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence',
         ),
         'Doctrine\\ORM\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM',
+        ),
+        'Doctrine\\Migrations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/migrations/lib/Doctrine/Migrations',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -581,6 +602,11 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
             1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
+            2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
+        ),
+        'Doctrine\\Bundle\\MigrationsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle',
         ),
         'Doctrine\\Bundle\\FixturesBundle\\' => 
         array (

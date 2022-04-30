@@ -63,8 +63,6 @@ return [
         'ha_NG' => 'haúça (Nigéria)',
         'hi' => 'hindi',
         'hi_IN' => 'hindi (Índia)',
-        'hi_Latn' => 'hindi (latim)',
-        'hi_Latn_IN' => 'hindi (latim, Índia)',
         'hy' => 'arménio',
         'hy_AM' => 'arménio (Arménia)',
         'it_SM' => 'italiano (São Marinho)',

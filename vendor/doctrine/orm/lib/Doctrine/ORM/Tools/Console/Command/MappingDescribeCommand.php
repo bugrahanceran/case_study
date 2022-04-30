@@ -19,7 +19,7 @@ use function array_map;
 use function array_merge;
 use function count;
 use function current;
-use function get_debug_type;
+use function get_class;
 use function implode;
 use function is_array;
 use function is_bool;
@@ -108,7 +108,6 @@ EOT
                     $this->formatField('Table', $metadata->table),
                     $this->formatField('Composite identifier?', $metadata->isIdentifierComposite),
                     $this->formatField('Foreign identifier?', $metadata->containsForeignIdentifier),
-                    $this->formatField('Enum identifier?', $metadata->containsEnumIdentifier),
                     $this->formatField('Sequence generator definition', $metadata->sequenceGeneratorDefinition),
                     $this->formatField('Change tracking policy', $metadata->changeTrackingPolicy),
                     $this->formatField('Versioned?', $metadata->isVersioned),
@@ -215,7 +214,7 @@ EOT
         }
 
         if (is_object($value)) {
-            return sprintf('<%s>', get_debug_type($value));
+            return sprintf('<%s>', get_class($value));
         }
 
         if (is_scalar($value)) {

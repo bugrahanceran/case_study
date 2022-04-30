@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class AdminRecipientConfig 
 {
     private $email;
     private $phone;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class AdminRecipientConfig
      */
     public function email($value): static
     {
-        $this->_usedProperties['email'] = true;
         $this->email = $value;
     
         return $this;
@@ -35,7 +33,6 @@ class AdminRecipientConfig
      */
     public function phone($value): static
     {
-        $this->_usedProperties['phone'] = true;
         $this->phone = $value;
     
         return $this;
@@ -44,14 +41,12 @@ class AdminRecipientConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('email', $value)) {
-            $this->_usedProperties['email'] = true;
+        if (isset($value['email'])) {
             $this->email = $value['email'];
             unset($value['email']);
         }
     
-        if (array_key_exists('phone', $value)) {
-            $this->_usedProperties['phone'] = true;
+        if (isset($value['phone'])) {
             $this->phone = $value['phone'];
             unset($value['phone']);
         }
@@ -64,10 +59,10 @@ class AdminRecipientConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['email'])) {
+        if (null !== $this->email) {
             $output['email'] = $this->email;
         }
-        if (isset($this->_usedProperties['phone'])) {
+        if (null !== $this->phone) {
             $output['phone'] = $this->phone;
         }
     

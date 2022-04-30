@@ -13,10 +13,8 @@ namespace Symfony\Component\Mailer;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Mailer\Event\MessageEvent;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\Messenger\SendEmailMessage;
 use Symfony\Component\Mailer\Transport\TransportInterface;
-use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Mime\RawMessage;
 
@@ -51,15 +49,6 @@ final class Mailer implements MailerInterface
             $this->dispatcher->dispatch($event);
         }
 
-        try {
-            $this->bus->dispatch(new SendEmailMessage($message, $envelope));
-        } catch (HandlerFailedException $e) {
-            foreach ($e->getNestedExceptions() as $nested) {
-                if ($nested instanceof TransportExceptionInterface) {
-                    throw $nested;
-                }
-            }
-            throw $e;
-        }
+        $this->bus->dispatch(new SendEmailMessage($message, $envelope));
     }
 }

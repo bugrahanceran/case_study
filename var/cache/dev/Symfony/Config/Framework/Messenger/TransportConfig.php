@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class TransportConfig 
 {
@@ -18,7 +18,6 @@ class TransportConfig
     private $options;
     private $failureTransport;
     private $retryStrategy;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -27,7 +26,6 @@ class TransportConfig
      */
     public function dsn($value): static
     {
-        $this->_usedProperties['dsn'] = true;
         $this->dsn = $value;
     
         return $this;
@@ -41,7 +39,6 @@ class TransportConfig
      */
     public function serializer($value): static
     {
-        $this->_usedProperties['serializer'] = true;
         $this->serializer = $value;
     
         return $this;
@@ -54,7 +51,6 @@ class TransportConfig
      */
     public function options(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['options'] = true;
         $this->options = $value;
     
         return $this;
@@ -68,7 +64,6 @@ class TransportConfig
      */
     public function failureTransport($value): static
     {
-        $this->_usedProperties['failureTransport'] = true;
         $this->failureTransport = $value;
     
         return $this;
@@ -77,7 +72,6 @@ class TransportConfig
     public function retryStrategy(array $value = []): \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig
     {
         if (null === $this->retryStrategy) {
-            $this->_usedProperties['retryStrategy'] = true;
             $this->retryStrategy = new \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "retryStrategy()" has already been initialized. You cannot pass values the second time you call retryStrategy().');
@@ -89,32 +83,27 @@ class TransportConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('dsn', $value)) {
-            $this->_usedProperties['dsn'] = true;
+        if (isset($value['dsn'])) {
             $this->dsn = $value['dsn'];
             unset($value['dsn']);
         }
     
-        if (array_key_exists('serializer', $value)) {
-            $this->_usedProperties['serializer'] = true;
+        if (isset($value['serializer'])) {
             $this->serializer = $value['serializer'];
             unset($value['serializer']);
         }
     
-        if (array_key_exists('options', $value)) {
-            $this->_usedProperties['options'] = true;
+        if (isset($value['options'])) {
             $this->options = $value['options'];
             unset($value['options']);
         }
     
-        if (array_key_exists('failure_transport', $value)) {
-            $this->_usedProperties['failureTransport'] = true;
+        if (isset($value['failure_transport'])) {
             $this->failureTransport = $value['failure_transport'];
             unset($value['failure_transport']);
         }
     
-        if (array_key_exists('retry_strategy', $value)) {
-            $this->_usedProperties['retryStrategy'] = true;
+        if (isset($value['retry_strategy'])) {
             $this->retryStrategy = new \Symfony\Config\Framework\Messenger\TransportConfig\RetryStrategyConfig($value['retry_strategy']);
             unset($value['retry_strategy']);
         }
@@ -127,19 +116,19 @@ class TransportConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['dsn'])) {
+        if (null !== $this->dsn) {
             $output['dsn'] = $this->dsn;
         }
-        if (isset($this->_usedProperties['serializer'])) {
+        if (null !== $this->serializer) {
             $output['serializer'] = $this->serializer;
         }
-        if (isset($this->_usedProperties['options'])) {
+        if (null !== $this->options) {
             $output['options'] = $this->options;
         }
-        if (isset($this->_usedProperties['failureTransport'])) {
+        if (null !== $this->failureTransport) {
             $output['failure_transport'] = $this->failureTransport;
         }
-        if (isset($this->_usedProperties['retryStrategy'])) {
+        if (null !== $this->retryStrategy) {
             $output['retry_strategy'] = $this->retryStrategy->toArray();
         }
     

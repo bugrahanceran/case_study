@@ -8,14 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ProviderConfig 
 {
     private $dsn;
     private $domains;
     private $locales;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -24,7 +23,6 @@ class ProviderConfig
      */
     public function dsn($value): static
     {
-        $this->_usedProperties['dsn'] = true;
         $this->dsn = $value;
     
         return $this;
@@ -37,7 +35,6 @@ class ProviderConfig
      */
     public function domains(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['domains'] = true;
         $this->domains = $value;
     
         return $this;
@@ -50,7 +47,6 @@ class ProviderConfig
      */
     public function locales(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['locales'] = true;
         $this->locales = $value;
     
         return $this;
@@ -59,20 +55,17 @@ class ProviderConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('dsn', $value)) {
-            $this->_usedProperties['dsn'] = true;
+        if (isset($value['dsn'])) {
             $this->dsn = $value['dsn'];
             unset($value['dsn']);
         }
     
-        if (array_key_exists('domains', $value)) {
-            $this->_usedProperties['domains'] = true;
+        if (isset($value['domains'])) {
             $this->domains = $value['domains'];
             unset($value['domains']);
         }
     
-        if (array_key_exists('locales', $value)) {
-            $this->_usedProperties['locales'] = true;
+        if (isset($value['locales'])) {
             $this->locales = $value['locales'];
             unset($value['locales']);
         }
@@ -85,13 +78,13 @@ class ProviderConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['dsn'])) {
+        if (null !== $this->dsn) {
             $output['dsn'] = $this->dsn;
         }
-        if (isset($this->_usedProperties['domains'])) {
+        if (null !== $this->domains) {
             $output['domains'] = $this->domains;
         }
-        if (isset($this->_usedProperties['locales'])) {
+        if (null !== $this->locales) {
             $output['locales'] = $this->locales;
         }
     

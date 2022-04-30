@@ -8,12 +8,11 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class TemplatingConfig 
 {
     private $controllerPatterns;
-    private $_usedProperties = [];
     
     /**
      * @param ParamConfigurator|list<ParamConfigurator|mixed> $value
@@ -22,7 +21,6 @@ class TemplatingConfig
      */
     public function controllerPatterns(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['controllerPatterns'] = true;
         $this->controllerPatterns = $value;
     
         return $this;
@@ -31,8 +29,7 @@ class TemplatingConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('controller_patterns', $value)) {
-            $this->_usedProperties['controllerPatterns'] = true;
+        if (isset($value['controller_patterns'])) {
             $this->controllerPatterns = $value['controller_patterns'];
             unset($value['controller_patterns']);
         }
@@ -45,7 +42,7 @@ class TemplatingConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['controllerPatterns'])) {
+        if (null !== $this->controllerPatterns) {
             $output['controller_patterns'] = $this->controllerPatterns;
         }
     

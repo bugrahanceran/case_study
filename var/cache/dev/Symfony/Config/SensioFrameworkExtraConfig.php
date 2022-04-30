@@ -13,7 +13,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilderInterface
 {
@@ -23,12 +23,10 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     private $cache;
     private $security;
     private $templating;
-    private $_usedProperties = [];
     
     public function router(array $value = []): \Symfony\Config\SensioFrameworkExtra\RouterConfig
     {
         if (null === $this->router) {
-            $this->_usedProperties['router'] = true;
             $this->router = new \Symfony\Config\SensioFrameworkExtra\RouterConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "router()" has already been initialized. You cannot pass values the second time you call router().');
@@ -40,7 +38,6 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     public function request(array $value = []): \Symfony\Config\SensioFrameworkExtra\RequestConfig
     {
         if (null === $this->request) {
-            $this->_usedProperties['request'] = true;
             $this->request = new \Symfony\Config\SensioFrameworkExtra\RequestConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "request()" has already been initialized. You cannot pass values the second time you call request().');
@@ -52,7 +49,6 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     public function view(array $value = []): \Symfony\Config\SensioFrameworkExtra\ViewConfig
     {
         if (null === $this->view) {
-            $this->_usedProperties['view'] = true;
             $this->view = new \Symfony\Config\SensioFrameworkExtra\ViewConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "view()" has already been initialized. You cannot pass values the second time you call view().');
@@ -64,7 +60,6 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     public function cache(array $value = []): \Symfony\Config\SensioFrameworkExtra\CacheConfig
     {
         if (null === $this->cache) {
-            $this->_usedProperties['cache'] = true;
             $this->cache = new \Symfony\Config\SensioFrameworkExtra\CacheConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "cache()" has already been initialized. You cannot pass values the second time you call cache().');
@@ -76,7 +71,6 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     public function security(array $value = []): \Symfony\Config\SensioFrameworkExtra\SecurityConfig
     {
         if (null === $this->security) {
-            $this->_usedProperties['security'] = true;
             $this->security = new \Symfony\Config\SensioFrameworkExtra\SecurityConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "security()" has already been initialized. You cannot pass values the second time you call security().');
@@ -88,7 +82,6 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     public function templating(array $value = []): \Symfony\Config\SensioFrameworkExtra\TemplatingConfig
     {
         if (null === $this->templating) {
-            $this->_usedProperties['templating'] = true;
             $this->templating = new \Symfony\Config\SensioFrameworkExtra\TemplatingConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "templating()" has already been initialized. You cannot pass values the second time you call templating().');
@@ -105,38 +98,32 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('router', $value)) {
-            $this->_usedProperties['router'] = true;
+        if (isset($value['router'])) {
             $this->router = new \Symfony\Config\SensioFrameworkExtra\RouterConfig($value['router']);
             unset($value['router']);
         }
     
-        if (array_key_exists('request', $value)) {
-            $this->_usedProperties['request'] = true;
+        if (isset($value['request'])) {
             $this->request = new \Symfony\Config\SensioFrameworkExtra\RequestConfig($value['request']);
             unset($value['request']);
         }
     
-        if (array_key_exists('view', $value)) {
-            $this->_usedProperties['view'] = true;
+        if (isset($value['view'])) {
             $this->view = new \Symfony\Config\SensioFrameworkExtra\ViewConfig($value['view']);
             unset($value['view']);
         }
     
-        if (array_key_exists('cache', $value)) {
-            $this->_usedProperties['cache'] = true;
+        if (isset($value['cache'])) {
             $this->cache = new \Symfony\Config\SensioFrameworkExtra\CacheConfig($value['cache']);
             unset($value['cache']);
         }
     
-        if (array_key_exists('security', $value)) {
-            $this->_usedProperties['security'] = true;
+        if (isset($value['security'])) {
             $this->security = new \Symfony\Config\SensioFrameworkExtra\SecurityConfig($value['security']);
             unset($value['security']);
         }
     
-        if (array_key_exists('templating', $value)) {
-            $this->_usedProperties['templating'] = true;
+        if (isset($value['templating'])) {
             $this->templating = new \Symfony\Config\SensioFrameworkExtra\TemplatingConfig($value['templating']);
             unset($value['templating']);
         }
@@ -149,22 +136,22 @@ class SensioFrameworkExtraConfig implements \Symfony\Component\Config\Builder\Co
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['router'])) {
+        if (null !== $this->router) {
             $output['router'] = $this->router->toArray();
         }
-        if (isset($this->_usedProperties['request'])) {
+        if (null !== $this->request) {
             $output['request'] = $this->request->toArray();
         }
-        if (isset($this->_usedProperties['view'])) {
+        if (null !== $this->view) {
             $output['view'] = $this->view->toArray();
         }
-        if (isset($this->_usedProperties['cache'])) {
+        if (null !== $this->cache) {
             $output['cache'] = $this->cache->toArray();
         }
-        if (isset($this->_usedProperties['security'])) {
+        if (null !== $this->security) {
             $output['security'] = $this->security->toArray();
         }
-        if (isset($this->_usedProperties['templating'])) {
+        if (null !== $this->templating) {
             $output['templating'] = $this->templating->toArray();
         }
     

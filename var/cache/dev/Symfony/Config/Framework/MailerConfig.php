@@ -10,7 +10,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class MailerConfig 
 {
@@ -20,7 +20,6 @@ class MailerConfig
     private $transports;
     private $envelope;
     private $headers;
-    private $_usedProperties = [];
     
     /**
      * @default true
@@ -29,7 +28,6 @@ class MailerConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -43,7 +41,6 @@ class MailerConfig
      */
     public function messageBus($value): static
     {
-        $this->_usedProperties['messageBus'] = true;
         $this->messageBus = $value;
     
         return $this;
@@ -56,7 +53,6 @@ class MailerConfig
      */
     public function dsn($value): static
     {
-        $this->_usedProperties['dsn'] = true;
         $this->dsn = $value;
     
         return $this;
@@ -67,7 +63,6 @@ class MailerConfig
      */
     public function transport(string $name, mixed $value): static
     {
-        $this->_usedProperties['transports'] = true;
         $this->transports[$name] = $value;
     
         return $this;
@@ -76,7 +71,6 @@ class MailerConfig
     public function envelope(array $value = []): \Symfony\Config\Framework\Mailer\EnvelopeConfig
     {
         if (null === $this->envelope) {
-            $this->_usedProperties['envelope'] = true;
             $this->envelope = new \Symfony\Config\Framework\Mailer\EnvelopeConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "envelope()" has already been initialized. You cannot pass values the second time you call envelope().');
@@ -88,8 +82,6 @@ class MailerConfig
     public function header(string $name, array $value = []): \Symfony\Config\Framework\Mailer\HeaderConfig
     {
         if (!isset($this->headers[$name])) {
-            $this->_usedProperties['headers'] = true;
-    
             return $this->headers[$name] = new \Symfony\Config\Framework\Mailer\HeaderConfig($value);
         }
         if ([] === $value) {
@@ -102,38 +94,32 @@ class MailerConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('message_bus', $value)) {
-            $this->_usedProperties['messageBus'] = true;
+        if (isset($value['message_bus'])) {
             $this->messageBus = $value['message_bus'];
             unset($value['message_bus']);
         }
     
-        if (array_key_exists('dsn', $value)) {
-            $this->_usedProperties['dsn'] = true;
+        if (isset($value['dsn'])) {
             $this->dsn = $value['dsn'];
             unset($value['dsn']);
         }
     
-        if (array_key_exists('transports', $value)) {
-            $this->_usedProperties['transports'] = true;
+        if (isset($value['transports'])) {
             $this->transports = $value['transports'];
             unset($value['transports']);
         }
     
-        if (array_key_exists('envelope', $value)) {
-            $this->_usedProperties['envelope'] = true;
+        if (isset($value['envelope'])) {
             $this->envelope = new \Symfony\Config\Framework\Mailer\EnvelopeConfig($value['envelope']);
             unset($value['envelope']);
         }
     
-        if (array_key_exists('headers', $value)) {
-            $this->_usedProperties['headers'] = true;
+        if (isset($value['headers'])) {
             $this->headers = array_map(function ($v) { return new \Symfony\Config\Framework\Mailer\HeaderConfig($v); }, $value['headers']);
             unset($value['headers']);
         }
@@ -146,22 +132,22 @@ class MailerConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['messageBus'])) {
+        if (null !== $this->messageBus) {
             $output['message_bus'] = $this->messageBus;
         }
-        if (isset($this->_usedProperties['dsn'])) {
+        if (null !== $this->dsn) {
             $output['dsn'] = $this->dsn;
         }
-        if (isset($this->_usedProperties['transports'])) {
+        if (null !== $this->transports) {
             $output['transports'] = $this->transports;
         }
-        if (isset($this->_usedProperties['envelope'])) {
+        if (null !== $this->envelope) {
             $output['envelope'] = $this->envelope->toArray();
         }
-        if (isset($this->_usedProperties['headers'])) {
+        if (null !== $this->headers) {
             $output['headers'] = array_map(function ($v) { return $v->toArray(); }, $this->headers);
         }
     

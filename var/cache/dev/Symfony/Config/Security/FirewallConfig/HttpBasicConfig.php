@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class HttpBasicConfig 
 {
     private $provider;
     private $realm;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class HttpBasicConfig
      */
     public function provider($value): static
     {
-        $this->_usedProperties['provider'] = true;
         $this->provider = $value;
     
         return $this;
@@ -36,7 +34,6 @@ class HttpBasicConfig
      */
     public function realm($value): static
     {
-        $this->_usedProperties['realm'] = true;
         $this->realm = $value;
     
         return $this;
@@ -45,14 +42,12 @@ class HttpBasicConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('provider', $value)) {
-            $this->_usedProperties['provider'] = true;
+        if (isset($value['provider'])) {
             $this->provider = $value['provider'];
             unset($value['provider']);
         }
     
-        if (array_key_exists('realm', $value)) {
-            $this->_usedProperties['realm'] = true;
+        if (isset($value['realm'])) {
             $this->realm = $value['realm'];
             unset($value['realm']);
         }
@@ -65,10 +60,10 @@ class HttpBasicConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['provider'])) {
+        if (null !== $this->provider) {
             $output['provider'] = $this->provider;
         }
-        if (isset($this->_usedProperties['realm'])) {
+        if (null !== $this->realm) {
             $output['realm'] = $this->realm;
         }
     

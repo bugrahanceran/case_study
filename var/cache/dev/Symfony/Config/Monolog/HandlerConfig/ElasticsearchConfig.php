@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class ElasticsearchConfig 
 {
@@ -18,7 +18,6 @@ class ElasticsearchConfig
     private $transport;
     private $user;
     private $password;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -27,7 +26,6 @@ class ElasticsearchConfig
      */
     public function id($value): static
     {
-        $this->_usedProperties['id'] = true;
         $this->id = $value;
     
         return $this;
@@ -40,7 +38,6 @@ class ElasticsearchConfig
      */
     public function host($value): static
     {
-        $this->_usedProperties['host'] = true;
         $this->host = $value;
     
         return $this;
@@ -53,7 +50,6 @@ class ElasticsearchConfig
      */
     public function port($value): static
     {
-        $this->_usedProperties['port'] = true;
         $this->port = $value;
     
         return $this;
@@ -66,7 +62,6 @@ class ElasticsearchConfig
      */
     public function transport($value): static
     {
-        $this->_usedProperties['transport'] = true;
         $this->transport = $value;
     
         return $this;
@@ -79,7 +74,6 @@ class ElasticsearchConfig
      */
     public function user($value): static
     {
-        $this->_usedProperties['user'] = true;
         $this->user = $value;
     
         return $this;
@@ -92,7 +86,6 @@ class ElasticsearchConfig
      */
     public function password($value): static
     {
-        $this->_usedProperties['password'] = true;
         $this->password = $value;
     
         return $this;
@@ -101,38 +94,32 @@ class ElasticsearchConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('id', $value)) {
-            $this->_usedProperties['id'] = true;
+        if (isset($value['id'])) {
             $this->id = $value['id'];
             unset($value['id']);
         }
     
-        if (array_key_exists('host', $value)) {
-            $this->_usedProperties['host'] = true;
+        if (isset($value['host'])) {
             $this->host = $value['host'];
             unset($value['host']);
         }
     
-        if (array_key_exists('port', $value)) {
-            $this->_usedProperties['port'] = true;
+        if (isset($value['port'])) {
             $this->port = $value['port'];
             unset($value['port']);
         }
     
-        if (array_key_exists('transport', $value)) {
-            $this->_usedProperties['transport'] = true;
+        if (isset($value['transport'])) {
             $this->transport = $value['transport'];
             unset($value['transport']);
         }
     
-        if (array_key_exists('user', $value)) {
-            $this->_usedProperties['user'] = true;
+        if (isset($value['user'])) {
             $this->user = $value['user'];
             unset($value['user']);
         }
     
-        if (array_key_exists('password', $value)) {
-            $this->_usedProperties['password'] = true;
+        if (isset($value['password'])) {
             $this->password = $value['password'];
             unset($value['password']);
         }
@@ -145,22 +132,22 @@ class ElasticsearchConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['id'])) {
+        if (null !== $this->id) {
             $output['id'] = $this->id;
         }
-        if (isset($this->_usedProperties['host'])) {
+        if (null !== $this->host) {
             $output['host'] = $this->host;
         }
-        if (isset($this->_usedProperties['port'])) {
+        if (null !== $this->port) {
             $output['port'] = $this->port;
         }
-        if (isset($this->_usedProperties['transport'])) {
+        if (null !== $this->transport) {
             $output['transport'] = $this->transport;
         }
-        if (isset($this->_usedProperties['user'])) {
+        if (null !== $this->user) {
             $output['user'] = $this->user;
         }
-        if (isset($this->_usedProperties['password'])) {
+        if (null !== $this->password) {
             $output['password'] = $this->password;
         }
     

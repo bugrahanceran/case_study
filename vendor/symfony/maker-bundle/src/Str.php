@@ -11,6 +11,7 @@
 
 namespace Symfony\Bundle\MakerBundle;
 
+use Doctrine\Common\Inflector\Inflector as LegacyInflector;
 use Doctrine\Inflector\Inflector;
 use Doctrine\Inflector\InflectorFactory;
 use Symfony\Component\DependencyInjection\Container;
@@ -101,9 +102,7 @@ final class Str
 
     public static function asRouteName(string $value): string
     {
-        $routeName = self::asTwigVariable($value);
-
-        return str_starts_with($routeName, 'app_') ? $routeName : 'app_'.$routeName;
+        return self::asTwigVariable($value);
     }
 
     public static function asSnakeCase(string $value): string
@@ -219,12 +218,20 @@ final class Str
 
     private static function pluralize(string $word): string
     {
-        return static::getInflector()->pluralize($word);
+        if (class_exists(Inflector::class)) {
+            return static::getInflector()->pluralize($word);
+        }
+
+        return LegacyInflector::pluralize($word);
     }
 
     private static function singularize(string $word): string
     {
-        return static::getInflector()->singularize($word);
+        if (class_exists(Inflector::class)) {
+            return static::getInflector()->singularize($word);
+        }
+
+        return LegacyInflector::singularize($word);
     }
 
     private static function getInflector(): Inflector

@@ -104,7 +104,6 @@ return [
         'en_MS' => 'Anglisy (Montserrat)',
         'en_MT' => 'Anglisy (Malta)',
         'en_MU' => 'Anglisy (Maorisy)',
-        'en_MV' => 'Anglisy (Maldiva)',
         'en_MW' => 'Anglisy (Malaoì)',
         'en_MY' => 'Anglisy (Malaizia)',
         'en_NA' => 'Anglisy (Namibia)',

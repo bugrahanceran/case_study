@@ -7,7 +7,7 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 /**
  * Marker interface for constraints.
  *
- * @deprecated Use {@see ForeignKeyConstraint}, {@see Index} or {@see UniqueConstraint} instead.
+ * @deprecated Use {@link ForeignKeyConstraint}, {@link Index} or {@link UniqueConstraint} instead.
  */
 interface Constraint
 {

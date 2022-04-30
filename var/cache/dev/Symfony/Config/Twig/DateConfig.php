@@ -8,14 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class DateConfig 
 {
     private $format;
     private $intervalFormat;
     private $timezone;
-    private $_usedProperties = [];
     
     /**
      * @default 'F j, Y H:i'
@@ -24,7 +23,6 @@ class DateConfig
      */
     public function format($value): static
     {
-        $this->_usedProperties['format'] = true;
         $this->format = $value;
     
         return $this;
@@ -37,7 +35,6 @@ class DateConfig
      */
     public function intervalFormat($value): static
     {
-        $this->_usedProperties['intervalFormat'] = true;
         $this->intervalFormat = $value;
     
         return $this;
@@ -51,7 +48,6 @@ class DateConfig
      */
     public function timezone($value): static
     {
-        $this->_usedProperties['timezone'] = true;
         $this->timezone = $value;
     
         return $this;
@@ -60,20 +56,17 @@ class DateConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('format', $value)) {
-            $this->_usedProperties['format'] = true;
+        if (isset($value['format'])) {
             $this->format = $value['format'];
             unset($value['format']);
         }
     
-        if (array_key_exists('interval_format', $value)) {
-            $this->_usedProperties['intervalFormat'] = true;
+        if (isset($value['interval_format'])) {
             $this->intervalFormat = $value['interval_format'];
             unset($value['interval_format']);
         }
     
-        if (array_key_exists('timezone', $value)) {
-            $this->_usedProperties['timezone'] = true;
+        if (isset($value['timezone'])) {
             $this->timezone = $value['timezone'];
             unset($value['timezone']);
         }
@@ -86,13 +79,13 @@ class DateConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['format'])) {
+        if (null !== $this->format) {
             $output['format'] = $this->format;
         }
-        if (isset($this->_usedProperties['intervalFormat'])) {
+        if (null !== $this->intervalFormat) {
             $output['interval_format'] = $this->intervalFormat;
         }
-        if (isset($this->_usedProperties['timezone'])) {
+        if (null !== $this->timezone) {
             $output['timezone'] = $this->timezone;
         }
     

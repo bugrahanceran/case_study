@@ -299,8 +299,7 @@ final class MakerTestEnvironment
 
         file_put_contents($this->flexPath.'/.gitignore', "var/cache/\n");
 
-        // Force adding vendor/ dir to Git repo in case users exclude it in global .gitignore
-        MakerTestProcess::create('git init && git config user.name "symfony" && git config user.email "test@symfony.com" && git add . && git add vendor/ -f && git commit -a -m "first commit"',
+        MakerTestProcess::create('git init && git config user.name "symfony" && git config user.email "test@symfony.com" && git add . && git commit -a -m "first commit"',
             $this->flexPath
         )->run();
     }

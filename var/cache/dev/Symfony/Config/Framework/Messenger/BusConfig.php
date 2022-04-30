@@ -9,13 +9,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class BusConfig 
 {
     private $defaultMiddleware;
     private $middleware;
-    private $_usedProperties = [];
     
     /**
      * @default true
@@ -24,7 +23,6 @@ class BusConfig
      */
     public function defaultMiddleware($value): static
     {
-        $this->_usedProperties['defaultMiddleware'] = true;
         $this->defaultMiddleware = $value;
     
         return $this;
@@ -32,22 +30,18 @@ class BusConfig
     
     public function middleware(array $value = []): \Symfony\Config\Framework\Messenger\BusConfig\MiddlewareConfig
     {
-        $this->_usedProperties['middleware'] = true;
-    
         return $this->middleware[] = new \Symfony\Config\Framework\Messenger\BusConfig\MiddlewareConfig($value);
     }
     
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('default_middleware', $value)) {
-            $this->_usedProperties['defaultMiddleware'] = true;
+        if (isset($value['default_middleware'])) {
             $this->defaultMiddleware = $value['default_middleware'];
             unset($value['default_middleware']);
         }
     
-        if (array_key_exists('middleware', $value)) {
-            $this->_usedProperties['middleware'] = true;
+        if (isset($value['middleware'])) {
             $this->middleware = array_map(function ($v) { return new \Symfony\Config\Framework\Messenger\BusConfig\MiddlewareConfig($v); }, $value['middleware']);
             unset($value['middleware']);
         }
@@ -60,10 +54,10 @@ class BusConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['defaultMiddleware'])) {
+        if (null !== $this->defaultMiddleware) {
             $output['default_middleware'] = $this->defaultMiddleware;
         }
-        if (isset($this->_usedProperties['middleware'])) {
+        if (null !== $this->middleware) {
             $output['middleware'] = array_map(function ($v) { return $v->toArray(); }, $this->middleware);
         }
     

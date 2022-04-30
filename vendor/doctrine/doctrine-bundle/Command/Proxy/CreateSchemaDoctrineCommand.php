@@ -13,7 +13,10 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class CreateSchemaDoctrineCommand extends CreateCommand
 {
-    protected function configure(): void
+    /**
+     * {@inheritDoc}
+     */
+    protected function configure()
     {
         parent::configure();
 
@@ -28,7 +31,10 @@ class CreateSchemaDoctrineCommand extends CreateCommand
         $this->addOption('em', null, InputOption::VALUE_OPTIONAL, 'The entity manager to use for this command');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
+    /**
+     * {@inheritDoc}
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
         DoctrineCommandHelper::setApplicationEntityManager($this->getApplication(), $input->getOption('em'));
 

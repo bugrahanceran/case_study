@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class NotCompromisedPasswordConfig 
 {
     private $enabled;
     private $endpoint;
-    private $_usedProperties = [];
     
     /**
      * When disabled, compromised passwords will be accepted as valid.
@@ -24,7 +23,6 @@ class NotCompromisedPasswordConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -38,7 +36,6 @@ class NotCompromisedPasswordConfig
      */
     public function endpoint($value): static
     {
-        $this->_usedProperties['endpoint'] = true;
         $this->endpoint = $value;
     
         return $this;
@@ -47,14 +44,12 @@ class NotCompromisedPasswordConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('endpoint', $value)) {
-            $this->_usedProperties['endpoint'] = true;
+        if (isset($value['endpoint'])) {
             $this->endpoint = $value['endpoint'];
             unset($value['endpoint']);
         }
@@ -67,10 +62,10 @@ class NotCompromisedPasswordConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['endpoint'])) {
+        if (null !== $this->endpoint) {
             $output['endpoint'] = $this->endpoint;
         }
     

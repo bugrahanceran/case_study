@@ -1,9 +1,9 @@
 parameters:
-    phpVersion: 80100
+    phpVersion: 70100
     level: 3
     paths:
         - .
-    excludePaths:
+    excludes_analyse:
         - vendor
 
 includes:

@@ -8,13 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class RemoteUserConfig 
 {
     private $provider;
     private $user;
-    private $_usedProperties = [];
     
     /**
      * @default null
@@ -23,7 +22,6 @@ class RemoteUserConfig
      */
     public function provider($value): static
     {
-        $this->_usedProperties['provider'] = true;
         $this->provider = $value;
     
         return $this;
@@ -36,7 +34,6 @@ class RemoteUserConfig
      */
     public function user($value): static
     {
-        $this->_usedProperties['user'] = true;
         $this->user = $value;
     
         return $this;
@@ -45,14 +42,12 @@ class RemoteUserConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('provider', $value)) {
-            $this->_usedProperties['provider'] = true;
+        if (isset($value['provider'])) {
             $this->provider = $value['provider'];
             unset($value['provider']);
         }
     
-        if (array_key_exists('user', $value)) {
-            $this->_usedProperties['user'] = true;
+        if (isset($value['user'])) {
             $this->user = $value['user'];
             unset($value['user']);
         }
@@ -65,10 +60,10 @@ class RemoteUserConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['provider'])) {
+        if (null !== $this->provider) {
             $output['provider'] = $this->provider;
         }
-        if (isset($this->_usedProperties['user'])) {
+        if (null !== $this->user) {
             $output['user'] = $this->user;
         }
     

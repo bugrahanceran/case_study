@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help in creating a config.
+ * This class is automatically generated to help creating config.
  */
 class AssetsConfig 
 {
@@ -22,7 +22,6 @@ class AssetsConfig
     private $basePath;
     private $baseUrls;
     private $packages;
-    private $_usedProperties = [];
     
     /**
      * @default true
@@ -31,7 +30,6 @@ class AssetsConfig
      */
     public function enabled($value): static
     {
-        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -45,7 +43,6 @@ class AssetsConfig
      */
     public function strictMode($value): static
     {
-        $this->_usedProperties['strictMode'] = true;
         $this->strictMode = $value;
     
         return $this;
@@ -58,7 +55,6 @@ class AssetsConfig
      */
     public function versionStrategy($value): static
     {
-        $this->_usedProperties['versionStrategy'] = true;
         $this->versionStrategy = $value;
     
         return $this;
@@ -71,7 +67,6 @@ class AssetsConfig
      */
     public function version($value): static
     {
-        $this->_usedProperties['version'] = true;
         $this->version = $value;
     
         return $this;
@@ -84,7 +79,6 @@ class AssetsConfig
      */
     public function versionFormat($value): static
     {
-        $this->_usedProperties['versionFormat'] = true;
         $this->versionFormat = $value;
     
         return $this;
@@ -97,7 +91,6 @@ class AssetsConfig
      */
     public function jsonManifestPath($value): static
     {
-        $this->_usedProperties['jsonManifestPath'] = true;
         $this->jsonManifestPath = $value;
     
         return $this;
@@ -109,7 +102,6 @@ class AssetsConfig
      */
     public function basePath($value): static
     {
-        $this->_usedProperties['basePath'] = true;
         $this->basePath = $value;
     
         return $this;
@@ -122,7 +114,6 @@ class AssetsConfig
      */
     public function baseUrls(ParamConfigurator|array $value): static
     {
-        $this->_usedProperties['baseUrls'] = true;
         $this->baseUrls = $value;
     
         return $this;
@@ -131,8 +122,6 @@ class AssetsConfig
     public function package(string $name, array $value = []): \Symfony\Config\Framework\Assets\PackageConfig
     {
         if (!isset($this->packages[$name])) {
-            $this->_usedProperties['packages'] = true;
-    
             return $this->packages[$name] = new \Symfony\Config\Framework\Assets\PackageConfig($value);
         }
         if ([] === $value) {
@@ -145,56 +134,47 @@ class AssetsConfig
     public function __construct(array $value = [])
     {
     
-        if (array_key_exists('enabled', $value)) {
-            $this->_usedProperties['enabled'] = true;
+        if (isset($value['enabled'])) {
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (array_key_exists('strict_mode', $value)) {
-            $this->_usedProperties['strictMode'] = true;
+        if (isset($value['strict_mode'])) {
             $this->strictMode = $value['strict_mode'];
             unset($value['strict_mode']);
         }
     
-        if (array_key_exists('version_strategy', $value)) {
-            $this->_usedProperties['versionStrategy'] = true;
+        if (isset($value['version_strategy'])) {
             $this->versionStrategy = $value['version_strategy'];
             unset($value['version_strategy']);
         }
     
-        if (array_key_exists('version', $value)) {
-            $this->_usedProperties['version'] = true;
+        if (isset($value['version'])) {
             $this->version = $value['version'];
             unset($value['version']);
         }
     
-        if (array_key_exists('version_format', $value)) {
-            $this->_usedProperties['versionFormat'] = true;
+        if (isset($value['version_format'])) {
             $this->versionFormat = $value['version_format'];
             unset($value['version_format']);
         }
     
-        if (array_key_exists('json_manifest_path', $value)) {
-            $this->_usedProperties['jsonManifestPath'] = true;
+        if (isset($value['json_manifest_path'])) {
             $this->jsonManifestPath = $value['json_manifest_path'];
             unset($value['json_manifest_path']);
         }
     
-        if (array_key_exists('base_path', $value)) {
-            $this->_usedProperties['basePath'] = true;
+        if (isset($value['base_path'])) {
             $this->basePath = $value['base_path'];
             unset($value['base_path']);
         }
     
-        if (array_key_exists('base_urls', $value)) {
-            $this->_usedProperties['baseUrls'] = true;
+        if (isset($value['base_urls'])) {
             $this->baseUrls = $value['base_urls'];
             unset($value['base_urls']);
         }
     
-        if (array_key_exists('packages', $value)) {
-            $this->_usedProperties['packages'] = true;
+        if (isset($value['packages'])) {
             $this->packages = array_map(function ($v) { return new \Symfony\Config\Framework\Assets\PackageConfig($v); }, $value['packages']);
             unset($value['packages']);
         }
@@ -207,31 +187,31 @@ class AssetsConfig
     public function toArray(): array
     {
         $output = [];
-        if (isset($this->_usedProperties['enabled'])) {
+        if (null !== $this->enabled) {
             $output['enabled'] = $this->enabled;
         }
-        if (isset($this->_usedProperties['strictMode'])) {
+        if (null !== $this->strictMode) {
             $output['strict_mode'] = $this->strictMode;
         }
-        if (isset($this->_usedProperties['versionStrategy'])) {
+        if (null !== $this->versionStrategy) {
             $output['version_strategy'] = $this->versionStrategy;
         }
-        if (isset($this->_usedProperties['version'])) {
+        if (null !== $this->version) {
             $output['version'] = $this->version;
         }
-        if (isset($this->_usedProperties['versionFormat'])) {
+        if (null !== $this->versionFormat) {
             $output['version_format'] = $this->versionFormat;
         }
-        if (isset($this->_usedProperties['jsonManifestPath'])) {
+        if (null !== $this->jsonManifestPath) {
             $output['json_manifest_path'] = $this->jsonManifestPath;
         }
-        if (isset($this->_usedProperties['basePath'])) {
+        if (null !== $this->basePath) {
             $output['base_path'] = $this->basePath;
         }
-        if (isset($this->_usedProperties['baseUrls'])) {
+        if (null !== $this->baseUrls) {
             $output['base_urls'] = $this->baseUrls;
         }
-        if (isset($this->_usedProperties['packages'])) {
+        if (null !== $this->packages) {
             $output['packages'] = array_map(function ($v) { return $v->toArray(); }, $this->packages);
         }
     
