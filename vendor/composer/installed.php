@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '91184cb931c80d8935e9ae951a6da8b3d2ea2c60',
+        'reference' => '8454f979c1aabd50f70e756a43fc69435f91d52e',
         'name' => 'symfony/symfony-demo',
         'dev' => true,
     ),
@@ -1265,7 +1265,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '91184cb931c80d8935e9ae951a6da8b3d2ea2c60',
+            'reference' => '8454f979c1aabd50f70e756a43fc69435f91d52e',
             'dev_requirement' => false,
         ),
         'symfony/translation' => array(
