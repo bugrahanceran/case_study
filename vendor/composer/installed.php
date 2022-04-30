@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'db436229c1e54239336169ee21ef800124be0129',
+        'reference' => 'bf908ebcdd52ff514367f804faafd4cd0bb83834',
         'name' => 'symfony/symfony-demo',
         'dev' => true,
     ),
@@ -520,8 +520,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(
@@ -1250,7 +1250,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'db436229c1e54239336169ee21ef800124be0129',
+            'reference' => 'bf908ebcdd52ff514367f804faafd4cd0bb83834',
             'dev_requirement' => false,
         ),
         'symfony/translation' => array(

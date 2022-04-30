@@ -596,8 +596,8 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-            1 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
         ),
         'Doctrine\\Bundle\\MigrationsBundle\\' => 
         array (
