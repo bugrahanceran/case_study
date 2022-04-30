@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'fe86ec137659ade455bf01f163b9d1329abecb51',
+        'reference' => '717d81f805f163e321c1f61818b6972980dca0ab',
         'name' => 'symfony/symfony-demo',
         'dev' => true,
     ),
@@ -118,15 +118,6 @@
             'reference' => '601988c5b46dbd20a0f886f967210aba378a6fd5',
             'dev_requirement' => true,
         ),
-        'doctrine/doctrine-migrations-bundle' => array(
-            'pretty_version' => '3.2.2',
-            'version' => '3.2.2.0',
-            'type' => 'symfony-bundle',
-            'install_path' => __DIR__ . '/../doctrine/doctrine-migrations-bundle',
-            'aliases' => array(),
-            'reference' => '3393f411ba25ade21969c33f2053220044854d01',
-            'dev_requirement' => false,
-        ),
         'doctrine/event-manager' => array(
             'pretty_version' => '1.1.1',
             'version' => '1.1.1.0',
@@ -161,15 +152,6 @@
             'install_path' => __DIR__ . '/../doctrine/lexer',
             'aliases' => array(),
             'reference' => 'c268e882d4dbdd85e36e4ad69e02dc284f89d229',
-            'dev_requirement' => false,
-        ),
-        'doctrine/migrations' => array(
-            'pretty_version' => '3.5.0',
-            'version' => '3.5.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../doctrine/migrations',
-            'aliases' => array(),
-            'reference' => '5713b45c933122e509d9b31c767b420c3dfed399',
             'dev_requirement' => false,
         ),
         'doctrine/orm' => array(
@@ -213,24 +195,6 @@
             'replaced' => array(
                 0 => '*',
             ),
-        ),
-        'friendsofphp/proxy-manager-lts' => array(
-            'pretty_version' => 'v1.0.8',
-            'version' => '1.0.8.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../friendsofphp/proxy-manager-lts',
-            'aliases' => array(),
-            'reference' => '581ab35f83ce2135057e0afae892fbf1c583bfb9',
-            'dev_requirement' => false,
-        ),
-        'laminas/laminas-code' => array(
-            'pretty_version' => '4.5.1',
-            'version' => '4.5.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../laminas/laminas-code',
-            'aliases' => array(),
-            'reference' => '6fd96d4d913571a2cd056a27b123fa28cb90ac4e',
-            'dev_requirement' => false,
         ),
         'league/commonmark' => array(
             'pretty_version' => '2.3.0',
@@ -312,12 +276,6 @@
             'aliases' => array(),
             'reference' => '210577fe3cf7badcc5814d99455df46564f3c077',
             'dev_requirement' => false,
-        ),
-        'ocramius/proxy-manager' => array(
-            'dev_requirement' => false,
-            'replaced' => array(
-                0 => '^2.1',
-            ),
         ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.3',
@@ -1233,7 +1191,7 @@
             'install_path' => __DIR__ . '/../symfony/stopwatch',
             'aliases' => array(),
             'reference' => 'f2c1780607ec6502f2121d9729fd8150a655d337',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'symfony/string' => array(
             'pretty_version' => 'v6.0.8',
@@ -1250,7 +1208,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'fe86ec137659ade455bf01f163b9d1329abecb51',
+            'reference' => '717d81f805f163e321c1f61818b6972980dca0ab',
             'dev_requirement' => false,
         ),
         'symfony/translation' => array(

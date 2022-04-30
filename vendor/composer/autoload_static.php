@@ -16,7 +16,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        'c2aad8997a98dfc4771bdbffea3d62b7' => __DIR__ . '/..' . '/laminas/laminas-code/polyfill/ReflectionEnumPolyfill.php',
         'e1e8b49c332434256b5df11b0f0c2a62' => __DIR__ . '/..' . '/league/uri-parser/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
@@ -120,7 +119,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
-            'ProxyManager\\' => 13,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
         ),
@@ -134,7 +132,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'League\\Uri\\' => 11,
             'League\\Config\\' => 14,
             'League\\CommonMark\\' => 18,
-            'Laminas\\Code\\' => 13,
         ),
         'H' => 
         array (
@@ -154,7 +151,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'Doctrine\\SqlFormatter\\' => 22,
             'Doctrine\\Persistence\\' => 21,
             'Doctrine\\ORM\\' => 13,
-            'Doctrine\\Migrations\\' => 20,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Deprecations\\' => 22,
@@ -165,7 +161,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
-            'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\FixturesBundle\\' => 31,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
             'Dflydev\\DotAccessData\\' => 22,
@@ -490,10 +485,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
-        'ProxyManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager',
-        ),
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
@@ -522,10 +513,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
         ),
-        'Laminas\\Code\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
-        ),
         'HtmlSanitizer\\Bundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/tgalopin/html-sanitizer-bundle/src',
@@ -553,10 +540,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         'Doctrine\\ORM\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM',
-        ),
-        'Doctrine\\Migrations\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/migrations/lib/Doctrine/Migrations',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -598,10 +581,6 @@ class ComposerStaticInita63a6b14842abb9daf0940c93e06fa71
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
             1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-        ),
-        'Doctrine\\Bundle\\MigrationsBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle',
         ),
         'Doctrine\\Bundle\\FixturesBundle\\' => 
         array (
