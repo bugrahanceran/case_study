@@ -38,5 +38,5 @@ jobs:
     - name: Run test suite
       run: |
            composer run-script test
-           vendor/bin/phpunit test
+           vendor/bin/phpunit
       
