@@ -37,7 +37,5 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run test suite #composer run-script test
-      run: |
-           composer require symfony/panther
-           bin/phpunit tests/
+      run: bin/phpunit tests/
       
