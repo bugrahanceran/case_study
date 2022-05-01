@@ -40,10 +40,18 @@ jobs:
           apiVersion: apps/v1
           kind: Deployment
           metadata:
-            name: php-project
+            name: php-deployment
+            labels:
+              apps: php-project
           spec:
             replicas: 1
+            selector:
+              matchLabels:
+                app: php-project
             template:
+              metadata:
+                labels:
+                  app: php-project
               spec:
                 containers:
                 - name: php-case-container
