@@ -15,3 +15,5 @@ https://docs.github.com/en/actions/creating-actions/
 https://github.com/marketplace/actions/docker-build-push-action
 
 https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
+
+it's not totally works right yet...
