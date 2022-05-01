@@ -22,9 +22,8 @@ jobs:
       
    # - name: Build the Docker image
    #   uses: elgohr/Publish-Docker-Github-Action@v4
-   
-    - uses: mr-smithers-excellent/docker-build-push@v5 #this is all we need: login,build,push
-      name: Build & push Docker image
+    - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5 #this is all we need: login,build,push
       with:
         registry: docker.io #default
         name: bugracer/case_container #docker repo
